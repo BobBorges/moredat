@@ -5,6 +5,8 @@
 MOREDAT is an example website for remote linguistic data collection. The site is written in Python using the Django framework; as such, it is easily customized for deployment on a webserver, and individual apps are modular, in so far as possible. As a researcher intending to engage in remote data-collection activities, you can start with a MOREDAT instance as a template for a from-scratch website, or you can integrate MOREDAT apps into another Django project. 
 
 
+![](media/screenshot_landing-page.png)
+
 ### Individual data collection apps are:
 
 * Automatized picture naming task: Users name a series of pictures in rapid succession
@@ -122,3 +124,15 @@ I learned a lot while working on this project. You can see in some of the older 
 ### long term
 
 * ..?
+
+
+## More Screenshots
+
+![The user profile](media/screenshot_user-profile.png)
+The user profile.
+
+![The admin panel](media/screenshot_admin-page.png)
+The admin panel.
+
+![The SPN task](media/screenshot_spn-task.png)
+The SPN task.
