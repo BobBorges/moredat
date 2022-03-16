@@ -1,0 +1,70 @@
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+
+<div class="col-lg-4 col-md-12">
+	<div class="">
+		<p>
+			<ul class="list-group">
+				<li class="list-group-item list-group-item-light"><a href="{% url 'quickstart' %}">Quick Start Guide</a></li>
+				<li class="list-group-item list-group-item-light"><a href="{% url 'documentation-descr' %}">Documentation</a></li>
+				<li class="list-group-item list-group-item-light"><a href="{% url 'about-django' %}">About Django</a></li>
+				<li class="list-group-item list-group-item-light"><a href="{% url 'home-apps' %}">Apps</a>
+					<ul class="nested-list-group">
+						<li class="list-group-item list-group-item-light">
+							<a href="{% url 'ran-descr' %}">
+								{% translate 'Automated Picture Naming' %}
+							</a>
+						</li>
+						<li class="list-group-item list-group-item-light">
+							<a href="{% url 'free-media-upload-descr' %}">
+								{% translate 'Free Media Upload' %}
+							</a>
+						</li>
+						<li class="list-group-item list-group-item-light">
+							<a href="{% url 'informed-consent-descr' %}">
+								{% translate 'Informed Consent' %}
+							</a>
+						</li>
+						<li class="list-group-item list-group-item-light">
+							<a href="{% url 'questionnaires-descr' %}">
+								{% translate 'Questionnaires' %}
+							</a>
+						</li>
+						<li class="list-group-item list-group-item-light">
+							<a href="{% url 'trog-descr' %}">
+								{% translate 'Receptive Proficiency' %}
+							</a>
+						</li>
+						<li class="list-group-item list-group-item-light">
+							<a href="{% url 'spn-descr' %}">
+								{% translate 'Self Paced Picture Naming' %}
+							</a>
+						</li>
+						<li class="list-group-item list-group-item-light">
+							<a href="{% url 'test-user-audio-descr' %}">
+								{% translate 'Test User Audio IO' %}
+							</a>
+						</li>
+						<li class="list-group-item list-group-item-light">
+							<a href="{% url 'users-descr' %}">
+								{% translate 'Users (and authentication)' %}
+							</a>
+						</li>
+						
+						<li class="list-group-item list-group-item-light">
+							<a href="{% url 'vidnar-descr' %}">
+								{% translate 'Video Narration' %}
+							</a>
+						</li>
+						<li class="list-group-item list-group-item-light">
+							<a href="{% url 'wordlist-translation-descr' %}">
+								{% translate 'Word List Translation' %}
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="list-group-item list-group-item-light"><a href="{% url 'how-to-cite' %}">How to Cite</a></li>
+			</ul>
+		</p>
+	</div>
+</div>

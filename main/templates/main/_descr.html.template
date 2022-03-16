@@ -1,0 +1,23 @@
+{% extends 'main/main-base.html' %}
+{% load i18n %}
+
+
+
+{% block content %}
+	{% include './main-sidebar.html' %}
+	<div class="col-lg-8 col-md-12">
+		<h1>{% translate 'TITLE' %}</h1>
+		<hr>
+		<h2>{% translate 'Rationale' %}</h2>
+		<p>{% translate 'RATIONALE' %}</p>
+		<h2>{% translate 'How it works' %}</h2>
+		<p>{% translate 'HOW IT WORKS' %}</p>
+		<h2>{% translate 'See it in action' %}</h2>
+		<p>
+			{% translate 'Example Informed Consent Form:' %}&nbsp;<a href="#">{% translate 'here' %}</a></p>
+		<h2>{% translate 'Read the Documentation' %}</h2>
+			{% translate 'App Documentation:' %}&nbsp;<a href="#">{% translate 'here' %}</a>
+		</p>
+
+	</div>
+{% endblock %}

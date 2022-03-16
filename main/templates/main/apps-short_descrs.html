@@ -1,0 +1,131 @@
+{% extends 'main/main-base.html' %}
+{% load i18n %}
+
+
+
+{% block content %}
+	{% include './main-sidebar.html' %}
+	<div class="col-lg-8 col-md-12">
+		<h1>{% translate 'Included Apps' %}</h1>
+		<hr>
+		<p>{% translate 'On this page you find a a list in alphabetical order and brief description of each App along with links to a more detailed description and documentation.' %}</p>
+
+
+
+
+		<!-- RAN APP -->
+		<h2>{% translate 'Automatized Picture Naming App' %}</h2>
+		<p>{% translate 'Inspired by the Rapid Automatized Picture Naming assessment, this app shows a series of image stimuli to the user. The user should produce a spoken response, stating in one word what is depicted in the image. The images are shown sequentially in blocks of 10 by default, and the user has no control over the pace of each block of stimuli.' %}</p>
+		<p>
+			{% translate 'Detailed description of App:' %}&nbsp;<a href="{% url 'ran-descr' %}">{% translate 'here' %}</a><br>
+			{% translate 'Example:' %}&nbsp;<a href="{% url 'ran-welcome' %}">{% translate 'here' %}</a><br>
+			{% translate 'App Documentation:' %}&nbsp;<a href="{% url 'documentation_page' slug='RanAppDocumentation' %}">{% translate 'here' %}</a>
+		</p>
+
+
+
+
+		<!-- FREE MEDIA UPLOAD APP -->
+		<h2>{% translate 'Free Media Upload App' %}</h2>
+		<p>{% translate 'This app allows users to upload files along with minimal meta information.' %}</p>
+		<p>
+			{% translate 'Detailed description of App:' %}&nbsp;<a href="{% url 'free-media-upload-descr' %}">{% translate 'here' %}</a><br>
+			{% translate 'Example:' %}&nbsp;<a href="{% url 'freemediaupload' %}">{% translate 'here' %}</a><br>
+			{% translate 'App Documentation:' %}&nbsp;<a href="{% url 'documentation_page' slug='FreeMediaUploadDocumentation' %}">{% translate 'here' %}</a>
+		</p>
+
+
+
+
+		<!-- INFORMED CONSENT APP -->
+		<h2>{% translate 'Informed Consent App' %}</h2>
+		<p>{% translate 'Conducting ethical research with human usually requires that participants / subjects are informed about the research they participate in. The MoReDaT Informed Consent Form is a tool that allows the researcher / data-collection site admins to present such information and ask for participants&#39; agreement. Consent is built into MoReDat  and by default is required to be complete before participants can access and complete any other tasks.' %}</p>
+		<p>
+			{% translate 'Detailed description of the Consent App:' %}&nbsp;<a href="{% url 'informed-consent-descr' %}">{% translate 'here' %}</a><br>
+			{% translate 'Example:' %}&nbsp;<a href="{% url 'get-consent' %}">{% translate 'here' %}</a><br>
+			{% translate 'Consent App Documentation:' %}&nbsp;<a href="{% url 'documentation_page' slug='ConsentAppDocumentation' %}">{% translate 'here' %}</a>
+		</p>
+
+
+
+		<!-- QUESTIONNAIRES APP -->
+		<h2>{% translate 'Questionnaires App' %}</h2>
+		<p>{% translate 'A frequent activity in linguistics research is the distribution of sociolinguistic survey questionnaires. This app allows the researcher to create multiple questionnaires and distrubute them the users. The questionnaire app is written generically so virtually any type of questionnaire can be designed and deployed with the Questionnaires App. MoReDaT comes with two preconstructed questionnaires &mdash;one about pizza preferences and a shortened version of the EuLaViBar linguistic vitality questionnaire&mdash; to illustrate how the different model components work together.' %}</p>
+		<p>
+			{% translate 'Detailed description of Questionnaires App:' %}&nbsp;<a href="{% url 'questionnaires-descr' %}">{% translate 'here' %}</a><br>
+			{% translate 'Example questionnaire:' %}&nbsp;<a href="{% url 'questionnaire-welcome' questionnaire='all-about-pizza' %}">{% translate 'here' %}</a><br>
+			{% translate 'Questionnaires App Documentation:' %}&nbsp;<a href="{% url 'documentation_page' slug='QuestionnaireDocumentation' %}">{% translate 'here' %}</a>
+		</p>
+
+
+
+
+		<!-- TROG APP -->
+		<h2>{% translate 'Receptive Proficiency App' %}</h2>
+		<p>{% translate 'Sometimes it is necessary to get an idea of how much of a language a participant can understand. This app allows you to present audio stimuli, such as a phrase or sentence, along with a set of images in a 2x2 grid, wherein one corresponds to the audio prompt and the other three are distractor images. The user selects the image they think corresponds to the audio prompt.' %}</p>
+		<p>
+			{% translate 'Detailed description of App:' %}&nbsp;<a href="{% url 'trog-descr' %}">{% translate 'here' %}</a><br>
+			{% translate 'Example:' %}&nbsp;<a href="{% url 'trog-welcome' %}">{% translate 'here' %}</a><br>
+			{% translate 'App Documentation:' %}&nbsp;<a href="{% url 'documentation_page' slug='TrogAppDocumentation' %}">{% translate 'here' %}</a>
+		</p>
+
+
+
+
+		<!-- SPN APP -->
+		<h2>{% translate 'Self-Paced Picture Naming App' %}</h2>
+		<p>{% translate 'List translation as a means to get acquainted with a new language is useful, but translation tasks have their drawbacks. An alternative to translation tasks are using non verbal stimuli such as photographs and drawings to elicit words and / or short phrases. This app is a means to conduct elicitation with image-based stimuli.' %}</p>
+		<p>
+			{% translate 'Detailed description of App:' %}&nbsp;<a href="{% url 'spn-descr' %}">{% translate 'here' %}</a><br>
+			{% translate 'Example:' %}&nbsp;<a href="{% url 'spn-welcome' pic_set='cats' %}">{% translate 'here' %}</a><br>
+			{% translate 'App Documentation:' %}&nbsp;<a href="{% url 'documentation_page' slug='SpnAppDocumentation' %}">{% translate 'here' %}</a>
+		</p>
+
+
+
+
+		<!-- TEST AUDIO IO APP -->
+		<h2>{% translate 'Test User Audio IO App' %}</h2>
+		<p>{% translate 'This is a support app, which is planned to be incorporated into the startpage of tasks that require playing or recording audio. It checks that the user&#39;s sound hardware and software are correctly configured.' %}</p>
+		<p>
+			{% translate 'Detailed description of App:' %}&nbsp;<a href="{% url 'test-user-audio-descr' %}">{% translate 'here' %}</a><br>
+			{% translate 'Example   :' %}&nbsp;<a href="{% url 'test-user-audio' %}">{% translate 'here' %}</a><br>
+			{% translate 'App Documentation:' %}&nbsp;<a href="{% url 'documentation_page' slug='TestUserAudioIODocumentation' %}">{% translate 'here' %}</a>
+		</p>
+
+
+
+		<!-- USERS APP -->
+		<h2>{% translate 'Users (and authentication) App(s)' %}</h2>
+		<p>{% translate 'The Users App provides a means for keeping track of individual users and customizing how MoReDaT interacts with individuals and groups of users. It relies on Django&#39;s default User Authentication with a few additions. The User object is the foreign key for the results of the research tasks that generate database data; the user ID number is included in audio data generated. This means that we have a means for research participants to be authenticated by the site and research participants can be designated to research groups; research tasks can be assigned to them based on their group membership.' %}</p>
+		<p>
+			{% translate 'Detailed description of Users App' %}&nbsp;<a href="{% url 'users-descr' %}">{% translate 'here' %}</a><br>
+			{% translate 'Users App Documentation:' %}&nbsp;<a href="{% url 'documentation_page' slug='UsersApp' %}">{% translate 'here' %}</a>			
+		</p>
+
+
+
+		<!-- VIDEO NARRATION APP -->
+		<h2>{% translate 'Video Narration App' %}</h2>
+		<p>{% translate 'Translation of longer stretches of text is generally not an acceptable method in language documentation due to translation effects. Instead it is preferable in most instances to elicit longer stretches of text with non-verbal stimuli such as video and images. This app allows for the creation of video-based elicitation tasks.' %}</p>
+		<p>
+			{% translate 'Detailed description of App:' %}&nbsp;<a href="{% url 'vidnar-descr' %}">{% translate 'here' %}</a><br>
+			{% translate 'Example:' %}&nbsp;<a href="{% url 'vidnar-welcome' vid_set='put-vids-trgt' %}">{% translate 'here' %}</a><br>
+			{% translate 'App Documentation:' %}&nbsp;<a href="{% url 'documentation_page' slug='VidnarAppDocumentation' %}">{% translate 'here' %}</a>
+		</p>
+
+
+
+		<!-- WORD LIST TRANSLATION -->
+		<h2>{% translate 'Word List Translation App' %}</h2>
+		<p>{% translate 'When we know almost nothing about a language, it can be useful to start by translating lists of basic vocabulary and sets of short phrases (grammar paradigms). This app allows for the creation of word (or phrase) list-based Tasks.' %}</p>
+		<p>
+			{% translate 'Detailed description of App:' %}&nbsp;<a href="{% url 'wordlist-translation-descr' %}">{% translate 'here' %}</a><br>
+			{% translate 'Example:' %}&nbsp;<a href="{% url 'wlt-welcome' word_set='common-animals' %}">{% translate 'here' %}</a><br>
+			{% translate 'App Documentation:' %}&nbsp;<a href="{% url 'documentation_page' slug='WordlistAppDocumentation' %}">{% translate 'here' %}</a>
+		</p>
+
+
+
+	</div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'main/main-base.html' %}
+{% load i18n %}
+
+
+
+{% block content %}
+	{% include './main-sidebar.html' %}
+	<div class="col-lg-8 col-md-12">
+		<h1>{% translate 'TROG Task' %}</h1>
+		<hr>
+		<h2>{% translate 'Rationale' %}</h2>
+		<p>{% translate 'Sometimes it is necessary to get an idea of how much of a language a participant can understand. This app allows you to present audio stimuli, such as a phrase or sentence, along with a set of images in a 2x2 grid, wherein one corresponds to the audio prompt and the other three are distractor images. The user selects the image they think corresponds to the audio prompt.' %}</p>
+		<h2>{% translate 'How it works' %}</h2>
+		<p>{% translate 'The TROG app allows to construct a single task as described above. Stimuli sets are displayed in a random order and the arrangement of the 2x2 grid is randomized. File naming conventions must be followed strictly and be stored in the correct directories for the task to function properly.' %}</p>
+		<p>{% translate 'The task records the users response for each trial &mdash; selected image (the file name indicates whether it was the target), selected quadrant, the amount of time it took the participant to make a selection, and the number of times the participant replayed the audio stimulus.' %}</p>
+		<h2>{% translate 'See it in action' %}</h2>
+		<p>
+			{% translate 'Example TROG task:' %}&nbsp;<a href="{% url 'trog-welcome' %}">{% translate 'here' %}</a></p>
+		<h2>{% translate 'Read the Documentation' %}</h2>
+			{% translate 'App Documentation:' %}&nbsp;<a href="{% url 'documentation_page' slug='TrogAppDocumentation' %}">{% translate 'here' %}</a>
+		</p>
+
+	</div>
+{% endblock %}

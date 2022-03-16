@@ -1,0 +1,43 @@
+{% extends 'main/main-base.html' %}
+{% load i18n %}
+
+
+
+
+
+
+
+
+{% block content %}
+	{% include './main-sidebar.html' %}
+	<div class="col-lg-8 col-md-12">
+
+
+		<h1>{% translate 'Users (authentication)' %}</h1>
+		<hr>
+
+		<h2>{% translate 'Rationale' %}</h2>
+
+		<p>{% translate 'The users app provides a means for keeping track of individual users and customizing how MoReDaT interacts with individual and groups of users. It relies on Django\'s default User Authentication with a few additions &mdash; a model for storing additional details from idividual users (research group, self-directed bio, gender, picture), a model for differentiating research groups (group name, short-name, language, second-language, description, slug), an assigned tasks model (user, task, complete), and a model for default assigned tasks per research group (group name, task). The User object is the foreign key for the results of the research tasks that generate database data; the user ID number is included in audio data generated. This means that we have a means for research participants to be authenticated by the site and research participants can be designated to research groups; research tasks can be assigned to them based on their group membership.' %}</p>
+
+
+		<h2>{% translate 'How it works' %}</h2>
+
+		<p>{% translate 'The researcher must first define research groups with the ResearchGroups model &mdash; this can be done in the admin panel. Two <i>language</i> fields are provided (&#39;language&#39; and &#39;L2&#39;) because often in questionnaires, we are interested in how our informants view their sociolinguistic setting, e.g. a minority language and a national language, thus these can be defined here. Once research groups are defined, default tasks can be assigned to those research groups (the DefaultAssignedTasksByGroup model). The MoReDaT example project consent form redirects users, on completion, to the UserDetails form, where they choose the research group to which they belong. On successful completion of the UserDetails form, default tasks will be assigned to that user automatically according to the research group they joined via the <span class="code">get_user_details()</span> view function in <span class="code">users/views.py</span>.' %}</p>
+
+		<p>{% translate 'Research groups and default assigned tasks are managed in the admin panel. By default The AssignedTasks model is handled by by <span class="code">register()</span> (give consent and user details) and <span class="code">get_user_details()</span> (all the rest) in <span class="code">users/views.py</span>. It&#39;s possible to manually assign tasks to users in the admin panel, but by design, it shouldn&#39;t be necessary. Tasks (in the main app) do need to be defined manually.</p>
+
+
+		<h2>{% translate 'See it in action' %}</h2>
+
+		<p>{% translate 'Example Get User Details Form:' %}&nbsp;<a href="{% url 'get-user-details' %}">{% translate 'here' %}</a></p>
+
+		<p>{% translate 'The user profile also displays information related to the Users App, including some User Details and links to assigned tasks.' %} <a href="{% url 'profile' %}">here</a></p>
+
+
+		<h2>{% translate 'Read the Documentation' %}</h2>
+		
+		<p>{% translate 'Users App Documentation:' %}&nbsp;<a href="{% url 'documentation_page' slug='UsersApp' %}">{% translate 'here' %}</a></p>
+
+	</div>
+{% endblock %}

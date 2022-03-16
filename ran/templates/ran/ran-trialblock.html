@@ -1,0 +1,66 @@
+{% extends "main/task-base.html" %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+
+
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'ran/ran-trial.css' %}">
+<div class="col-md-1"></div>
+
+<div class="col-md-10">
+    <h1>{% translate 'RAN Task' %}</h1>
+    
+    <div> <!-- class="col-md-8"> -->
+        <div class="content-section">
+            <p>
+                {% if current_trial == 'block_1' or current_trial == 'block_6' or current_trial == 'practice_block_1' %}
+                    <img class="cue1" style="" src="{% static 'ran/cues/cue_'|add:user_details.research_group.other_langauge_short_name|add:'.png' %}">
+                {% else %}
+                    <img class="cue1" style="" src="{% static 'ran/cues/cue_'|add:user_details.research_group.target_lang_short_name|add:'.png' %}">                               
+                {% endif %}
+                RAN Expermiment: {{ block_description }}.
+            </p>
+            <p><audio id="ding"><source src="{% static 'ran/audio/ding1295ms.mp3' %}" type="audio/wav"></audio>
+                <audio id="tone"><source src="{% static 'ran/audio/05sec.mp3' %}" type="audio/wav"></audio>
+                <div id="stimBox">
+                    <div id="startTrialMessage">
+                        <p>{% translate 'This is trial' %} {{ block_desctiption }}.</p>
+                        <p>{% translate 'Please name what you see in the picture in ' %} 
+                            {% if current_trial == 'block_1' or current_trial == 'block_6' or current_trial == 'practice_block_1' %}
+                                <b>{{user_details.research_group.other_language}}</b>.
+                            {% else %}
+                                <b>{{user_details.research_group.target_language}}</b>.
+                            {% endif %}
+                        </p>    
+                        <button class="btn btn-info" id="startTrialButton">{% translate 'Start Trial' %}</button>
+                    </div>
+                    <div id="startingTrialIn">
+                        <p id="startingTrialInThree">{% translate 'Starting trial in <b>3</b>...' %}</p>
+                        <p id="startingTrialInTwo">{% translate 'Starting trial in <b>2</b>...' %}</p>
+                        <p id="startingTrialInOne">{% translate 'Starting trial in <b>1</b>...' %}</p>
+                    </div>
+                    <img id="focusDot" src="{% static 'ran/img/pngwing.com.png' %}">
+                {% for stimulus in stimuli %}
+                    <img class="RANStim" src="{% static 'ran/img/RANstim_'|add:stimulus|add:'.png' %}">
+                {% endfor %}
+                </div>
+            </p>
+            <div id="bottomDiv">
+                <p id="nextButtonNotice">{% translate 'Click Next to continue...' %}
+                    <a href="{% url 'ran-trialblock' block=next %}"><button class="btn btn-success" type="button">{% translate 'Next' %}</button></a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    var currentTrialBlock = "{{ current_trial }}";
+    var userRG = "{{ user_details.research_group.target_lang_short_name }}";
+    var languageCode = "{{ LANGUAGE_CODE }}";
+</script>
+<script type="text/javascript" src="{% static 'ran/ran-trial.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,125 @@
+#replayButtonDiv {
+	display: none;
+}
+
+#replayButtonDiv p {
+	text-align: center;
+}
+
+#startDiv {
+	width: 100%; 
+	height: 502px; 
+	border: solid;
+	margin-top: 45px;
+}
+
+#startingTrialIn {
+	display: none;
+}
+
+#startTrialMessage {
+	margin: 40px;
+}
+
+#startTrialMessage p {
+	text-align: center;
+}
+
+#startingTrialIn > p {
+	display: none; 
+	width: 100%;
+	text-align: right;
+	position: absolute;
+	padding: 120px;
+}
+
+#startingTrialInThree {
+	top: 25%;
+}
+
+#startingTrialInTwo {
+	top: 50%;
+}
+
+#startingTrialInOne {
+	top: 75%;
+}
+
+#dotDiv {
+	width: 100%; 
+	height: 502px; 
+	border: solid;
+	display: none;
+}
+
+#dotDiv p {
+	text-align: center;
+	margin-top: 261px;
+}
+
+#focusDot {
+	width: 25px;
+}
+
+#audioButtonDiv p {
+	text-align: center;
+}
+
+.stimDiv {
+	width: 100%; 
+	height: 502px;
+	display: none;
+}
+
+#stimDivTop {
+	width: 100%; 
+	height: 226px; 
+	background-color: yellow; 
+	display: flex;
+}
+
+#SDTopLeft {
+	width: 50%; 
+	height: 100%; 
+	display: inline-block;
+	clear: none; 
+	white-space: nowrap;
+}
+
+#SDTopRight {
+	width: 50%; 
+	height: 100%; 
+	display: inline-block; 
+	background-color: orange; 
+	clear:none; 
+	white-space: nowrap;
+}
+
+#stimDivBottom {
+	width: 100%; 
+	height: 226px; 
+	background-color: pink;
+	display: flex;
+}
+
+#SDBottomLeft {
+	width: 50%; 
+	height: 100%; 
+	display: inline-block;
+	clear: none; 
+	white-space: nowrap; 
+	background-color: red;
+}
+
+#SDBottomRight {
+	width: 50%; 
+	height: 100%; 
+	display: inline-block; 
+	clear: none; 
+	white-space: nowrap;
+}
+
+.stimg {
+	width: 100%;
+	border: solid;
+}

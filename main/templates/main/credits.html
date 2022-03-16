@@ -1,0 +1,26 @@
+{% extends 'main/main-base.html' %}
+{% load i18n %}
+
+
+
+{% block content %}
+	{% include './main-sidebar.html' %}
+	<div class="col-lg-8 col-md-12">
+		
+
+		<h1>{% translate 'Credits' %}</h1>
+
+		<p>{% translate 'MoReDaT was conceptualized and written by Robert Borges under the auspices of the NESPOMILA project, funded by NCN, agreement nr###.' %}</p>
+
+
+
+		<h3>{% translate 'Acknowledgements' %}</h3>
+
+		<p>
+			<ul>
+				<li>{% translate 'The MoReDaT Documentation App was inspired by' %}&nbsp;<a href="https://github.com/bartTC/django-wakawaka">Wakawaka</a>. {% translate 'If you need a wiki for your site, check them out.' %}</li>
+			</ul>
+		</p>
+
+	</div>
+{% endblock %}

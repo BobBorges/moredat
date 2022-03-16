@@ -1,0 +1,60 @@
+{% extends 'main/main-base.html' %}
+{% load i18n %}
+
+
+
+{% block content %}
+	{% include './main-sidebar.html' %}
+	<div class="col-lg-8 col-md-12">
+		<h1>Quick Start Guide</h1>
+
+		<p>{% translate 'There are two ways to use MOREDAT. If you&#39;re just exploring the set of programs for the first time, your best bet is to run MOREDAT on localhost &mdash; this means that you run the site on a single machine. Django (the framework MOREDAT is written in) come, by default, with a mock server to test and debug applications on a single computer before they are deployed over the internet. You probably want to use MOREDAT on local host while you make and test customizations.' %}</p>
+
+		<p>{% translate 'Once you&#39;re satisfied with the customization of MOREDAT, or the addition of MOREDAT apps to another Django project, it&#39;s time to put your project "in production", that is to deploy it to the public internet.' %}</p>
+
+
+		<h2>Localhost</h2>
+
+		<p>
+			<ul>
+				<li>Check / install recent python version</li>
+				<li>Create python virtual environment and install dependencies</li>
+				<li>Run development server
+					<p><span class="code">python manage.py runsslserver</span></p>
+				</li>
+				<li>Navigage to MOREDAT in a web browser. Either
+					<p><span class="code">https://localhost:8000</span></p>
+					or
+					<p><span class="code">https://127.0.0.1:8000</span></p>
+					Note that it's probably required to explicitly enter <span class="code">https</span> since we run MOREDAT in an ssl development server. Your browser will probably complain about the lack of a valid certificate, but that's ok.
+				</li>
+			</ul>
+		</p>
+
+
+		<h2>In production</h2>
+
+		<p>Deploying a website is perhaps a little too vast a topic to describe in detail here, but some points to think about:</p>
+
+		<p>
+			<ul>
+				<li>Decide on and install web server software, e.g. Apache2</li>
+				<li>Decide on and install database software, e.g. MySQL (The sqlite database that MOREDAT comes with is meant for development only --- it's probably too slow for a site in production)</li>
+				<li>Create a python venv (if the hardware will do more than run the MOREDAT instance) and install the required dependencies (or just install the required dependencies)</li>
+				<li>Configure webserver (this will depend on  which software you chose)
+					<ul>
+						<li>Add project files to a suitable place on the server</li>
+						<li>Update ALLOWED_HOSTS in the settings.py file</li>
+						<li>Edit wsgi.py or asgi.py, depending on your needs (point to your venv if you made one, not system python)</li>
+					</ul>
+				</li>
+				<li>Update the settings.py file to point to your new database</li>
+				<li>Makemigrations and migrate the new database (you lose database entries from the development version / sqlite database. If you need them dump them to json first and import them to the new DB after tables are created.)</li>
+				<li>Point your domain name to the server and install an ssl certificate</li>
+				<li>Check if you can get to your instance of MOREDAT at your domain name</li>
+				<li>Turn off DEBUG in settings.py</li>
+			</ul>
+		</p>
+
+	</div>
+{% endblock %}

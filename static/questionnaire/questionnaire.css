@@ -1,0 +1,49 @@
+legend {
+  text-align: left;
+}
+
+.form-group > button, .form-group > a > button {
+  width: 100%;
+}
+
+.my-radio{
+  display: block;
+  width: 100;
+}
+
+.my-radio > div{
+  padding: 0;
+  display: inline-block;
+}
+
+.label{
+  width: 39%;
+  text-align: left;
+}
+
+.inputs{
+  width: 60%;
+}
+
+.my-radio > div > ul{
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.my-radio > div > ul > li{
+  display: inline;
+}
+
+.my-radio > div > label{
+  margin-bottom: 0;
+  padding-right: 10px;
+}
+.form-check{
+  margin-left: 30px;
+}
+
+
+.my-radio > div > ul > li > label{
+  margin-bottom: 0;
+  margin-right: 20px;
+}

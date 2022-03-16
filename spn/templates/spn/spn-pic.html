@@ -1,0 +1,53 @@
+{% extends 'main/task-base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% load i18n %}
+
+
+
+
+
+
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'spn/spn-trial.css' %}">
+
+<div class="col-lg-2 col-md-12"></div>
+<div class="col-lg-8 col-md-12">
+	<div id="spnimgcontainer">
+		<img id="spnimg" src="{% static 'spn/img/'|add:current_pic.filename %}">
+	</div>
+    <div id="spnrecorderdiv" style="text-align:center;">
+    	<br>
+    	<div>
+	    	<p>
+	    		<audio id="player" controls></audio>
+	    	</p>
+    	</div>
+    	<div>
+	    	<p>
+	    		<a style="display: none;" id="download">Download</a>
+				<button class="btn btn-outline-info" id="start">
+					{% translate 'Start recording' %}
+				</button>
+				<button class="btn btn-outline-info" id="stop">
+					{% translate 'Stop recording' %}
+				</button>
+			</p>
+		</div>
+	</div>
+	<form id="THEFORM" method="POST" enctype="multipart/form-data">
+		{% csrf_token %}
+        <legend class="border-bottom mb-4"></legend>
+        {% if helptext %}
+    		<small class="text-muted">{% translate 'What do you see in the image?' %}</small>
+    	{% endif %}
+    	<br>
+		{{ form|crispy }}
+        <div class="form-group">
+	    	<button id="spnSubmitButton" class="btn btn-outline-info" type="submit">{% translate 'Submit' %}</button>
+        </div>
+    </form>
+</div>
+<script type="text/javascript" src="{% static 'spn/spn-trial.js' %}"></script>	
+{% endblock %}

@@ -1,0 +1,33 @@
+
+
+
+<h1>Using MoReDaT as the basis for a new website</h1>
+
+
+<p>Here are some things to consider doing if you want to adopt MoReDaT as the basis for a new website:
+	<ul>
+		<li>Customize urls, viwes functions, and templates in <span class="code">main</span></li>
+		<li>Customize the look and feel of the site with css in <span class="code">static/main/main.css</span></li>
+		<li>Bulk up your authentication system
+			<ul>
+				<li>add email field to user registration form</li>
+				<li>on create user set <span class="code">is_active</span> to <span class="code">False</span></li>
+				<li>confirm email to activate</li>
+			</ul>
+			<br>
+			<ul>
+				<li>password reset form</li>
+			</ul>
+		</li>
+	</ul>
+</p>
+
+<p>Consider how you want to deploy your site into production (this is well beyond the scope of this documentation, but some things for consideration):
+	<ul>
+		<li>renting server space or acquiring hardware</li>
+		<li>which linux distro do you want to install on</li>
+		<li>which webserver software (Apache, Nginx, etc)</li>
+		<li>acquiring domain name...</li>
+		<li>etc...</li>
+	</ul>
+</p>

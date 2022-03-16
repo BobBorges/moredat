@@ -1,0 +1,57 @@
+{% extends 'main/task-base.html' %}
+{% load static %}
+{% load i18n %}
+
+
+
+
+
+
+{% block content %}
+	<div class="col-lg-2 col-md-12"></div>
+	<div class="col-lg-8 col-md-12">
+		<h1 style="text-align:left;">Self-paced picture naming task</h1> 
+		<h2>Picture set: {{ pic_set_obj.name }}</h2>
+		<hr>
+		<br>
+		<h2>{% translate 'Description of picture set' %}</h2>
+		<p>{{ pic_set_obj.description|safe }}</p>
+		<h2>{% translate 'Instructions' %}</h2>
+		<p>{{ pic_set_obj.special_instructions }}</p>
+
+		<p>{% translate 'You will be shown a series of images; for each, you should provide a response. If you recognize what you see in the image, select "Record response" from the form, use the media controller to record yourself saying what you see in ' %}<b>{{ user_details.research_group.target_language }}</b>{% translate ', (optionally also write what you said in the "Written response" field and provide any commentary you might have), then click "Submit". The SPN tasks use your computer&#39;s microphone in order to record your voice. In order to prepare for this you should make sure of a few things <em>before</em> you start the experiment:' %}
+            <ul>
+                <li>{% translate 'Sit with tour computer in a quiet place.' %}
+                    <p>{% translate 'Things like rowdy children, street noise, chickens, air conditioners, etc. will jeopardize the quality of the recordings, and thus their usefulness in the research.' %}</p></li>
+                <li>{% translate 'Test your audio!' %}
+                    <p>{% translate 'Before you start the experiment, test your audio to make sure your microphone is detected by the site. Going through the experiment with a microphone that is not detecting an audio signal is only a waste of time.' %}</p>
+                    <p>{% translate 'You can test your audio ' %}<a id="testAudioButton" target="_blank" href="{% url 'test-user-audio' %}">{% translate 'here' %}</a>. <b>{% translate 'In fact, the "Get Started" button below will not work until you have tested your microphone.' %}</b></p>
+                    <p>{% translate 'Depending on your browser and browser settings, you may have to manually allow this site to access your microphone in the browser settings. Other browsers will prompt you for access, and depending on the settings you may be prompted at the start of each Block of images.' %}</p>
+                </li>
+                <li>{% translate 'Make sure you are in a setting where you feel comfortable talking to the computer.' %}
+                    <p>{% translate 'In this experiment, you should vocalize your responses to the image stimuli. If you are in a setting where it would be uncomfortable for you to speak in a normal tone of voice, better to wait to do the experiment until you are in a more comfortable setting.' %}</p>
+                </li>
+            </ul>
+        </p>
+        <p>{% translate 'If you have tested that your microphone works and you are otherwise ready to complete the self-paced picture naming task, click "get started" . Otherwise, you can ' %} <a href="{% url 'profile' %}">{% translate 'leave' %}</a> {% translate 'and come back later.' %}</p>
+
+		<h2>{% translate 'Ready?' %}</h2>
+		<div class="form-group">
+			<a href="{% url 'spn-pic' pic_set_obj.slug '1' %}"> <button id="getGoingButton" disabled class="btn btn-outline-info" >{% translate 'Get Started' %}</button></a>
+		</div>
+
+		{% if user.is_authenticated and user.get_username == 'admin' %}
+		<br><hr>
+		<h2>Pics in Set</h2>
+		<p><span style="color:red;">(!!!) </span>{% translate 'You also see a  list of pictures because you are logged in as the admin user. Regular users do not see the stimuli ahead of time.' %}<span style="color:red;"> (!!!)</span><hr>
+			<ul style="list-style-type:none;">
+				{% for i, P in pics_fn_desc.items %}
+				<li><a href="#">{{ i }}.</a> {{ P.0 }} &mdash; {{ P.1 }}</li>
+				{% endfor %}
+			</ul>
+		</p>
+		{% endif %}
+	</div>
+	<div class="col-lg-2 col-md-12"></div>
+	<script type="text/javascript" src="{% static 'spn/spn-welcome.js' %}"></script>
+{% endblock %}

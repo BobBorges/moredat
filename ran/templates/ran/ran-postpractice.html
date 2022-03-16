@@ -1,0 +1,27 @@
+{% extends "main/task-base.html" %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+
+{% block content %}
+
+<div class="col-md-8">
+	<div>
+		<h2>{% translate 'Post Practice' %}</h2>
+        <div class="content-section">
+			<p>{% translate 'You have finished the practice trials. The rest of the exercise will proceed similarly.' %}<br><br>{% translate 'Press &#39;Next&#39; to continue.' %}
+				<div style="justify-content: right;">
+					<p style="text-align:right;">
+						<a href="{% url 'ran-trialblock' block='block_1' %}">
+							<button class="btn btn-info" type="submit">{% translate 'Next' %}</button>
+						</a>
+					</p>
+				</div>
+			</p>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

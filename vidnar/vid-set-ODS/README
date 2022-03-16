@@ -1,0 +1,1 @@
+This directory is provided to serve as examples of video stimuli dirs and related ods files. Neither the vidnar app nor the import_img-set.py script require these to be in the current location. Edit your script accordingly.

@@ -1,0 +1,48 @@
+{% extends 'main/task-base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% load i18n %}
+
+
+
+
+
+
+{% block content %}
+	<div class="col-lg-2 col-md-12"></div>
+	<div id="questionnaire-container" class="col-lg-8 col-md-12">
+		<h1>{{ questionnaire_slug }} Questionnaire</h1>
+		<p>Question number {{ q_num }} of {{ total_q }}.</p>
+		<form method="POST">
+            <legend class="border-bottom mb-4">{{q_text}}</legend>
+            {% if helptext %}
+        		<small class="text-muted">{{helptext|safe}}</small>
+        	{% endif %}
+        	<br>
+			{% for k, v in question_forms.items %}
+	            {% csrf_token %}
+	            	{% if horizontalRadio == True %}
+	            		{% for radio in v.0 %}
+	            			<!-- <fieldset class="form-group"> -->
+						    <div class="my-radio" style="">
+						    	<div class="label" style=""><label> {{ radio.label }}</label></div>
+						    	<div class="inputs" style="">{{radio}}</div>
+						    </div>
+						    <!-- </fieldset> -->
+						{% endfor %}
+	            	{% else %}
+		            <fieldset class="form-group">{{ v.0|crispy }}</fieldset>
+		            {% endif %}
+		            {% if v.2 != None %}
+		            	<fieldset class="form-group"><div style="display:none;" id="{{ forloop.counter0 }}_div_other_field">{{ v.2 }}</div></fieldset>
+		            {% endif %}
+			{% endfor %}
+			<br><br>
+            <div class="form-group">
+		    	<button class="btn btn-outline-info" type="submit">{% translate 'Next' %}</button>
+            </div>
+        </form>
+	</div>
+	<div class="col-lg-2 col-md-12"></div>
+	<script type="text/javascript" src="{% static 'questionnaire/questionnaire-forms.js' %}"></script>
+{% endblock %}

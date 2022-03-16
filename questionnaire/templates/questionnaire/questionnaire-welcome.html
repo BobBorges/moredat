@@ -1,0 +1,47 @@
+{% extends 'main/task-base.html' %}
+{% load static %}
+{% load i18n %}
+
+
+
+
+
+
+{% block content %}
+	<div class="col-lg-2 col-md-12"></div>
+	<div class="col-lg-8 col-md-12">
+		<h1 style="text-align:left;"> {{ questionnaire_obj.slug }} Questionnaire:</h1> 
+		<h2>{{ questionnaire_obj.name }}</h2>
+		<hr>
+		<br>
+		<h2>{% translate 'Description of questionnaire' %}</h2>
+		<p>{{ questionnaire_obj.description|safe }}</p>
+		<h2>{% translate 'Instructions' %}</h2>
+		<p>{{ questionnaire_obj.welcome_instructions }}</p>
+		<h2>{% translate 'Ready?' %}</h2>
+		<div class="form-group">
+			<a href="{% url 'questionnaire-question' questionnaire_obj.slug Q_objs.0.0 %}">  <button class="btn btn-outline-info" >{% translate 'Get Started' %}</button></a>
+		</div>
+
+		{% if user.is_authenticated and user.get_username == 'admin' %}
+		<br><hr>
+		<h2>Questions</h2>
+		<p><span style="color:red;">(!!!) </span>{% translate 'You also see a  list of questions because you are logged in as the admin user. Regular users do not see the questions ahead of time.' %}<span style="color:red;"> (!!!)</span><hr>
+			<ol>
+				{% for Q in Q_objs %}
+				<li>{{ Q.1 }} &mdash; <a href="{% url 'questionnaire-question' questionnaire_obj.slug Q.0 %}">here</a>
+					<ul>
+					{% for st in Q.2 %}
+					{% if st != None %}
+						<li>{{st}}</li>
+					{% endif %}
+					{% endfor %}
+					</ul>
+				</li>
+				{% endfor %} {# #}
+			</ol>
+		</p>
+		{% endif %}
+	</div>
+	<div class="col-lg-2 col-md-12"></div>
+{% endblock %}

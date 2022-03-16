@@ -1,0 +1,23 @@
+{% extends 'main/main-base.html' %}
+{% load i18n %}
+
+
+
+{% block content %}
+	{% include './main-sidebar.html' %}
+	<div class="col-lg-8 col-md-12">
+		<h1>{% translate 'Test User Audio IO' %}</h1>
+		<hr>
+		<h2>{% translate 'Rationale' %}</h2>
+		<p>{% translate 'Most of the apps rely on the user being able to play and / or record audio on their device. Therefore it makes sense to ensure that they are able to to play and record audio before they start research tasks. The "Test User Audio IO" app does just that. It is embedded in the start sequence of the app that rely on audio such that an average user cannot start task without first checking their audio.' %}</p>
+		<h2>{% translate 'How it works' %}</h2>
+		<p>{% translate 'The "Test User Audio IO" app uses Javascript to access the user&#39;s microphone. They can record a short "testing one, two" sequence and play it back. When the hear the recorded sequence clearly they proceed to the task. Troubleshooting tips are provided for several browsers in case the user cannot record or play audio.' %}</p>
+		<h2>{% translate 'See it in action' %}</h2>
+		<p>
+			{% translate 'Test User Audio IO:' %}&nbsp;<a href="{% url 'test-user-audio' %}">{% translate 'here' %}</a></p>
+		<h2>{% translate 'Read the Documentation' %}</h2>
+			{% translate 'App Documentation:' %}&nbsp;<a href="{% url 'documentation_page' slug='TestUserAudioIODocumentation' %}">{% translate 'here' %}</a>
+		</p>
+
+	</div>
+{% endblock %}

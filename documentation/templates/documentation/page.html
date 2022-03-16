@@ -1,0 +1,79 @@
+{% extends "main/main-base.html" %}
+{% load docs_tags %}
+{% load i18n %}
+
+
+
+{% block extrahead %}
+	{{ block.super }}
+
+	{# Don't let search engines scan this old revision #}
+	{% if rev.is_not_current %}
+		<meta name="robots" content="noindex" />
+	{% endif %}
+{% endblock %}
+
+
+
+{% block title %}
+	{{ page.title }}
+{% endblock %}
+
+
+
+{% block content %}
+	<div class="col-lg-12 col-md-12">
+		<div style="background-color: lightgrey; padding: 10px;" class="">
+			<span>
+				Documentation Navigation:
+			</span>&nbsp;
+			<span>
+				<a href="{% url 'documentation_index' %}">{% trans "Start" %}</a>
+			</span>&nbsp;
+			<span>
+				<a href="{% url 'documentation_page_list' %}">{% trans "Index" %}</a>
+			</span>&nbsp;
+			<span>
+				<a href="{% url 'documentation_revision_list' %}">{% trans "Revisions" %}</a>
+			</span>&nbsp;
+		</div>
+		<br>
+
+		
+		<h1><a href="{% url 'documentation_page' slug=page.slug %}">{{ page.title }}</a></h1>
+		<hr>
+		{% if rev.is_not_current %}
+		<p class="revert-warning">
+			{% trans "You are viewing an older revision!" %}
+			<a href="{% url 'documentation_page' slug=page.slug %}">
+			  {% trans "See the latest version" %}
+			</a>
+		</p>
+		{% endif %}
+		<div class="content-section">
+			<div class="page">
+			{{ rev.content|safe|urlize|wikify }}
+			</div>
+		</div>
+		{% spaceless %}
+		<hr>
+		<div style="padding:10px; background-color:lightgrey;" class="info">
+	    	<span>
+	    		<strong>{{ page.title }}</strong>
+	    	</span>
+	    	<span>
+	    		{% blocktrans with page.current.creator as creator and rev.modified|date:_("DATETIME_FORMAT") as modified %}
+	    		    Recently modified by <em>{{ creator }}</em>: {{ modified }}
+	    		{% endblocktrans %}
+	    		(<a href="{% url 'documentation_revision_list' slug=page.slug %}">{% trans "History" %}</a>)
+	    	</span>
+	    	
+	    	{% if perms.documentation.change_wikipage %}
+	    	<span>
+	    		<a href="{% url 'documentation_edit' slug=page.slug %}">{% trans "Edit" %}</a>
+	    	</span>
+	    	{% endif %}
+		</div>
+		{% endspaceless %}
+	</div>
+{% endblock %}

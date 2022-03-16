@@ -1,0 +1,55 @@
+{% extends 'main/main-base.html' %}
+{% load static %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+<div class="col-md-2"></div>
+<div class="col-md-8">
+    <div class="content-section">
+        <div class="border-bottom mb-4">
+            <h4>{% trans 'Instructions' %}</h4>
+        </div>
+        <p>{% trans 'In this task, you will be shown images of miscellaneous items and you should say what you see in that image. The task consists of six &#39;blocks&#39; of images, each with several images. It will be indicated at the beginning of each block which language you should name the pictures in.' %}</p>
+        <p>{% translate 'You should use a single word to describe each picture. For instance, if you are shown an image depicting a bird, you should say &#39;bird&#39;, <b>*NOT</b> &#39;I see a bird.&#39; or &#39;There is a bird.&#39; &ndash; one word is enough.' %}</p>
+        <p>{% translate 'After you see each image, your browser will record your voice response. Each block of images progresses on its own; you have approximately five seconds to name the image before the next image is shown. You can control the start of each block of image with a button, but all other links on the site will be disabled and you should do the entire RAN experiment in one sitting. It takes around 10 minutes if without any long pauses between trial blocks.' %}</p>
+        <p>{% translate 'Once you start the task you can not stop / pause it, go back, or start over. Please be sure you are in a suitable environment and have time to complete the task before you get started.' %}</p>
+        <p>{% translate 'Details about the experiment: ' %}<a id='deetsAshow' href="javascript:void(0);" onclick="showHideDetails();">{% translate ' Show' %}</a><a href="javascript:void(0);" onclick="showHideDetails();" id="deetsAhide" style="display:none;">{% translate ' Hide' %}</a></p>
+        <div id="experimentDetails" style="display:none;padding-left:20px;">
+            <p>{% translate 'The name of the so-called RAN experiment is an acronym for <em>Rapid Automatized picture-Naming</em>. You have already seen in the instructions above that it is RAPID; you are given approximately 5 seconds to produce a word corresponding to the image stimulus. It is Automatized in the sense that you, as the participant, do not have controll over the pace at which stimili are presented to you.' %}</p>
+        </div>
+        <div class="border-bottom mb-4">
+            <h4>{% translate 'Getting ready' %}</h4>
+        </div>
+        <p>{% translate 'The RAN experiment uses your computer&#39;s microphone in order to record your voice when you say each word. In order to prepare for this you should make sure of a few things <em>before</em> you start the experiment:' %}
+            <ul>
+                <li>{% translate 'Sit with tour computer in a quiet place.' %}
+                    <p>{% translate 'Things like roudy children, street noise, chickens, air conditioners, etc. will jeopardize the quality of the recordings, and thus their usefullness in the research.' %}</p></li>
+                <li>{% translate 'Test your audio!' %}
+                    <p>{% translate 'Before you start the experiment, test your audio to make sure your microphone is detected by the site. Going through the experiment with a microphone that is not detecting an audio signal is only a waste of time.' %}</p>
+                    <p>{% translate 'You can test your audio ' %}<a id="testAudioButton" target="_blank" href="{% url 'test-user-audio' %}">{% translate 'here' %}</a>. <b>{% translate 'In fact, the Start button below will not work until you have tested your microphone.' %}</b></p>
+                    <p>{% translate 'Depending on your browser and browser settings, you may have to manually allow this site to access your microphone in the browser settings. Other browsers will prompt you for access, and depending on the settings you may be prompted at the start of each Block of images.' %}</p>
+                </li>
+                <li>{% translate 'Make sure you are in a setting where you feel comfortable talking to the computer.' %}
+                    <p>{% translate 'In this experiment, you should vocalize your responses to the image stimuli. If you are in a setting where it would be uncomfortable for you to speak in a normal tone of voice, better to wait to do the experiment until you are in a more comfortable setting.' %}</p>
+                </li>
+            </ul>
+        </p>
+        <p>{% translate 'If you have tested that your microphone works and you are otherwise ready to participate in the RAN experiment, check the tickbox below and click Start RAN. Otherwise, you can do the RAN experiment' %} <a href="{% url 'profile' %}">{% translate 'later' %}</a>.'</p>
+	
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">{% translate 'Start RAN Task' %}</legend>
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button id="getGoingButton" disabled class="btn btn-info" type="submit">{% translate 'Start RAN' %}</button>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="col-md-2"></div>
+<script type="text/javascript" src="{% static 'ran/ran-welcome.js' %}"></script>
+{% endblock %}

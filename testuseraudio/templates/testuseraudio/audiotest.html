@@ -1,0 +1,75 @@
+{% extends "main/main-base.html" %}
+{% load i18n %}
+{% load static %}
+{% get_current_language as LANGUAGE_CODE %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+
+<div></div>
+<div class="col-md-8">
+	<h2>{% translate 'Test your audio' %}</h2>
+    <div class="content-section">
+    	<div >
+	    	<p>{% translate 'Let&#39;s make sure that we can capture audio from your computer&#39;s microphone. Click the "Start recording test" button below, say a few words, then click the "Stop recording test" button.' %} </p>
+	    	<p>
+	    		<ul>
+	    			<li>{% translate 'If you <b>can</b> play back the few words you just said and it sounds clear, then we are good. You can close this tab and go back to the task you were about to complete.' %}</li> 
+		    		<li>{% translate 'If if you <b>can not</b>, please take a look below the buttons for suggestions how to get your microphone to cooperate with the site.' %}</li>
+	    		</ul>
+	 	   	</p>
+	    </div>
+	    <div style="text-align:center;">
+	    	<div>
+		    	<p>
+		    		<audio id="player" controls></audio>
+		    	</p>
+	    	</div>
+	    	<div>
+		    	<p>
+		    		<a style="display: none;" id="download">Download</a>
+					<button class="btn btn-outline-info" id="start">
+						{% translate 'Start recording test' %}
+					</button>
+					<button class="btn btn-outline-info" id="stop">
+						{% translate 'Stop recording test' %}
+					</button>
+				</p>
+			</div>
+		</div>
+		<div>
+			<p>
+				{% translate 'Suggestions by browser' %}
+				<ul>
+					<li>
+						<a href="https://support.google.com/chrome/answer/2693767/use-your-camera-amp-microphone-computer?co=GENIE.Platform%3DDesktop&hl=en" target="_blank">
+							Chrome
+						</a>
+					</li>
+					<li>
+						<a href="https://support.microsoft.com/en-us/windows/windows-10-camera-microphone-and-privacy-a83257bc-e990-d54a-d212-b5e41beba857#:~:text=In%20Microsoft%20Edge%2C%20select%20Settings,disable%20access%20for%20that%20website." target="_blank">
+							Edge
+						</a>
+					</li>
+					<li>
+						<a href="https://support.mozilla.org/en-US/kb/how-manage-your-camera-and-microphone-permissions" target="_blank">
+							Firefox
+						</a>
+					</li>
+					<li>
+						<a href="https://www.mozilla.org/en-US/firefox/new/" target="_blank">
+							Internet Explorer
+						</a>
+					</li>
+					<li>
+						<a href="https://support.apple.com/guide/safari/websites-ibrwe2159f50/mac" target="_blank">
+							Safari
+						</a>
+					</li>
+				</ul>
+			</p>
+		</div>
+    </div>
+</div>
+<script type="text/javascript" src="{% static 'testuseraudio/audiotest.js' %}"></script>
+{% endblock %}

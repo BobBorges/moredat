@@ -1,0 +1,86 @@
+
+
+
+<h2>Overview in Brief</h2>
+
+
+<p>What is MoReDaT?</p>
+
+<p>MoReDat is an example set of tools that will allow you to collect linguistic data over the web remotely. It is essentially a website, with backend written in Python/Django, divided into subsections &mdash; or Apps &mdash; that consist of a single "elicitation-type" task. This means that, while you might use this example project running on localhost to collect data during in-person fieldwork or as the basis for a whole new website for your remote data-collection needs, individual Apps can also be easily integrated into existing websites.</p>
+
+<p>MoReDaT is free and open source. It is intended to be used as the basis for a custom site to collect langauge data. It is fully customizable, from the look and feel of the site, to the main functionalities &ndash; everything about MoReDaT can be changed to suit researcher preferences and research questions. </p>
+
+
+<p>MoReDaT is available as a fully functioning site (that is, it will run by default on a local development server). This means that there are parts of MoReDaT that aren't really distributed with the intention to be taken over, rather they are either necessary for the MoReDaT to run as a self-contained site, or part of its Documentation App &ndash; these parts of MoReDaT are referred to as the <i><b>Scaffolding Site</b></i>. The other parts of MoReDaT are the individual task apps &ndash; these are written to be as independed from the Scaffolding Site such that they can be stuck on to another website like Legos.</p>
+
+
+
+<h2>Getting started</h2>
+
+<p>In order to get MoReDaT running locally (i.e. on a PC, not over the internet), one musd do the following:
+	<ul>
+		<li>Make sure you have a recent version (3.6+) version of Python installed on the computer you intend to run MoReDaT on</li>
+		<li>Clone or Download MoReDaT</li>
+		<li>In the main <span class="code">MOREDAT</span> directory, create and activate a python virtual environmment:
+			<p><span class="code">python3 -m venv MOREDAT_env</span></p>
+			<p><span class="code">source MOREDAT_env/bin/avtivate</span></p>
+		</li>
+		<li>Install the requirements:
+			<p><span class="code">pip install -r requirements.txt</span></p>
+		</li>
+		<li>That's it. Then run the server...
+			<p><span class="code">python manage.py runsslserver</span></p>
+			<p>...and MoReDaT should be available at <a href="https://localhost:8000">https://localhost:8000</a> (nb. the &lt;s&gt; of https is necessary to use the computer's microphone in the browser. Your browser will probably complain that this is not a secure site. You can safely ignore this warning and procede to MoReDaT.)</p>
+		</li>
+	</ul>
+</p>
+<p>You can use MoReDaT in one of two ways:
+	<ul>
+		<li>as the base for a new website &mdash; see <a href="#">here</a></li>
+		<li>pick and choose apps to incorporate into an existing Django site &mdash; see <a href="#">here</a></li>
+	</ul>
+In either case, this documentation will be your buddy. While Django is known for being relatively easy and Python has a reputation for being readable, it's perhaps always easier to understand how software works by reading code in combination with an explanation...and here you have it.</p>
+
+<p>Whatever you plan to do with MoReDaT, you should start with the overview of the MoReDaT project structure (<a href="#">here</a>), the overview of the MoReDaT Scaffolding Site (<a href="#">here</a>), and the overview of the MoReDaT Apps (<a href="#">here</a>). After that, there are documentation pages dedicated to each individual app that can be consulted.</p>
+
+<p>Once you're happy with your customizations/integrations of MoReDaT Apps, you can deploy your Django site on a web server (like Apache, Nginx, etc) with an ssl certificate behind a domain that points to your computer's public IP address. (You could also use MoReDaT on local host as a software solution for collecting data in an in-person fieldwork setting &ndash; it will work fine, though it wasn't the original intention of MoReDaT.)</p>
+
+
+<h3>MoReDaT as a starter for a website</h3>
+
+
+<p>MoReDaT comes packaged as a fully functional, but simple website. If you're reading this it means that you probably already have the site running on a localhost development server. In order to use a MoReDaT site on the public internet, some things most definitely need to be customized and some key additions need to be made. Some suggestions are provided.</p>
+
+
+
+<h3>Cherry picking apps for an existing site</h3>
+
+<p>It was perhaps more the intention that individual apps can be easily co-opted and reused in another (existing) website. In this documentation, suggestions and tips are provided for how to detach MoReDaT apps from the Scaffolding site and get them working with another site.</p>
+
+
+
+<h2>How to use this documentation</h2>
+
+
+<p>In overview pages, links are provided to relevant related pages of the documentation such that users can achieve some continuity while reading this documentation. Aside from that, it's possible to consult the list of apps in the subsection below, or to use the <a href="index/">index</a> link at the top of this page in order to view a list of <b>all</b> available documentation pages. Pages are named according to some convention, such that related pages should be grouped together in the index list.
+
+
+
+
+<h3>Documentation per App</h3>
+
+
+<p>
+	<ul>
+		<li><a href="#">Check User Audio IO</a></li>
+		<li><a href="#">Free Media Upload</a></li>
+		<li><a href="#">Informed Consent</a></li>
+		<li><a href="#">Questionnaire</a></li>
+		<li><a href="#">Rapid Automated Naming Task</a></li>
+		<li><a href="#">Self-Paced Naming Task</a></li>
+		<li><a href="#">Test for Reception of Grammar</a></li>
+		<li><a href="#">Users (authentication)</a></li>
+		<li><a href="#">Video Narration Task</a></li>
+		<li><a href="#">Word List Translation Task</a></li>
+	</ul>
+</p>

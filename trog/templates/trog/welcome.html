@@ -1,0 +1,57 @@
+{% extends 'main/task-base.html' %}
+{% load static %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+
+
+
+{% block content %}
+
+	<div class="col-lg-2 col-md-12"></div>
+	<div class="col-lg-8 col-md-12">
+		<h2>{% translate 'TROG Experiment: Welcome' %}</h2>
+        <div class="content-section">
+            <div class="border-bottom mb-4">
+                <h4>{% trans 'Instructions' %}</h4>
+            </div>		
+			<p>{% translate 'In this task, you will hear a short sentence and at the same time you will see four illustratons. You must click the image that most closely corresponds to the sentence you heard. The site will automatically procede to the next audio prompt/image set. You may repeat the audio prompt with the "Replay Audio" button, but you <i>should not</i> navigate back in your browser; once you have clicked an image, your answer is set.' %}</p>
+			<p>{% translate 'The task consists of 8 sets of 10 audio prompts and corresponding images. It might take around 10 minutes to complete, depending on how quickly you decide which image to select.' %}</p>
+			<p>{% translate 'Once you start the task you can not stop / pause it, go back, or start over. Please be sure you are in a suitable environment and have time to complete the task before you get started.' %}</p>
+			<p>{% translate 'Details about the experiment: ' %}<a id='deetsAshow' href="javascript:void(0);" onclick="showHideDetails();">{% translate ' Show' %}</a><a href="javascript:void(0);" onclick="showHideDetails();" id="deetsAhide" style="display:none;">{% translate ' Hide' %}</a></p>
+            <div id="experimentDetails" style="display:none;padding-left:20px;">
+                <p>{% translate 'The task is based loosely on the well-known TROG test. TROG is an acronym and stands for <em>Test for Reception of Grammar</em>. By design it allows researchers to examine a person&#39;s &#39;receptive&#39; proficiency, or how well they are able to parse and understand grammatical structures.' %}</p>
+            </div>
+            <div class="border-bottom mb-4">
+                <h4>{% translate 'Getting ready' %}</h4>
+            </div>
+            <p>{% translate 'The task makes use of your web-browser&#39;s ability to play an audio stimulus, which is key to being able to complete the task. You will also need to select the appropriate image, so settle yourself in a position that will be comfortable to effectively use your mouse or track pad. Additionally:' %}
+            	<ul>
+            		<li>{% translate 'Use a computer' %}
+            			<p>{% translate 'The image stimuli for this task will not fit comfortably on the display of an average mobile phone. The images will either be too small or hang over the edge of the display &mdash; either case will interfere with the results of the task and your responses will be thrown out.' %}</p>
+            		</li>
+            		<li>{% translate 'Sit with your computer in a quiet place.' %}
+            			<p>{% translate 'You need to be able to hear the audio promts properly. Playing children, barking dogs, laundry machines, etc. <i>will</i> distract you. It would probably also be best to use earphones if possible.' %}</p>
+            		</li>
+            		<li>{% translate 'Check that your audio settings work' %}
+            			<p>{% translate 'Use the media player here to make sure your browser is playing audio properly <i>before</i> you click the start button below. Make sure you hear a clear "ding" sound.' %}<br>
+            				<audio id="dingaling" src="{% static 'trog/cues/ding1295ms.mp3' %}" preload="auto" controls></audio>
+            			</p>
+            		</li>
+            	</ul>
+            </p>
+			<p>{% translate 'Once you&#39;re sure that your sound is working properly and everything else is right with the world, click "Start" to begin the task. If something isn&#39;t right, you can always come back and do the TROG task' %}&nbsp;<a href="{% url 'profile' %}">{% translate 'later' %}</a>.</p>
+		<form method="POST">
+			{% csrf_token %}
+			<fieldset class="form-group">
+				<legend class="border-bottom mb-4">{% translate 'Start listening task' %}</legend>
+				{{ form|crispy }}
+			</fieldset>
+			<div class="form-group">
+				<button class="btn btn-info" type="submit">{% translate 'Start' %}</button>
+			</div>
+		</form>
+	</div>
+	<script type="text/javascript" src="{% static 'trog/trog-welcome.js' %}"></script>
+
+{% endblock %}

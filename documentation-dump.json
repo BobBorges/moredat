@@ -1,0 +1,820 @@
+[
+{
+    "model": "documentation.wikipage",
+    "pk": 1,
+    "fields": {
+        "slug": "DocumentationLanding",
+        "title": "Documentation Landing",
+        "created": "2021-08-26T09:11:13.065Z",
+        "modified": "2021-08-26T09:15:22.564Z"
+    }
+},
+{
+    "model": "documentation.wikipage",
+    "pk": 2,
+    "fields": {
+        "slug": "MoReDaTasBaseWebsite",
+        "title": "MoReDaT as a Base for a New Website",
+        "created": "2021-09-11T18:47:52.731Z",
+        "modified": "2021-09-11T18:47:52.731Z"
+    }
+},
+{
+    "model": "documentation.wikipage",
+    "pk": 3,
+    "fields": {
+        "slug": "MoReDaTcherryPick",
+        "title": "MoReDaT Cherry-pick Apps for an Existing Site",
+        "created": "2021-09-11T18:49:38.386Z",
+        "modified": "2021-09-11T18:57:18.219Z"
+    }
+},
+{
+    "model": "documentation.wikipage",
+    "pk": 4,
+    "fields": {
+        "slug": "MoReDaTstructureOverview",
+        "title": "MoReDaT Project Structure",
+        "created": "2021-09-11T18:50:40.642Z",
+        "modified": "2021-09-11T18:50:40.642Z"
+    }
+},
+{
+    "model": "documentation.wikipage",
+    "pk": 5,
+    "fields": {
+        "slug": "MoReDaTscaffolding",
+        "title": "MoReDaT Scaffolding",
+        "created": "2021-09-11T18:52:37.147Z",
+        "modified": "2021-09-11T18:52:37.147Z"
+    }
+},
+{
+    "model": "documentation.wikipage",
+    "pk": 6,
+    "fields": {
+        "slug": "MoReDaTapps",
+        "title": "MoReDaT Apps",
+        "created": "2021-09-11T18:53:12.305Z",
+        "modified": "2021-09-11T18:53:12.305Z"
+    }
+},
+{
+    "model": "documentation.wikipage",
+    "pk": 7,
+    "fields": {
+        "slug": "ConsentAppDocumentation",
+        "title": "App: Informed Consent App Documentation",
+        "created": "2021-09-12T15:01:22.832Z",
+        "modified": "2022-03-04T13:45:56.363Z"
+    }
+},
+{
+    "model": "documentation.wikipage",
+    "pk": 8,
+    "fields": {
+        "slug": "UsersApp",
+        "title": "App: Users App Documentation",
+        "created": "2021-09-12T18:59:12.224Z",
+        "modified": "2021-09-12T19:50:40.429Z"
+    }
+},
+{
+    "model": "documentation.wikipage",
+    "pk": 9,
+    "fields": {
+        "slug": "ResearchGroups",
+        "title": "Model users ResearchGroups",
+        "created": "2021-09-12T19:00:20.841Z",
+        "modified": "2021-09-12T19:02:06.803Z"
+    }
+},
+{
+    "model": "documentation.wikipage",
+    "pk": 10,
+    "fields": {
+        "slug": "UserDetails",
+        "title": "Model users UserDetails",
+        "created": "2021-09-12T19:02:51.724Z",
+        "modified": "2021-09-12T19:06:14.431Z"
+    }
+},
+{
+    "model": "documentation.wikipage",
+    "pk": 11,
+    "fields": {
+        "slug": "UserDetailsForm",
+        "title": "Form users UserDetailsForm",
+        "created": "2021-09-12T19:03:14.172Z",
+        "modified": "2021-09-12T19:06:32.537Z"
+    }
+},
+{
+    "model": "documentation.wikipage",
+    "pk": 12,
+    "fields": {
+        "slug": "DefaultAssignedTasksByGroup",
+        "title": "Model users DefaultAssignedTasksByGroup",
+        "created": "2021-09-12T19:04:17.359Z",
+        "modified": "2021-09-12T19:07:48.425Z"
+    }
+},
+{
+    "model": "documentation.wikipage",
+    "pk": 13,
+    "fields": {
+        "slug": "RegisterUser",
+        "title": "Form users RegisterUser",
+        "created": "2021-09-12T19:05:02.799Z",
+        "modified": "2021-09-12T19:05:50.318Z"
+    }
+},
+{
+    "model": "documentation.wikipage",
+    "pk": 14,
+    "fields": {
+        "slug": "AssignedTasks",
+        "title": "Model users AssignedTasks",
+        "created": "2021-09-12T19:51:55.876Z",
+        "modified": "2021-09-12T19:52:41.152Z"
+    }
+},
+{
+    "model": "documentation.wikipage",
+    "pk": 15,
+    "fields": {
+        "slug": "QuestionnaireDocumentation",
+        "title": "App: Questionnaire App Documentation",
+        "created": "2021-09-12T22:33:43.295Z",
+        "modified": "2021-09-12T22:33:43.295Z"
+    }
+},
+{
+    "model": "documentation.wikipage",
+    "pk": 16,
+    "fields": {
+        "slug": "TestUserAudioIODocumentation",
+        "title": "App: Test User Audio IO",
+        "created": "2022-03-03T09:50:09.317Z",
+        "modified": "2022-03-03T09:50:09.317Z"
+    }
+},
+{
+    "model": "documentation.wikipage",
+    "pk": 17,
+    "fields": {
+        "slug": "FreeMediaUploadDocumentation",
+        "title": "App: Free Media Upload",
+        "created": "2022-03-03T21:57:18.930Z",
+        "modified": "2022-03-03T21:57:18.930Z"
+    }
+},
+{
+    "model": "documentation.wikipage",
+    "pk": 18,
+    "fields": {
+        "slug": "TrogAppDocumentation",
+        "title": "App: Test For Reception of Grammar-like",
+        "created": "2022-03-16T10:34:43.306Z",
+        "modified": "2022-03-16T10:48:48.103Z"
+    }
+},
+{
+    "model": "documentation.wikipage",
+    "pk": 19,
+    "fields": {
+        "slug": "SpnAppDocumentation",
+        "title": "App: Self-paced Picture-Naming",
+        "created": "2022-03-16T10:47:46.959Z",
+        "modified": "2022-03-16T10:49:08.990Z"
+    }
+},
+{
+    "model": "documentation.wikipage",
+    "pk": 20,
+    "fields": {
+        "slug": "RanAppDocumentation",
+        "title": "App: Rapid Automatized Picture Naming",
+        "created": "2022-03-16T10:59:56.147Z",
+        "modified": "2022-03-16T11:00:19.934Z"
+    }
+},
+{
+    "model": "documentation.wikipage",
+    "pk": 21,
+    "fields": {
+        "slug": "VidnarAppDocumentation",
+        "title": "App: Video Narration",
+        "created": "2022-03-16T11:13:36.522Z",
+        "modified": "2022-03-16T11:13:52.671Z"
+    }
+},
+{
+    "model": "documentation.wikipage",
+    "pk": 22,
+    "fields": {
+        "slug": "WordlistAppDocumentation",
+        "title": "App: Wordlist Translation",
+        "created": "2022-03-16T12:16:18.643Z",
+        "modified": "2022-03-16T12:16:45.707Z"
+    }
+},
+{
+    "model": "documentation.revision",
+    "pk": 1,
+    "fields": {
+        "page": 1,
+        "content": "Documentation landing page.",
+        "message": "init post",
+        "creator": 1,
+        "creator_ip": "127.0.0.1",
+        "created": "2021-08-26T09:11:13.066Z",
+        "modified": "2021-08-26T09:11:13.066Z"
+    }
+},
+{
+    "model": "documentation.revision",
+    "pk": 2,
+    "fields": {
+        "page": 1,
+        "content": "Documentation landing page.",
+        "message": "title ---> camel case",
+        "creator": 1,
+        "creator_ip": "127.0.0.1",
+        "created": "2021-08-26T09:15:22.564Z",
+        "modified": "2021-08-26T09:15:22.564Z"
+    }
+},
+{
+    "model": "documentation.revision",
+    "pk": 3,
+    "fields": {
+        "page": 1,
+        "content": "# Documentation landing page\r\n\r\n*Documentation landing page.*\r\n\r\nDoes markdown _work_?\r\n\r\n\r\n<h2>HTML?</h2>\r\n\r\n<p>Does it <span style=\"color:green;\">work</span>?</p>",
+        "message": "Testing mkd and html",
+        "creator": 1,
+        "creator_ip": "127.0.0.1",
+        "created": "2021-08-26T09:19:08.338Z",
+        "modified": "2021-08-26T09:19:08.338Z"
+    }
+},
+{
+    "model": "documentation.revision",
+    "pk": 4,
+    "fields": {
+        "page": 1,
+        "content": "<h2>HTML?</h2>\r\n\r\n<p>Does it <span style=\"color:green;\">work</span>?</p>",
+        "message": "rm markdown test",
+        "creator": 1,
+        "creator_ip": "127.0.0.1",
+        "created": "2021-08-26T10:17:12.046Z",
+        "modified": "2021-08-26T10:17:12.046Z"
+    }
+},
+{
+    "model": "documentation.revision",
+    "pk": 5,
+    "fields": {
+        "page": 1,
+        "content": "<h2>Overview in Brief</h2>\r\n\r\n<p>What is MoReDaT?</p>\r\n\r\n<p>To explain here\r\n<ul>\r\n<li>Django</li>\r\n<li>Scaffolding site</li>\r\n<li>Individual Apps</li>\r\n</ul>\r\n</p>\r\n\r\n\r\n<h2>Getting started</h2>\r\n\r\n<p>You can use MoReDaT in one of two ways:\r\n<ul>\r\n<li>as the base for a new website &mdash; see <a href=\"#\">here</href></li>\r\n<li>pick and choose apps to incorporate into an existing Django site &mdash; see <a href=\"#\">here</href></li>\r\n</ul>\r\nIn either case, this documentation will be your buddy. While Django is known for being relatively easy and Python has a reputation for being readable, it's perhaps always easier to understand how software works by reading code in combination with an explanation...and here you have it.</p>\r\n\r\n<p>Whatever you plan to do with MoReDaT, you should start with the overview of the MoReDaT project structure (<a href=\"#\">here</a>), the overview of the MoReDaT Scaffolding Site(<a href=\"#\">here</a>), and the overview of the MoReDaT Apps(<a href=\"#\">here</a>). After that, there are documentation pages dedicated to each individual app that can be consulted.</p>\r\n\r\n\r\n<h3>MoReDaT as a starter for a website</h3>\r\n\r\n<p>MoReDaT comes packaged as a fully functional, but simple website. If you're reading this it means that you probably already have the site running on a localhost development server. In order to use a MoReDaT site on the public internet, some things most definitely need to be customized and some key additions need to be made. Some suggestions are provided.</p>\r\n\r\n\r\n\r\n<h3>Cherry picking apps for an existing site</h3>\r\n\r\n<p>It was perhaps more the intention that individual apps can be easily co-opted and reused in another (existing) website. In this documentation, suggestions and tips are provided for how to detach MoReDaT apps from the Scaffolding site and get them working with another site.</p>\r\n\r\n\r\n\r\n<h2>How to use this documentation</h2>\r\n\r\n<p>In overview pages, links are provided to relevant related pages of the documentation such that users can achieve some continuity while reading this documentation. Aside from that, it's possible to consult the list of apps in the subsection below, or to use the index button at the top of this page in order to view a list of <b>all</b> available documentation pages. Pages are named according to some convention, such that related pages should be grouped together in the index list.\r\n\r\n\r\n<h3>Documentation per App</h3>\r\n\r\n<ul>\r\n<li><a href=\"#\">Questionnaire</a></li>\r\n<li><a href=\"#\">RAN test</a></li>\r\n<li><a href=\"#\">Users</a></li>\r\n<li><a href=\"#\">Video Narration Task</a></li>\r\n</ul",
+        "message": "",
+        "creator": 1,
+        "creator_ip": "127.0.0.1",
+        "created": "2021-09-11T16:48:41.318Z",
+        "modified": "2021-09-11T16:48:41.318Z"
+    }
+},
+{
+    "model": "documentation.revision",
+    "pk": 6,
+    "fields": {
+        "page": 1,
+        "content": "<h2>Overview in Brief</h2>\r\n\r\n<p>What is MoReDaT?</p>\r\n\r\n<p>To explain here\r\n<ul>\r\n<li>Django</li>\r\n<li>Scaffolding site</li>\r\n<li>Individual Apps</li>\r\n</ul>\r\n</p>\r\n\r\n\r\n<h2>Getting started</h2>\r\n\r\n<p>You can use MoReDaT in one of two ways:\r\n<ul>\r\n<li>as the base for a new website &mdash; see <a href=\"#\">here</href></li>\r\n<li>pick and choose apps to incorporate into an existing Django site &mdash; see <a href=\"#\">here</a></li>\r\n</ul>\r\nIn either case, this documentation will be your buddy. While Django is known for being relatively easy and Python has a reputation for being readable, it's perhaps always easier to understand how software works by reading code in combination with an explanation...and here you have it.</p>\r\n\r\n<p>Whatever you plan to do with MoReDaT, you should start with the overview of the MoReDaT project structure (<a href=\"#\">here</a>), the overview of the MoReDaT Scaffolding Site(<a href=\"#\">here</a>), and the overview of the MoReDaT Apps(<a href=\"#\">here</a>). After that, there are documentation pages dedicated to each individual app that can be consulted.</p>\r\n\r\n\r\n<h3>MoReDaT as a starter for a website</h3>\r\n\r\n<p>MoReDaT comes packaged as a fully functional, but simple website. If you're reading this it means that you probably already have the site running on a localhost development server. In order to use a MoReDaT site on the public internet, some things most definitely need to be customized and some key additions need to be made. Some suggestions are provided.</p>\r\n\r\n\r\n\r\n<h3>Cherry picking apps for an existing site</h3>\r\n\r\n<p>It was perhaps more the intention that individual apps can be easily co-opted and reused in another (existing) website. In this documentation, suggestions and tips are provided for how to detach MoReDaT apps from the Scaffolding site and get them working with another site.</p>\r\n\r\n\r\n\r\n<h2>How to use this documentation</h2>\r\n\r\n<p>In overview pages, links are provided to relevant related pages of the documentation such that users can achieve some continuity while reading this documentation. Aside from that, it's possible to consult the list of apps in the subsection below, or to use the index button at the top of this page in order to view a list of <b>all</b> available documentation pages. Pages are named according to some convention, such that related pages should be grouped together in the index list.\r\n\r\n\r\n<h3>Documentation per App</h3>\r\n\r\n<ul>\r\n<li><a href=\"#\">Questionnaire</a></li>\r\n<li><a href=\"#\">RAN test</a></li>\r\n<li><a href=\"#\">Users</a></li>\r\n<li><a href=\"#\">Video Narration Task</a></li>\r\n</ul",
+        "message": "",
+        "creator": 1,
+        "creator_ip": "127.0.0.1",
+        "created": "2021-09-11T16:49:16.342Z",
+        "modified": "2021-09-11T16:49:16.342Z"
+    }
+},
+{
+    "model": "documentation.revision",
+    "pk": 7,
+    "fields": {
+        "page": 1,
+        "content": "<h2>Overview in Brief</h2>\r\n\r\n\r\n<p>What is MoReDaT?</p>\r\n\r\n<p>To explain here\r\n\t<ul>\r\n\t\t<li>Django</li>\r\n\t\t<li>Scaffolding site</li>\r\n\t\t<li>Individual Apps</li>\r\n\t</ul>\r\n</p>\r\n\r\n\r\n\r\n<h2>Getting started</h2>\r\n\r\n\r\n<p>You can use MoReDaT in one of two ways:\r\n\t<ul>\r\n\t\t<li>as the base for a new website &mdash; see <a href=\"#\">here</a></li>\r\n\t\t<li>pick and choose apps to incorporate into an existing Django site &mdash; see <a href=\"#\">here</a></li>\r\n\t</ul>\r\nIn either case, this documentation will be your buddy. While Django is known for being relatively easy and Python has a reputation for being readable, it's perhaps always easier to understand how software works by reading code in combination with an explanation...and here you have it.</p>\r\n\r\n<p>Whatever you plan to do with MoReDaT, you should start with the overview of the MoReDaT project structure (<a href=\"#\">here</a>), the overview of the MoReDaT Scaffolding Site (<a href=\"#\">here</a>), and the overview of the MoReDaT Apps (<a href=\"#\">here</a>). After that, there are documentation pages dedicated to each individual app that can be consulted.</p>\r\n\r\n\r\n\r\n<h3>MoReDaT as a starter for a website</h3>\r\n\r\n\r\n<p>MoReDaT comes packaged as a fully functional, but simple website. If you're reading this it means that you probably already have the site running on a localhost development server. In order to use a MoReDaT site on the public internet, some things most definitely need to be customized and some key additions need to be made. Some suggestions are provided.</p>\r\n\r\n\r\n\r\n<h3>Cherry picking apps for an existing site</h3>\r\n\r\n<p>It was perhaps more the intention that individual apps can be easily co-opted and reused in another (existing) website. In this documentation, suggestions and tips are provided for how to detach MoReDaT apps from the Scaffolding site and get them working with another site.</p>\r\n\r\n\r\n\r\n<h2>How to use this documentation</h2>\r\n\r\n\r\n<p>In overview pages, links are provided to relevant related pages of the documentation such that users can achieve some continuity while reading this documentation. Aside from that, it's possible to consult the list of apps in the subsection below, or to use the <a href=\"index/\">index</a> link at the top of this page in order to view a list of <b>all</b> available documentation pages. Pages are named according to some convention, such that related pages should be grouped together in the index list.\r\n\r\n\r\n\r\n<h3>Documentation per App</h3>\r\n\r\n\r\n<p>\r\n\t<ul>\r\n\t\t<li><a href=\"#\">Questionnaire</a></li>\r\n\t\t<li><a href=\"#\">RAN test</a></li>\r\n\t\t<li><a href=\"#\">Users</a></li>\r\n\t\t<li><a href=\"#\">Video Narration Task</a></li>\r\n\t</ul>\r\n</p>",
+        "message": "",
+        "creator": 1,
+        "creator_ip": "127.0.0.1",
+        "created": "2021-09-11T17:07:55.068Z",
+        "modified": "2021-09-11T17:07:55.068Z"
+    }
+},
+{
+    "model": "documentation.revision",
+    "pk": 8,
+    "fields": {
+        "page": 1,
+        "content": "<h2>Overview in Brief</h2>\r\n\r\n\r\n<p>What is MoReDaT?</p>\r\n\r\n<p>To explain here\r\n\t<ul>\r\n\t\t<li>Django</li>\r\n\t\t<li>Scaffolding site</li>\r\n\t\t<li>Individual Apps</li>\r\n\t</ul>\r\n</p>\r\n\r\n\r\n\r\n<h2>Getting started</h2>\r\n\r\n\r\n<p>You can use MoReDaT in one of two ways:\r\n\t<ul>\r\n\t\t<li>as the base for a new website &mdash; see <a href=\"#\">here</a></li>\r\n\t\t<li>pick and choose apps to incorporate into an existing Django site &mdash; see <a href=\"#\">here</a></li>\r\n\t</ul>\r\nIn either case, this documentation will be your buddy. While Django is known for being relatively easy and Python has a reputation for being readable, it's perhaps always easier to understand how software works by reading code in combination with an explanation...and here you have it.</p>\r\n\r\n<p>Whatever you plan to do with MoReDaT, you should start with the overview of the MoReDaT project structure (<a href=\"#\">here</a>), the overview of the MoReDaT Scaffolding Site (<a href=\"#\">here</a>), and the overview of the MoReDaT Apps (<a href=\"#\">here</a>). After that, there are documentation pages dedicated to each individual app that can be consulted.</p>\r\n\r\n\r\n\r\n<h3>MoReDaT as a starter for a website</h3>\r\n\r\n\r\n<p>MoReDaT comes packaged as a fully functional, but simple website. If you're reading this it means that you probably already have the site running on a localhost development server. In order to use a MoReDaT site on the public internet, some things most definitely need to be customized and some key additions need to be made. Some suggestions are provided.</p>\r\n\r\n\r\n\r\n<h3>Cherry picking apps for an existing site</h3>\r\n\r\n<p>It was perhaps more the intention that individual apps can be easily co-opted and reused in another (existing) website. In this documentation, suggestions and tips are provided for how to detach MoReDaT apps from the Scaffolding site and get them working with another site.</p>\r\n\r\n\r\n\r\n<h2>How to use this documentation</h2>\r\n\r\n\r\n<p>In overview pages, links are provided to relevant related pages of the documentation such that users can achieve some continuity while reading this documentation. Aside from that, it's possible to consult the list of apps in the subsection below, or to use the <a href=\"../index/\">index</a> link at the top of this page in order to view a list of <b>all</b> available documentation pages. Pages are named according to some convention, such that related pages should be grouped together in the index list.\r\n\r\n\r\n\r\n<h3>Documentation per App</h3>\r\n\r\n\r\n<p>\r\n\t<ul>\r\n\t\t<li><a href=\"#\">Questionnaire</a></li>\r\n\t\t<li><a href=\"#\">RAN test</a></li>\r\n\t\t<li><a href=\"#\">Users</a></li>\r\n\t\t<li><a href=\"#\">Video Narration Task</a></li>\r\n\t</ul>\r\n</p>",
+        "message": "",
+        "creator": 1,
+        "creator_ip": "127.0.0.1",
+        "created": "2021-09-11T17:08:52.213Z",
+        "modified": "2021-09-11T17:08:52.213Z"
+    }
+},
+{
+    "model": "documentation.revision",
+    "pk": 9,
+    "fields": {
+        "page": 2,
+        "content": "How to use MoReDaT as a Base for a New Website:",
+        "message": "",
+        "creator": 1,
+        "creator_ip": "127.0.0.1",
+        "created": "2021-09-11T18:47:52.731Z",
+        "modified": "2021-09-11T18:47:52.731Z"
+    }
+},
+{
+    "model": "documentation.revision",
+    "pk": 10,
+    "fields": {
+        "page": 3,
+        "content": "How to Cherry-pick MoReDaT Apps for an existing site:",
+        "message": "",
+        "creator": 1,
+        "creator_ip": "127.0.0.1",
+        "created": "2021-09-11T18:49:38.387Z",
+        "modified": "2021-09-11T18:49:38.387Z"
+    }
+},
+{
+    "model": "documentation.revision",
+    "pk": 11,
+    "fields": {
+        "page": 4,
+        "content": "MoReDaT Project Structure",
+        "message": "",
+        "creator": 1,
+        "creator_ip": "127.0.0.1",
+        "created": "2021-09-11T18:50:40.643Z",
+        "modified": "2021-09-11T18:50:40.643Z"
+    }
+},
+{
+    "model": "documentation.revision",
+    "pk": 12,
+    "fields": {
+        "page": 5,
+        "content": "MoReDaT Scaffolding",
+        "message": "",
+        "creator": 1,
+        "creator_ip": "127.0.0.1",
+        "created": "2021-09-11T18:52:37.147Z",
+        "modified": "2021-09-11T18:52:37.147Z"
+    }
+},
+{
+    "model": "documentation.revision",
+    "pk": 13,
+    "fields": {
+        "page": 6,
+        "content": "MoReDaT Apps",
+        "message": "",
+        "creator": 1,
+        "creator_ip": "127.0.0.1",
+        "created": "2021-09-11T18:53:12.305Z",
+        "modified": "2021-09-11T18:53:12.305Z"
+    }
+},
+{
+    "model": "documentation.revision",
+    "pk": 14,
+    "fields": {
+        "page": 4,
+        "content": "# MoReDaT Project Structure\r\nDoes __markdown__ work? I think not.",
+        "message": "testing markdown",
+        "creator": 1,
+        "creator_ip": "127.0.0.1",
+        "created": "2021-09-11T19:20:12.794Z",
+        "modified": "2021-09-11T19:20:12.794Z"
+    }
+},
+{
+    "model": "documentation.revision",
+    "pk": 15,
+    "fields": {
+        "page": 7,
+        "content": "<h2>The Informed Consent App</h2>\r\n\r\n\r\n\r\n\r\n<h3>Rationale</h3>\r\n\r\n\r\n<p>Conducting ethical research with human usually requires that participants / subjects are informed about the research they participate in. The MoReDaT Informed Consent Form is a tool that allows the researcher / data-collection site admins to present such information and ask for participants&#39; agreement. Consent is built into MoReDat and by default, a user is required to consent before s/he can access research tasks and participate further.</p>\r\n\r\n\r\n\r\n\r\n<h3>How it works</h3>\r\n\r\n\r\n<p>Upon creation of a new user (<a href=\"#\">users</a> app), the new user is assigned the task to consent to the research program. The consent model is a simple model with a User object and a boolean value showing whether the user has consented to the research program or not. At the start of each research task, the consent model is queried and the user may not provide and further data about themselves or complete research tasks until and unless they provide their consent to participate. Additionally, untill the consent assignment (Assigned Tasks in users model) is markd complete, links to other research tasks will not be visible on the user&#39;s profile.</p>\r\n\r\n<p>The consent app allows you as the researcher to display a(n abbrebiated) version of your consent form as html directly in the app&#39;s form. As well the end user can download a pdf version of your consent form for his/her records.</p>\r\n\r\n<p>Upon consent, the Consent App redirects the user to the Get User Detaisl form (<a href=\"#\">users</a> app), where s/he selects the relevant research group and provides gender and DOB; then they are redirected to their individual profile.</p>\r\n\r\n\r\n\r\n\r\n<h2>Components</h2>\r\n\r\n\r\n\r\n\r\n<h3>Models</h3>\r\n\r\n\r\n<p>There's just one model, a simple bool value associated with the user. True means the user has consented.</p>\r\n\r\n\r\n\r\n\r\n<h3>Views</h3>\r\n\r\n\r\n<p>There are two views in the Consent App\r\n\t<ol>\r\n\t\t<li><span class=\"code\">get_user_consent()</span>\r\n\t\t\t<p>This actually displays the overview of the researcher defined consent form and the BooleanField form input. Text for the consent form is defined in the lines directly above the view function in <span class=\"code\">views.py</span>; the text shoudl be replaced by a real consent form corresponding to the researcher&#39;s project. Consent form text categories can be customized by adding/editing/removing context variables here, in the actual function, and in the template (<span class=\"code\">consent/templates/consent/consent-form.html</span>).</p>\r\n\t\t</li>\r\n\t\t<li><span class=\"code\">dl_consent_form()</span>\r\n\t\t\t<p>This allows the user to download a pdf version of the researcher&#39;s consent form, stored at <span class=\"code\">static/consent/docs/consent-form.pdf</span>. There is not actually an html template rendered after this function, rather the browser prompts the user to display or download the pdf direvtly.</p>\r\n\t\t</li>\r\n\t</ol>\r\n</p>\r\n\r\n\r\n\r\n\r\n<h3>Forms</h3>\r\n\r\n<p>There's just one form in <span class=\"code\">forms.py</span> diplayed by <span class=\"code\">get_user_consent()</span>. Customize the label here. It's also where the link is defined to call <span class=\"code\">dl_consent_form()</span></p>",
+        "message": "",
+        "creator": 1,
+        "creator_ip": "127.0.0.1",
+        "created": "2021-09-12T15:01:22.832Z",
+        "modified": "2021-09-12T15:01:22.832Z"
+    }
+},
+{
+    "model": "documentation.revision",
+    "pk": 16,
+    "fields": {
+        "page": 7,
+        "content": "<h2>The Informed Consent App</h2>\r\n\r\n\r\n\r\n\r\n<h3>Rationale</h3>\r\n\r\n\r\n<p>Conducting ethical research with human usually requires that participants / subjects are informed about the research they participate in. The MoReDaT Informed Consent Form is a tool that allows the researcher / data-collection site admins to present such information and ask for participants&#39; agreement. Consent is built into MoReDat and by default, a user is required to consent before s/he can access research tasks and participate further.</p>\r\n\r\n\r\n\r\n\r\n<h3>How it works</h3>\r\n\r\n\r\n<p>Upon creation of a new user (<a href=\"#\">users</a> app), the new user is assigned the task to consent to the research program. The consent model is a simple model with a User object and a boolean value showing whether the user has consented to the research program or not. At the start of each research task, the consent model is queried and the user may not provide and further data about themselves or complete research tasks until and unless they provide their consent to participate. Additionally, untill the consent assignment (Assigned Tasks in users model) is markd complete, links to other research tasks will not be visible on the user&#39;s profile.</p>\r\n\r\n<p>The consent app allows you as the researcher to display a(n abbrebiated) version of your consent form as html directly in the app&#39;s form. As well the end user can download a pdf version of your consent form for his/her records.</p>\r\n\r\n<p>Upon consent, the Consent App redirects the user to the Get User Detaisl form (<a href=\"#\">users</a> app), where s/he selects the relevant research group and provides gender and DOB; then they are redirected to their individual profile.</p>\r\n\r\n\r\n\r\n\r\n<h2>Components</h2>\r\n\r\n\r\n\r\n\r\n<h3>Models</h3>\r\n\r\n\r\n<p>There's just one model, a simple bool value associated with the user. True means the user has consented.</p>\r\n\r\n\r\n\r\n\r\n<h3>Views</h3>\r\n\r\n\r\n<p>There are two views in the Consent App\r\n\t<ol>\r\n\t\t<li><span class=\"code\">get_user_consent()</span>\r\n\t\t\t<p>This actually displays the overview of the researcher defined consent form and the -BooleanField form input. Text for the consent form is defined in the lines directly above the view function in <span class=\"code\">views.py</span>; the text shoudl be replaced by a real consent form corresponding to the researcher&#39;s project. Consent form text categories can be customized by adding/editing/removing context variables here, in the actual function, and in the template (<span class=\"code\">consent/templates/consent/consent-form.html</span>).</p>\r\n\t\t</li>\r\n\t\t<li><span class=\"code\">dl_consent_form()</span>\r\n\t\t\t<p>This allows the user to download a pdf version of the researcher&#39;s consent form, stored at <span class=\"code\">static/consent/docs/consent-form.pdf</span>. There is not actually an html template rendered after this function, rather the browser prompts the user to display or download the pdf direvtly.</p>\r\n\t\t</li>\r\n\t</ol>\r\n</p>\r\n\r\n\r\n\r\n\r\n<h3>Forms</h3>\r\n\r\n<p>There's just one form in <span class=\"code\">forms.py</span> diplayed by <span class=\"code\">get_user_consent()</span>. Customize the label here. It's also where the link is defined to call <span class=\"code\">dl_consent_form()</span></p>",
+        "message": "",
+        "creator": 1,
+        "creator_ip": "127.0.0.1",
+        "created": "2021-09-12T15:04:00.073Z",
+        "modified": "2021-09-12T15:04:00.073Z"
+    }
+},
+{
+    "model": "documentation.revision",
+    "pk": 17,
+    "fields": {
+        "page": 7,
+        "content": "<h2>The Informed Consent App</h2>\r\n\r\n\r\n\r\n\r\n<h3>Rationale</h3>\r\n\r\n\r\n<p>Conducting ethical research with human usually requires that participants / subjects are informed about the research they participate in. The MoReDaT Informed Consent Form is a tool that allows the researcher / data-collection site admins to present such information and ask for participants&#39; agreement. Consent is built into MoReDat and by default, a user is required to consent before s/he can access research tasks and participate further.</p>\r\n\r\n\r\n\r\n\r\n<h3>How it works</h3>\r\n\r\n\r\n<p>Upon creation of a new user (<a href=\"#\">users</a> app), the new user is assigned the task to consent to the research program. The consent model is a simple model with a User object and a boolean value showing whether the user has consented to the research program or not. At the start of each research task, the consent model is queried and the user may not provide and further data about themselves or complete research tasks until and unless they provide their consent to participate. Additionally, untill the consent assignment (Assigned Tasks in users model) is markd complete, links to other research tasks will not be visible on the user&#39;s profile.</p>\r\n\r\n<p>The consent app allows you as the researcher to display a(n abbrebiated) version of your consent form as html directly in the app&#39;s form. As well the end user can download a pdf version of your consent form for his/her records.</p>\r\n\r\n<p>Upon consent, the Consent App redirects the user to the Get User Detaisl form (<a href=\"#\">users</a> app), where s/he selects the relevant research group and provides gender and DOB; then they are redirected to their individual profile.</p>\r\n\r\n\r\n\r\n\r\n<h2>Components</h2>\r\n\r\n\r\n\r\n\r\n<h3>Models</h3>\r\n\r\n\r\n<p>There's just one model, a simple bool value associated with the user. True means the user has consented.</p>\r\n\r\n\r\n\r\n\r\n<h3>Views</h3>\r\n\r\n\r\n<p>There are two views in the Consent App\r\n\t<ol>\r\n\t\t<li><span class=\"code\">get_user_consent()</span>\r\n\t\t\t<p>This actually displays the overview of the researcher defined consent form and the BooleanField form input. Text for the consent form is defined in the lines directly above the view function in <span class=\"code\">views.py</span>; the text shoudl be replaced by a real consent form corresponding to the researcher&#39;s project. Consent form text categories can be customized by adding/editing/removing context variables here, in the actual function, and in the template (<span class=\"code\">consent/templates/consent/consent-form.html</span>).</p>\r\n\t\t</li>\r\n\t\t<li><span class=\"code\">dl_consent_form()</span>\r\n\t\t\t<p>This allows the user to download a pdf version of the researcher&#39;s consent form, stored at <span class=\"code\">static/consent/docs/consent-form.pdf</span>. There is not actually an html template rendered after this function, rather the browser prompts the user to display or download the pdf direvtly.</p>\r\n\t\t</li>\r\n\t</ol>\r\n</p>\r\n\r\n\r\n\r\n\r\n<h3>Forms</h3>\r\n\r\n<p>There's just one form in <span class=\"code\">forms.py</span> diplayed by <span class=\"code\">get_user_consent()</span>. Customize the label here. It's also where the link is defined to call <span class=\"code\">dl_consent_form()</span></p>",
+        "message": "",
+        "creator": 1,
+        "creator_ip": "127.0.0.1",
+        "created": "2021-09-12T15:04:39.506Z",
+        "modified": "2021-09-12T15:04:39.506Z"
+    }
+},
+{
+    "model": "documentation.revision",
+    "pk": 18,
+    "fields": {
+        "page": 7,
+        "content": "<h2>The Informed Consent App</h2>\r\n\r\n\r\n\r\n\r\n<h3>Rationale</h3>\r\n\r\n\r\n<p>Conducting ethical research with human usually requires that participants / subjects are informed about the research they participate in. The MoReDaT Informed Consent Form is a tool that allows the researcher / data-collection site admins to present such information and ask for participants&#39; agreement. Consent is built into MoReDat and by default, a user is required to consent before s/he can access research tasks and participate further.</p>\r\n\r\n\r\n\r\n\r\n<h3>How it works</h3>\r\n\r\n\r\n<p>Upon creation of a new user (<a href=\"#\">users</a> app), the new user is assigned the task to consent to the research program. The consent model is a simple model with a User object and a boolean value showing whether the user has consented to the research program or not. At the start of each research task, the consent model is queried and the user may not provide and further data about themselves or complete research tasks until and unless they provide their consent to participate. Additionally, untill the consent assignment (Assigned Tasks in users model) is markd complete, links to other research tasks will not be visible on the user&#39;s profile.</p>\r\n\r\n<p>The consent app allows you as the researcher to display a(n abbrebiated) version of your consent form as html directly in the app&#39;s form. As well the end user can download a pdf version of your consent form for his/her records.</p>\r\n\r\n<p>Upon consent, the Consent App redirects the user to the Get User Detaisl form (<a href=\"#\">users</a> app), where s/he selects the relevant research group and provides gender and DOB; then they are redirected to their individual profile.</p>\r\n\r\n\r\n\r\n\r\n<h2>Components</h2>\r\n\r\n\r\n\r\n\r\n<h3>Models</h3>\r\n\r\n\r\n<p>There's just one model, a simple bool value associated with the user. True means the user has consented.</p>\r\n\r\n\r\n\r\n\r\n<h3>Views</h3>\r\n\r\n\r\n<p>There are two views in the Consent App\r\n\t<ol>\r\n\t\t<li><span class=\"code\">get_user_consent()</span>\r\n\t\t\t<p>This actually displays the overview of the researcher defined consent form and the Boolean Field form input. Text for the consent form is defined in the lines directly above the view function in <span class=\"code\">views.py</span>; the text shoudl be replaced by a real consent form corresponding to the researcher&#39;s project. Consent form text categories can be customized by adding/editing/removing context variables here, in the actual function, and in the template (<span class=\"code\">consent/templates/consent/consent-form.html</span>).</p>\r\n\t\t</li>\r\n\t\t<li><span class=\"code\">dl_consent_form()</span>\r\n\t\t\t<p>This allows the user to download a pdf version of the researcher&#39;s consent form, stored at <span class=\"code\">static/consent/docs/consent-form.pdf</span>. There is not actually an html template rendered after this function, rather the browser prompts the user to display or download the pdf direvtly.</p>\r\n\t\t</li>\r\n\t</ol>\r\n</p>\r\n\r\n\r\n\r\n\r\n<h3>Forms</h3>\r\n\r\n<p>There's just one form in <span class=\"code\">forms.py</span> diplayed by <span class=\"code\">get_user_consent()</span>. Customize the label here. It's also where the link is defined to call <span class=\"code\">dl_consent_form()</span>.</p>\r\n\r\n\r\n\r\n\r\n<h2>Customizations</h2>\r\n\r\n\r\n\r\n\r\n<h3>Already done that</h3>\r\n\r\n<p>Currently if a user has already consented, <span class=\"code\">get_user_consent()</span> function will display the consent form with a warning message that it has already been completed. Change this behavior on lines 45 and 46 of <span class=\"code\">views.py</span>; you could, for instance, redirect to the get-UD url of the users app, redirect to the users profile, or similar.</p>",
+        "message": "",
+        "creator": 1,
+        "creator_ip": "127.0.0.1",
+        "created": "2021-09-12T15:27:30.564Z",
+        "modified": "2021-09-12T15:27:30.564Z"
+    }
+},
+{
+    "model": "documentation.revision",
+    "pk": 19,
+    "fields": {
+        "page": 8,
+        "content": "<h2>The Users App</h2>\r\n\r\n\r\n\r\n\r\n<h3>Rationale</h3>\r\n\r\n\r\n<p>The users app provides a means for keeping track of individual users and customizing how MoReDaT interacts with individual and groups of users. It relies on Django's default User Authentication with a few additions &mdash; a model for storing additional details from idividual users (research group, self-directed bio, gender, picture), a model for differentiating research groups (group name, short-name, language, second-language, description, slug), an assigned tasks model (user, task, complete), and a model for default assigned tasks per research group (group name, task). The User object is the foreign key for the results of the research tasks that generate database data; the user ID number is included in audio data generated. This means that we have a means for research participants to be authenticated by the site and research participants can be designated to research groups; research tasks can be assigned to them based on their group membership.</p>\r\n\r\n\r\n\r\n\r\n<h3>How it works</h3>\r\n\r\n\r\n<p>The researcher must first define research groups with the ResearchGroups model &mdash; this can be done in the admin panel. Two <i>language</i>' fields are provided ('language' and 'L2') because often in questionnaires, we are interested in how our informants view their sociolinguistic setting, e.g. a minority language and a national language, thus these can be defined here. Once research groups are defined, default tasks can be assigned to those research groups (the DefaultAssignedTasksByGroup model). The MoReDaT example project consent form redirects users, on completion, to the UserDetails form, where they choose the research group to which they belong. On successful completion of the UserDetails form, default tasks will be assigned to that user automatically according to the research group they joined via the <span class=\"code\">get_user_details()</span> view function in <span class=\"code\">users/views.py</span>.</p>\r\n\r\n<p>Research groups and default assigned tasks are managed in the admin panel. By default The AssignedTasks model is handled by by <span class=\"code\">register()</span> (give consent and user details) and <span class=\"code\">get_user_details()</span> (all the rest) in <span class=\"code\">users/views.py</span>. It's possible to manually assign tasks to users in the admin panel, but by design, it shouldn't be necessary. Tasks (in the main app) do need to be defined manually.</p>\r\n\r\n\r\n\r\n\r\n<h2>Components</h2>\r\n\r\n\r\n<h3>Models</h3>\t\r\n\r\n\t<h4>ResearchGroups</h4>\r\n\r\n\t<p>ResearchGroups are managed via the admin panel. Fields can be viewed and populated there.</p>\r\n\r\n\r\n\t<h4>UserDetails</h4>\r\n\r\n\t<p>The UserDetails model stores basic info about the user:\r\n\t\t<ul>\r\n\t\t\t<li>the research group to which the user belongs</li>\r\n\t\t\t<li>Date of birth</li>\r\n\t\t\t<li>the user's gender</li>\r\n\t\t\t<li>a user autobiography</li>\r\n\t\t\t<li>a user profile pic</li>\r\n\t\t</ul>\r\n\tUserDetails fields are populated by the UserDetailsForm(), the Autobiography() form, and the UpdatePicture() form.\r\n\t</p>\r\n\r\n\r\n\t<h4>AssignedTasks</h4>\r\n\r\n\t<p>By default, AssigendTasks do not need to be managed manually, though they can be assigned via the admin panel.</p>\r\n\r\n\r\n\t<h4>DefaultAssignedTasksByGroup</h4>\r\n\r\n\t<p>The DefaultAssignedTasksByGroup is managed via the admin panel. Tasks (<span class=\"code\">main/models.py</span>) and ResearchGroups need to be defined before they can be linked in this model.</p>\r\n\r\n\r\n<h3>Views</h3>\r\n\r\n\t<h4>register()</h4>\r\n\r\n\t<p>The register function sends the RegisterUser() form to the register.html template. Upon successful submission of the form, a new user is created and assigned tasks &ndash; consent and get-user-details</p>\r\n\r\n\r\n\t<h4>get_user_details()</h4>\r\n\r\n\t<p>This function calls the UserDetails form and passes it to the user-details template. On successfult submission of the form the form fields are added to the user's UserDetails Model instance.</p>\r\n\r\n\r\n\t<h4>profile()</h4>\r\n\r\n\t<p>This function displays the profile.html template. The user profile displays info about the user, UserDetails and active links to unfinished assigned tasks. The profile view also contains the Autobiography form and UpdatePicture form where users can provide a self-directed description and picture of themselves. Both forms populate the UserDetails model.</p>\r\n\r\n\r\n<h3>Forms</h3>\r\n\r\n\t<h4>RegisterUser()</h4>\r\n\r\n\t<h4>UserDetailsForm()</h4>\r\n\r\n\t<h4>Autobiography()</h4>\r\n\r\n\t<h4>UpdatePicture()</h4>\r\n\r\n\r\n<h3>custom_context_processor.py</h3>\r\n\r\n<p>This function (also named <span class=\"code\">get_user_details()</span>, unfortunately &mdash; not to be confused with the views function) makes the following details about a logged in user available as context variables accross the whole MoReDaT example site:\r\n\t<ul>\r\n\t\t<li>the UserDetails object</li>\r\n\t\t<li>the user's assigned tasks</li>\r\n\t\t<li>a bool about the user's consent status</li>\r\n\t\t<li>the number of a user's assigned tasks</li>\r\n\t\t<li>the number of tasks the user has completed</li>\r\n\t</ul>\r\n</p>\r\n\r\n\r\n<h3>task_checker.py</h3>\r\n\r\n<p>The Task Checker checks incomplete Tasks (<span class=\"code\">main/models.py</span>) assigned to the current user, and if a task has been completed since the last time the Task Checker has been called, the bool for that task is updated. The task checker is called each time the user loads his/her profile page.</p>\r\n\r\n\r\n\r\n<h2>Customizations</h2>\r\n\r\n\r\n<h3>User Details: Already done that</h3>\r\n\r\n<p>If a user navigates to the get-UD url, s/he will see a warning message that the user details have already been provided. Entering new info will do nothing to the database. As a researcher, you probably want to change this behavior, e.g. to redirect the user to his/her profile. This can be changed on lines 48 and 49 of <span class=\"code\">users/views.py</span>.</p>\r\n\r\n\r\n<h3>User Details: Gender</h3>\r\n\r\n<p>Add/edit/remove gendner options in <span class=\"code\">users/models.py</span> just above the UserDetails class definition.</p>\r\n\r\n\r\n<h3>User Details: assigning research group</h3>\r\n\r\n<p>By default, MoReDaT allows users to chose their own research group. They can be assgned to a default group, e.g. if there's only one target group by setting the default or initial value in the UserDetails model and removing the field from UserDetailsForm. Other solutions are possible but would require more complex customizations beyond the scope of this documetnation.</p>\r\n\r\n\r\n<h3>User Details: Assigning tasks</h3>\r\n\r\n<p>Default task sets are assigned by the <span class=\"code\">get_user_details()</span> function of <span class=\"code\">users/views.py</span>. This behavior can be changed there.</p>",
+        "message": "",
+        "creator": 1,
+        "creator_ip": "127.0.0.1",
+        "created": "2021-09-12T18:59:12.224Z",
+        "modified": "2021-09-12T18:59:12.224Z"
+    }
+},
+{
+    "model": "documentation.revision",
+    "pk": 20,
+    "fields": {
+        "page": 9,
+        "content": "Model in the users app.",
+        "message": "Initial revision",
+        "creator": 1,
+        "creator_ip": "127.0.0.1",
+        "created": "2021-09-12T19:00:20.850Z",
+        "modified": "2021-09-12T19:00:20.850Z"
+    }
+},
+{
+    "model": "documentation.revision",
+    "pk": 21,
+    "fields": {
+        "page": 10,
+        "content": "Model in the users app.",
+        "message": "Initial revision",
+        "creator": 1,
+        "creator_ip": "127.0.0.1",
+        "created": "2021-09-12T19:02:51.738Z",
+        "modified": "2021-09-12T19:02:51.738Z"
+    }
+},
+{
+    "model": "documentation.revision",
+    "pk": 22,
+    "fields": {
+        "page": 11,
+        "content": "Form in the users app.",
+        "message": "Initial revision",
+        "creator": 1,
+        "creator_ip": "127.0.0.1",
+        "created": "2021-09-12T19:03:14.188Z",
+        "modified": "2021-09-12T19:03:14.188Z"
+    }
+},
+{
+    "model": "documentation.revision",
+    "pk": 23,
+    "fields": {
+        "page": 12,
+        "content": "Model in the users app.",
+        "message": "Initial revision",
+        "creator": 1,
+        "creator_ip": "127.0.0.1",
+        "created": "2021-09-12T19:04:17.370Z",
+        "modified": "2021-09-12T19:04:17.370Z"
+    }
+},
+{
+    "model": "documentation.revision",
+    "pk": 24,
+    "fields": {
+        "page": 13,
+        "content": "Form in the users app.",
+        "message": "Initial revision",
+        "creator": 1,
+        "creator_ip": "127.0.0.1",
+        "created": "2021-09-12T19:05:02.810Z",
+        "modified": "2021-09-12T19:05:02.810Z"
+    }
+},
+{
+    "model": "documentation.revision",
+    "pk": 25,
+    "fields": {
+        "page": 14,
+        "content": "Model in the users app.",
+        "message": "Initial revision",
+        "creator": 1,
+        "creator_ip": "127.0.0.1",
+        "created": "2021-09-12T19:51:55.888Z",
+        "modified": "2021-09-12T19:51:55.888Z"
+    }
+},
+{
+    "model": "documentation.revision",
+    "pk": 26,
+    "fields": {
+        "page": 15,
+        "content": "<h2>The Questionnaires App</h2>\r\n\r\n\r\n\r\n\r\n<h3>Rationale</h3>\r\n\r\n\r\n<p>A frequent activity in linguistics research is the distribution of sociolinguistic survey questionnaires. This app allows the researcher to create multiple questionnaires and distrubute them the users. The questionnaire app is written generically so virtually any type of questionnaire can be designed and deployed with the Questionnaires App. MoReDaT comes with two preconstructed questionnaires &mdash;one about pizza preferences and a shortened version of the EuLaViBar linguistic vitality questionnaire&mdash; to illustrate how the different model components work together.</p>\r\n\r\n\r\n\r\n\r\n<h3>How it works</h3>\r\n\r\n\r\n<p>All elements of a questionnaire are model objects and these are constructed via the admin panel. Questionnaire objects contain Question objects. Question objects contain a type specification, and in the case when the question type specifies that there are predefined choises, the Question object contains a Choice-set object. Choice-set objects contain Choice objects. User answers are stored as Answer onjects with three foreign keys: User, Question, and Questionnaire.</p>\r\n\r\n<p>Practically speaking, questionnaires must be constructed from the smallest elememts. That is, if an envisioned question type calls for predefined choices, in the admin panel, Choice objects must be created first. Then a Choice-set can be created and Choices added to it. Once the Choice-set object is created, the Question object can be created and the Choice-set added. Once Question objects are created the Questionnaire object can be created and Question objects added to it. At any stage, more objects can be added to a parent object. In the case when Question object types require a free text answer, the above process can be started from the question object.</p>\r\n\r\n<p>The following types of questions are predefined in the MoReDaT Questionnaires App:\r\n\t<ul>\r\n\t\t<li>Short -one line- free text answer</li>\r\n\t\t<li>Options are presented, user selects one</li>\r\n\t\t<li>Options are presented, user selects multiple</li>\r\n\t\t<li>Select predefined options or \\'other\\' with text input</li>\r\n\t\t<li>Select predefined options and / or \\'other\\' with text input</li>\r\n\t\t<li>Long(ger) -multi line- free text answer</li>\r\n\t\t<li>Mutliple checkbox-select subquestions in a grid</li>\r\n\t</ul>\r\n</p>\r\n\r\n\r\n\r\n<h2>Components</h2>\r\n\r\n\r\n<h3>Models</h3>\r\n\r\n\t<h4>Choice</h4>\r\n\r\n\t<h4>ChoiceSet</h4>\r\n\r\n\t<h4>Question</h4>\r\n\r\n\t<h4>Questionnaire</h4>\r\n\r\n\t<h4>Answer</h4>\r\n\r\n\r\n<h3>Views</h3>\r\n\r\n\t<p>The <span class=\"code\">views.py</span> file contains views functions and several support functions.</p>\r\n\r\n\t\r\n\t<h4>home_view</h4>\r\n\r\n\t<p>This view lists all the available quesitionnaires. It should probably not be accessible to ordinary users.</p>\r\n\r\n\r\n\t<h4>welcome_view</h4>\r\n\r\n\t<p>This view displays the instructions for each questionnaire to the user. If the current user is the admin user, a list of questions is also displayed.</p>\r\n\r\n\r\n\t<h4>question_view</h4>\r\n\r\n\t<p></p>\r\n\r\n\r\n\t<h4>finish_view</h4>\r\n\r\n\t<p></p>\r\n\r\n\r\n\t<h4>Support Functions</h4>\r\n\r\n\t<p>\r\n\t\t<ul>\r\n\t\t\t<li>CompileQuestion()</li>\r\n\t\t\t<li>MakeQuestionForm()</li>\r\n\t\t\t<li>get_next_slug()</li>\r\n\t\t</ul>\r\n\t</p>\r\n\r\n\r\n<h3>Forms</h3>\r\n\r\n\t<h4>QuestionForm</h4>\r\n\r\n\t<p>Stupid Name for the form that save question answers as instances of the Answer model.</p>\r\n\r\n\r\n\t<h4>OtherFieldForm</h4>\r\n\r\n\t<p>Form to take text input for questions with choices where one choce is other. This form also saves instances of the Answer model.</p>\r\n\r\n\r\n<h2>Customizations</h2>",
+        "message": "",
+        "creator": 1,
+        "creator_ip": "127.0.0.1",
+        "created": "2021-09-12T22:33:43.296Z",
+        "modified": "2021-09-12T22:33:43.296Z"
+    }
+},
+{
+    "model": "documentation.revision",
+    "pk": 27,
+    "fields": {
+        "page": 1,
+        "content": "<h2>Overview in Brief</h2>\r\n\r\n\r\n<p>What is MoReDaT?</p>\r\n\r\n<p>MoReDat is an example set of tools that will allow you to collect linguistic data over the web remotely. It is essentially a website, with backend written in Python/Django, divided into subsections &mdash; or Apps &mdash; that consist of a single \"elicitation-type\" task. This means that, while you might use this example project running on localhost to collect data during in-person fieldwork or as the basis for a whole new website for your remote data-collection needs, individual Apps can also be easily integrated into existing websites.</p>\r\n\r\n<p>MoReDaT is free and open source. It is intended to be used as the basis for a custom site to collect langauge data. It is fully customizable, from the look and feel of the site, to the main functionalities &ndash; everything about MoReDaT can be changed to suit researcher preferences and research questions. </p>\r\n\r\n\r\n<p>MoReDaT is available as a fully functioning site (that is, it will run by default on a local development server). This means that there are parts of MoReDaT that aren't really distributed with the intention to be taken over, rather they are either necessary for the MoReDaT to run as a self-contained site, or part of its Documentation App &ndash; these parts of MoReDaT are referred to as the <i><b>Scaffolding Site</b></i>. The other parts of MoReDaT are the individual task apps &ndash; these are written to be as independed from the Scaffolding Site such that they can be stuck on to another website like Legos.</p>\r\n\r\n\r\n\r\n<h2>Getting started</h2>\r\n\r\n<p>In order to get MoReDaT running locally (i.e. on a PC, not over the internet), one musd do the following:\r\n\t<ul>\r\n\t\t<li>Make sure you have a recent version (3.6+) version of Python installed on the computer you intend to run MoReDaT on</li>\r\n\t\t<li>Clone or Download MoReDaT</li>\r\n\t\t<li>In the main <span class=\"code\">MOREDAT</span> directory, create and activate a python virtual environmment:\r\n\t\t\t<p><span class=\"code\">python3 -m venv MOREDAT_env</span></p>\r\n\t\t\t<p><span class=\"code\">source MOREDAT_env/bin/avtivate</span></p>\r\n\t\t</li>\r\n\t\t<li>Install the requirements:\r\n\t\t\t<p><span class=\"code\">pip install -r requirements.txt</span></p>\r\n\t\t</li>\r\n\t\t<li>That's it. Then run the server...\r\n\t\t\t<p><span class=\"code\">python manage.py runsslserver</span></p>\r\n\t\t\t<p>...and MoReDaT should be available at <a href=\"https://localhost:8000\">https://localhost:8000</a> (nb. the &lt;s&gt; of https is necessary to use the computer's microphone in the browser. Your browser will probably complain that this is not a secure site. You can safely ignore this warning and procede to MoReDaT.)</p>\r\n\t\t</li>\r\n\t</ul>\r\n</p>\r\n<p>You can use MoReDaT in one of two ways:\r\n\t<ul>\r\n\t\t<li>as the base for a new website &mdash; see <a href=\"#\">here</a></li>\r\n\t\t<li>pick and choose apps to incorporate into an existing Django site &mdash; see <a href=\"#\">here</a></li>\r\n\t</ul>\r\nIn either case, this documentation will be your buddy. While Django is known for being relatively easy and Python has a reputation for being readable, it's perhaps always easier to understand how software works by reading code in combination with an explanation...and here you have it.</p>\r\n\r\n<p>Whatever you plan to do with MoReDaT, you should start with the overview of the MoReDaT project structure (<a href=\"#\">here</a>), the overview of the MoReDaT Scaffolding Site (<a href=\"#\">here</a>), and the overview of the MoReDaT Apps (<a href=\"#\">here</a>). After that, there are documentation pages dedicated to each individual app that can be consulted.</p>\r\n\r\n<p>Once you're happy with your customizations/integrations of MoReDaT Apps, you can deploy your Django site on a web server (like Apache, Nginx, etc) with an ssl certificate behind a domain that points to your computer's public IP address. (You could also use MoReDaT on local host as a software solution for collecting data in an in-person fieldwork setting &ndash; it will work fine, though it wasn't the original intention of MoReDaT.)</p>\r\n\r\n\r\n<h3>MoReDaT as a starter for a website</h3>\r\n\r\n\r\n<p>MoReDaT comes packaged as a fully functional, but simple website. If you're reading this it means that you probably already have the site running on a localhost development server. In order to use a MoReDaT site on the public internet, some things most definitely need to be customized and some key additions need to be made. Some suggestions are provided.</p>\r\n\r\n\r\n\r\n<h3>Cherry picking apps for an existing site</h3>\r\n\r\n<p>It was perhaps more the intention that individual apps can be easily co-opted and reused in another (existing) website. In this documentation, suggestions and tips are provided for how to detach MoReDaT apps from the Scaffolding site and get them working with another site.</p>\r\n\r\n\r\n\r\n<h2>How to use this documentation</h2>\r\n\r\n\r\n<p>In overview pages, links are provided to relevant related pages of the documentation such that users can achieve some continuity while reading this documentation. Aside from that, it's possible to consult the list of apps in the subsection below, or to use the <a href=\"index/\">index</a> link at the top of this page in order to view a list of <b>all</b> available documentation pages. Pages are named according to some convention, such that related pages should be grouped together in the index list.\r\n\r\n\r\n\r\n\r\n<h3>Documentation per App</h3>\r\n\r\n\r\n<p>\r\n\t<ul>\r\n\t\t<li><a href=\"#\">Check User Audio IO</a></li>\r\n\t\t<li><a href=\"#\">Informed Consent</a></li>\r\n\t\t<li><a href=\"#\">Questionnaire</a></li>\r\n\t\t<li><a href=\"#\">Rapid Automated Naming Task</a></li>\r\n\t\t<li><a href=\"#\">Self-Paced Naming Task</a></li>\r\n\t\t<li><a href=\"#\">Test for Reception of Grammar</a></li>\r\n\t\t<li><a href=\"#\">Users (authentication)</a></li>\r\n\t\t<li><a href=\"#\">Video Narration Task</a></li>\r\n\t\t<li><a href=\"#\">Word List Translation Task</a></li>\r\n\t</ul>\r\n</p>",
+        "message": "",
+        "creator": 1,
+        "creator_ip": "127.0.0.1",
+        "created": "2021-09-14T11:32:13.483Z",
+        "modified": "2021-09-14T11:32:13.483Z"
+    }
+},
+{
+    "model": "documentation.revision",
+    "pk": 28,
+    "fields": {
+        "page": 1,
+        "content": "<h2>Overview in Brief</h2>\r\n\r\n\r\n<p>What is MoReDaT?</p>\r\n\r\n<p>MoReDat is an example set of tools that will allow you to collect linguistic data over the web remotely. It is essentially a website, with backend written in Python/Django, divided into subsections &mdash; or Apps &mdash; that consist of a single \"elicitation-type\" task. This means that, while you might use this example project running on localhost to collect data during in-person fieldwork or as the basis for a whole new website for your remote data-collection needs, individual Apps can also be easily integrated into existing websites.</p>\r\n\r\n<p>MoReDaT is free and open source. It is intended to be used as the basis for a custom site to collect langauge data. It is fully customizable, from the look and feel of the site, to the main functionalities &ndash; everything about MoReDaT can be changed to suit researcher preferences and research questions. </p>\r\n\r\n\r\n<p>MoReDaT is available as a fully functioning site (that is, it will run by default on a local development server). This means that there are parts of MoReDaT that aren't really distributed with the intention to be taken over, rather they are either necessary for the MoReDaT to run as a self-contained site, or part of its Documentation App &ndash; these parts of MoReDaT are referred to as the <i><b>Scaffolding Site</b></i>. The other parts of MoReDaT are the individual task apps &ndash; these are written to be as independed from the Scaffolding Site such that they can be stuck on to another website like Legos.</p>\r\n\r\n\r\n\r\n<h2>Getting started</h2>\r\n\r\n<p>In order to get MoReDaT running locally (i.e. on a PC, not over the internet), one musd do the following:\r\n\t<ul>\r\n\t\t<li>Make sure you have a recent version (3.6+) version of Python installed on the computer you intend to run MoReDaT on</li>\r\n\t\t<li>Clone or Download MoReDaT</li>\r\n\t\t<li>In the main <span class=\"code\">MOREDAT</span> directory, create and activate a python virtual environmment:\r\n\t\t\t<p><span class=\"code\">python3 -m venv MOREDAT_env</span></p>\r\n\t\t\t<p><span class=\"code\">source MOREDAT_env/bin/avtivate</span></p>\r\n\t\t</li>\r\n\t\t<li>Install the requirements:\r\n\t\t\t<p><span class=\"code\">pip install -r requirements.txt</span></p>\r\n\t\t</li>\r\n\t\t<li>That's it. Then run the server...\r\n\t\t\t<p><span class=\"code\">python manage.py runsslserver</span></p>\r\n\t\t\t<p>...and MoReDaT should be available at <a href=\"https://localhost:8000\">https://localhost:8000</a> (nb. the &lt;s&gt; of https is necessary to use the computer's microphone in the browser. Your browser will probably complain that this is not a secure site. You can safely ignore this warning and procede to MoReDaT.)</p>\r\n\t\t</li>\r\n\t</ul>\r\n</p>\r\n<p>You can use MoReDaT in one of two ways:\r\n\t<ul>\r\n\t\t<li>as the base for a new website &mdash; see <a href=\"#\">here</a></li>\r\n\t\t<li>pick and choose apps to incorporate into an existing Django site &mdash; see <a href=\"#\">here</a></li>\r\n\t</ul>\r\nIn either case, this documentation will be your buddy. While Django is known for being relatively easy and Python has a reputation for being readable, it's perhaps always easier to understand how software works by reading code in combination with an explanation...and here you have it.</p>\r\n\r\n<p>Whatever you plan to do with MoReDaT, you should start with the overview of the MoReDaT project structure (<a href=\"#\">here</a>), the overview of the MoReDaT Scaffolding Site (<a href=\"#\">here</a>), and the overview of the MoReDaT Apps (<a href=\"#\">here</a>). After that, there are documentation pages dedicated to each individual app that can be consulted.</p>\r\n\r\n<p>Once you're happy with your customizations/integrations of MoReDaT Apps, you can deploy your Django site on a web server (like Apache, Nginx, etc) with an ssl certificate behind a domain that points to your computer's public IP address. (You could also use MoReDaT on local host as a software solution for collecting data in an in-person fieldwork setting &ndash; it will work fine, though it wasn't the original intention of MoReDaT.)</p>\r\n\r\n\r\n<h3>MoReDaT as a starter for a website</h3>\r\n\r\n\r\n<p>MoReDaT comes packaged as a fully functional, but simple website. If you're reading this it means that you probably already have the site running on a localhost development server. In order to use a MoReDaT site on the public internet, some things most definitely need to be customized and some key additions need to be made. Some suggestions are provided.</p>\r\n\r\n\r\n\r\n<h3>Cherry picking apps for an existing site</h3>\r\n\r\n<p>It was perhaps more the intention that individual apps can be easily co-opted and reused in another (existing) website. In this documentation, suggestions and tips are provided for how to detach MoReDaT apps from the Scaffolding site and get them working with another site.</p>\r\n\r\n\r\n\r\n<h2>How to use this documentation</h2>\r\n\r\n\r\n<p>In overview pages, links are provided to relevant related pages of the documentation such that users can achieve some continuity while reading this documentation. Aside from that, it's possible to consult the list of apps in the subsection below, or to use the <a href=\"index/\">index</a> link at the top of this page in order to view a list of <b>all</b> available documentation pages. Pages are named according to some convention, such that related pages should be grouped together in the index list.\r\n\r\n\r\n\r\n\r\n<h3>Documentation per App</h3>\r\n\r\n\r\n<p>\r\n\t<ul>\r\n\t\t<li><a href=\"#\">Check User Audio IO</a></li>\r\n                <li><a href=\"#\">Free Media Upload</a></li>\r\n\t\t<li><a href=\"#\">Informed Consent</a></li>\r\n\t\t<li><a href=\"#\">Questionnaire</a></li>\r\n\t\t<li><a href=\"#\">Rapid Automated Naming Task</a></li>\r\n\t\t<li><a href=\"#\">Self-Paced Naming Task</a></li>\r\n\t\t<li><a href=\"#\">Test for Reception of Grammar</a></li>\r\n\t\t<li><a href=\"#\">Users (authentication)</a></li>\r\n\t\t<li><a href=\"#\">Video Narration Task</a></li>\r\n\t\t<li><a href=\"#\">Word List Translation Task</a></li>\r\n\t</ul>\r\n</p>",
+        "message": "",
+        "creator": 1,
+        "creator_ip": "127.0.0.1",
+        "created": "2021-09-14T11:35:57.022Z",
+        "modified": "2021-09-14T11:35:57.022Z"
+    }
+},
+{
+    "model": "documentation.revision",
+    "pk": 29,
+    "fields": {
+        "page": 1,
+        "content": "<h2>Overview in Brief</h2>\r\n\r\n\r\n<p>What is MoReDaT?</p>\r\n\r\n<p>MoReDaT is an example set of tools that will allow you to collect linguistic data over the web remotely. It is essentially a website, with backend written in Python/Django, divided into subsections &mdash; or Apps &mdash; that consist of a single \"elicitation-type\" task. This means that, while you might use this example project running on localhost to collect data during in-person fieldwork or as the basis for a whole new website for your remote data-collection needs, individual Apps can also be easily integrated into existing websites.</p>\r\n\r\n<p>MoReDaT is free and open source. It is intended to be used as the basis for a custom site to collect langauge data. It is fully customizable, from the look and feel of the site, to the main functionalities &ndash; everything about MoReDaT can be changed to suit researcher preferences and research questions. </p>\r\n\r\n\r\n<p>MoReDaT is available as a fully functioning site (that is, it will run by default on a local development server). This means that there are parts of MoReDaT that aren't really distributed with the intention to be taken over, rather they are either necessary for the MoReDaT to run as a self-contained site, or part of its Documentation App &ndash; these parts of MoReDaT are referred to as the <i><b>Scaffolding Site</b></i>. The other parts of MoReDaT are the individual task apps &ndash; these are written to be as independed from the Scaffolding Site such that they can be stuck on to another website like Legos.</p>\r\n\r\n\r\n\r\n<h2>Getting started</h2>\r\n\r\n<p>In order to get MoReDaT running locally (i.e. on a PC, not over the internet), one musd do the following:\r\n\t<ul>\r\n\t\t<li>Make sure you have a recent version (3.6+) version of Python installed on the computer you intend to run MoReDaT on</li>\r\n\t\t<li>Clone or Download MoReDaT</li>\r\n\t\t<li>In the main <span class=\"code\">MOREDAT</span> directory, create and activate a python virtual environmment:\r\n\t\t\t<p><span class=\"code\">python3 -m venv MOREDAT_env</span></p>\r\n\t\t\t<p><span class=\"code\">source MOREDAT_env/bin/avtivate</span></p>\r\n\t\t</li>\r\n\t\t<li>Install the requirements:\r\n\t\t\t<p><span class=\"code\">pip install -r requirements.txt</span></p>\r\n\t\t</li>\r\n\t\t<li>That's it. Then run the server...\r\n\t\t\t<p><span class=\"code\">python manage.py runsslserver</span></p>\r\n\t\t\t<p>...and MoReDaT should be available at <a href=\"https://localhost:8000\">https://localhost:8000</a> (nb. the &lt;s&gt; of https is necessary to use the computer's microphone in the browser. Your browser will probably complain that this is not a secure site. You can safely ignore this warning and procede to MoReDaT.)</p>\r\n\t\t</li>\r\n\t</ul>\r\n</p>\r\n<p>You can use MoReDaT in one of two ways:\r\n\t<ul>\r\n\t\t<li>as the base for a new website &mdash; see <a href=\"#\">here</a></li>\r\n\t\t<li>pick and choose apps to incorporate into an existing Django site &mdash; see <a href=\"#\">here</a></li>\r\n\t</ul>\r\nIn either case, this documentation will be your buddy. While Django is known for being relatively easy and Python has a reputation for being readable, it's perhaps always easier to understand how software works by reading code in combination with an explanation...and here you have it.</p>\r\n\r\n<p>Whatever you plan to do with MoReDaT, you should start with the overview of the MoReDaT project structure (<a href=\"#\">here</a>), the overview of the MoReDaT Scaffolding Site (<a href=\"#\">here</a>), and the overview of the MoReDaT Apps (<a href=\"#\">here</a>). After that, there are documentation pages dedicated to each individual app that can be consulted.</p>\r\n\r\n<p>Once you're happy with your customizations/integrations of MoReDaT Apps, you can deploy your Django site on a web server (like Apache, Nginx, etc) with an ssl certificate behind a domain that points to your computer's public IP address. (You could also use MoReDaT on local host as a software solution for collecting data in an in-person fieldwork setting &ndash; it will work fine, though it wasn't the original intention of MoReDaT.)</p>\r\n\r\n\r\n<h3>MoReDaT as a starter for a website</h3>\r\n\r\n\r\n<p>MoReDaT comes packaged as a fully functional, but simple website. If you're reading this it means that you probably already have the site running on a localhost development server. In order to use a MoReDaT site on the public internet, some things most definitely need to be customized and some key additions need to be made. Some suggestions are provided.</p>\r\n\r\n\r\n\r\n<h3>Cherry picking apps for an existing site</h3>\r\n\r\n<p>It was perhaps more the intention that individual apps can be easily co-opted and reused in another (existing) website. In this documentation, suggestions and tips are provided for how to detach MoReDaT apps from the Scaffolding site and get them working with another site.</p>\r\n\r\n\r\n\r\n<h2>How to use this documentation</h2>\r\n\r\n\r\n<p>In overview pages, links are provided to relevant related pages of the documentation such that users can achieve some continuity while reading this documentation. Aside from that, it's possible to consult the list of apps in the subsection below, or to use the <a href=\"index/\">index</a> link at the top of this page in order to view a list of <b>all</b> available documentation pages. Pages are named according to some convention, such that related pages should be grouped together in the index list.\r\n\r\n\r\n\r\n\r\n<h3>Documentation per App</h3>\r\n\r\n\r\n<p>\r\n\t<ul>\r\n\t\t<li><a href=\"#\">Check User Audio IO</a></li>\r\n                <li><a href=\"#\">Free Media Upload</a></li>\r\n\t\t<li><a href=\"#\">Informed Consent</a></li>\r\n\t\t<li><a href=\"#\">Questionnaire</a></li>\r\n\t\t<li><a href=\"#\">Rapid Automated Naming Task</a></li>\r\n\t\t<li><a href=\"#\">Self-Paced Naming Task</a></li>\r\n\t\t<li><a href=\"#\">Test for Reception of Grammar</a></li>\r\n\t\t<li><a href=\"#\">Users (authentication)</a></li>\r\n\t\t<li><a href=\"#\">Video Narration Task</a></li>\r\n\t\t<li><a href=\"#\">Word List Translation Task</a></li>\r\n\t</ul>\r\n</p>",
+        "message": "",
+        "creator": 1,
+        "creator_ip": "127.0.0.1",
+        "created": "2021-09-14T11:43:30.324Z",
+        "modified": "2021-09-14T11:43:30.324Z"
+    }
+},
+{
+    "model": "documentation.revision",
+    "pk": 30,
+    "fields": {
+        "page": 5,
+        "content": "<h1>MoReDaT Scaffolding</h1>\r\n\r\n<p>In order to make MoReDaT Apps operable and testable, it is built around the most basic parts of a Django website. This is referred to in the documentation as Scaffolding.</p>\r\n\r\n<h2>What is MoReDaT Scaffolding?</h2>\r\n\r\n<p>Under ordinary circumstances, a new Django project (lets say \"MyApp\") will consist of a <span class=\"code\">MyApp</span> directory containing the <span class=\"code\">manage.py</span> file and anothr <span class=\"code\">MyApp</span> directory which contains the <span class=\"code\">settings.py</span> configuration file and the root <span class=\"code\">urls.py</span> configuration file. Other apps are then built around these basic components – usually a new app gets a new subdirectory within the top-level <span class=\"code\">MyApp</span> directory.</p>\r\n\r\n<p>In the MoReDaT instance, we don't have another <span class=\"code\">MOREDAT</span> directory inside the top-level <span class=\"code\">MOREDAT</span> directory. This was in order to contain all necessary elements to run the basic functionality of the site inside one MOREDAT sub-directory. The <span class=\"code\">main</span> subdirectory of <span class=\"code\">MOREDAT</span> contains <span class=\"code\">settings.py</span> and the root <span class=\"code\">urls.py</span> file, but also functions as an app in itself. The <span class=\"code\">main</span> app responsible for displaying the MoReDaT language page, app descriptoins, and credits. All other directories, with the exception of <span class=\"code\">static</span> (and the python virtual environment directory, if applicable) are detachable MoReDaT modules. This main app is primarily what is referred to as Scaffolding in this documentation.</p>\r\n\r\n<p>The Users App serves as a kind of go-between, linking the Scaffolding from the modular apps. Extra care is needed when reusing / integrating this app into another project. Its functionality is based on Django's default authentication, but with some MoReDaT specific functionality. Care should be take to understand these functionalities in order to replicate them in a site serving as host for a MoReDaT module app.</p>\r\n\r\n<p>Finally, it must be mentioned that there is one database model in the <span class=\"code\">main</span> app. This model &ndash; Tasks &ndash; is a list of tasks the researcher will include (e.g. a questionnaire instance) in their site and assign to research subjects. As this model is neither directly related to any of the MoReDaT apps, nor user instances, it has been included in <span class=\"code\">main</span>. A similar model must be included somewhere in a site that will host a MoReDaT app.</p>\r\n\r\n\r\n<h2>The <span class=\"code\">settings.py</span> file</h2>\r\n\r\n<p>The most importand info regarding the settings file is that all apps that one wishes to work with on a host site need to be listed in the <span class=\"code\">INSTALLED_APPS</span> list. List entries refer to the class name of an app in the file <span class=\"code\">apps.py</span>. So an entry like <span class=\"code\">'consent.apps.ConsentConfig'</span> &ndash; this refers to the <span class=\"code\">consent</span> directory ---&gt; <span class=\"code\">apps.py</span> file ---&gt; <span class=\"code\">ConsentConfig</span> class. </p> \r\n\r\n\r\n<h2>The <span class=\"code\">urls.py</span> file</h2>\r\n\r\n<p>The list of urls in this instance of <span class=\"code\">urls.py</span> points to all views functions (in <span class=\"code\">main/views.py</span>) that are part of the MoReDaT Scaffolding (app descriptions, etc), and towards the end of the list, urls that point to installed apps. The <span class=\"code\">include()</span> function contained in these url definitions point django to the url configuration for individual apps.</p>",
+        "message": "",
+        "creator": 1,
+        "creator_ip": "127.0.0.1",
+        "created": "2021-09-14T13:48:59.372Z",
+        "modified": "2021-09-14T13:48:59.372Z"
+    }
+},
+{
+    "model": "documentation.revision",
+    "pk": 31,
+    "fields": {
+        "page": 5,
+        "content": "<h1>MoReDaT Scaffolding</h1>\r\n\r\n<p>In order to make MoReDaT Apps operable and testable, it is built around the most basic parts of a Django website. This is referred to in the documentation as Scaffolding.</p>\r\n\r\n<h2>What is MoReDaT Scaffolding?</h2>\r\n\r\n<p>Under ordinary circumstances, a new Django project (lets say \"MyApp\") will consist of a <span class=\"code\">MyApp</span> directory containing the <span class=\"code\">manage.py</span> file and anothr <span class=\"code\">MyApp</span> directory which contains the <span class=\"code\">settings.py</span> configuration file and the root <span class=\"code\">urls.py</span> configuration file. Other apps are then built around these basic components – usually a new app gets a new subdirectory within the top-level <span class=\"code\">MyApp</span> directory.</p>\r\n\r\n<p>In the MoReDaT instance, we don't have another <span class=\"code\">MOREDAT</span> directory inside the top-level <span class=\"code\">MOREDAT</span> directory. This was in order to contain all necessary elements to run the basic functionality of the site inside one MOREDAT sub-directory. The <span class=\"code\">main</span> subdirectory of <span class=\"code\">MOREDAT</span> contains <span class=\"code\">settings.py</span> and the root <span class=\"code\">urls.py</span> file, but also functions as an app in itself. The <span class=\"code\">main</span> app responsible for displaying the MoReDaT language page, app descriptoins, and credits. All other directories, with the exception of <span class=\"code\">static</span> (and the python virtual environment directory, if applicable) are detachable MoReDaT modules. This main app is primarily what is referred to as Scaffolding in this documentation.</p>\r\n\r\n<p>The Users App serves as a kind of go-between, linking the Scaffolding from the modular apps. Extra care is needed when reusing / integrating this app into another project. Its functionality is based on Django's default authentication, but with some MoReDaT specific functionality. Care should be take to understand these functionalities in order to replicate them in a site serving as host for a MoReDaT module app.</p>\r\n\r\n<p>Finally, it must be mentioned that there is one database model in the <span class=\"code\">main</span> app. This model &ndash; Tasks &ndash; is a list of tasks the researcher will include (e.g. a questionnaire instance) in their site and assign to research subjects. As this model is neither directly related to any of the MoReDaT apps, nor user instances, it has been included in <span class=\"code\">main</span>. A similar model must be included somewhere in a site that will host a MoReDaT app.</p>\r\n\r\n\r\n<h3>The <span class=\"code\">settings.py</span> file</h3>\r\n\r\n<p>The most importand info regarding the settings file is that all apps that one wishes to work with on a host site need to be listed in the <span class=\"code\">INSTALLED_APPS</span> list. List entries refer to the class name of an app in the file <span class=\"code\">apps.py</span>. So an entry like <span class=\"code\">'consent.apps.ConsentConfig'</span> &ndash; this refers to the <span class=\"code\">consent</span> directory ---&gt; <span class=\"code\">apps.py</span> file ---&gt; <span class=\"code\">ConsentConfig</span> class. </p> \r\n\r\n\r\n<h3>The <span class=\"code\">urls.py</span> file</h3>\r\n\r\n<p>The list of urls in this instance of <span class=\"code\">urls.py</span> points to all views functions (in <span class=\"code\">main/views.py</span>) that are part of the MoReDaT Scaffolding (app descriptions, etc), and towards the end of the list, urls that point to installed apps. The <span class=\"code\">include()</span> function contained in these url definitions point django to the url configuration for individual apps.</p>",
+        "message": "",
+        "creator": 1,
+        "creator_ip": "127.0.0.1",
+        "created": "2021-09-14T13:49:44.089Z",
+        "modified": "2021-09-14T13:49:44.089Z"
+    }
+},
+{
+    "model": "documentation.revision",
+    "pk": 32,
+    "fields": {
+        "page": 5,
+        "content": "<h1>MoReDaT Scaffolding</h1>\r\n\r\n<p>In order to make MoReDaT Apps operable and testable, it is built around the most basic parts of a Django website. This is referred to in the documentation as Scaffolding.</p>\r\n\r\n<h2>What is MoReDaT Scaffolding?</h2>\r\n\r\n<p>Under ordinary circumstances, a new Django project (lets say \"MyApp\") will consist of a <span class=\"code\">MyApp</span> directory containing the <span class=\"code\">manage.py</span> file and anothr <span class=\"code\">MyApp</span> directory which contains the <span class=\"code\">settings.py</span> configuration file and the root <span class=\"code\">urls.py</span> configuration file. Other apps are then built around these basic components – usually a new app gets a new subdirectory within the top-level <span class=\"code\">MyApp</span> directory.</p>\r\n\r\n<p>In the MoReDaT instance, we don't have another <span class=\"code\">MOREDAT</span> directory inside the top-level <span class=\"code\">MOREDAT</span> directory. This was in order to contain all necessary elements to run the basic functionality of the site inside one MOREDAT sub-directory. The <span class=\"code\">main</span> subdirectory of <span class=\"code\">MOREDAT</span> contains <span class=\"code\">settings.py</span> and the root <span class=\"code\">urls.py</span> file, but also functions as an app in itself. The <span class=\"code\">main</span> app responsible for displaying the MoReDaT language page, app descriptoins, and credits. All other directories, with the exception of <span class=\"code\">static</span> (and the python virtual environment directory, if applicable) are detachable MoReDaT modules. This main app is primarily what is referred to as Scaffolding in this documentation.</p>\r\n\r\n<p>The Users App serves as a kind of go-between, linking the Scaffolding from the modular apps. Extra care is needed when reusing / integrating this app into another project. Its functionality is based on Django's default authentication, but with some MoReDaT specific functionality. Care should be take to understand these functionalities in order to replicate them in a site serving as host for a MoReDaT module app.</p>\r\n\r\n<p>Finally, it must be mentioned that there is one database model in the <span class=\"code\">main</span> app. This model &ndash; Tasks &ndash; is a list of tasks the researcher will include (e.g. a questionnaire instance) in their site and assign to research subjects. As this model is neither directly related to any of the MoReDaT apps, nor user instances, it has been included in <span class=\"code\">main</span>. A similar model must be included somewhere in a site that will host a MoReDaT app.</p>\r\n\r\n\r\n<h3>The <span class=\"code\">settings.py</span> file</h3>\r\n\r\n<p>The most importand info regarding the settings file is that all apps that one wishes to work with on a host site need to be listed in the <span class=\"code\">INSTALLED_APPS</span> list. List entries refer to the class name of an app in the file <span class=\"code\">apps.py</span>. So an entry like <span class=\"code\">'consent.apps.ConsentConfig'</span> &ndash; this refers to the <span class=\"code\">consent</span> directory ---&gt; <span class=\"code\">apps.py</span> file ---&gt; <span class=\"code\">ConsentConfig</span> class. </p> \r\n\r\n\r\n<h3>The <span class=\"code\">urls.py</span> file</h3>\r\n\r\n<p>The list of urls in this instance of <span class=\"code\">urls.py</span> points to all views functions (in <span class=\"code\">main/views.py</span>) that are part of the MoReDaT Scaffolding (app descriptions, etc), and towards the end of the list, urls that point to installed apps. The <span class=\"code\">include()</span> function contained in these url definitions point django to the url configuration for individual apps.</p>\r\n\r\n\r\n<h3>The <span class=\"code\">templates</span> directory and the html base</h3>\r\n\r\n<p>Generally an app renders its own specific html templates with data passed from views.py. IN the <span class=\"code\">main/templates</span> directory there are two special template files &ndash; <span class=\"code\">main-base.html</span> and <span class=\"code\">task-base.html</span>. within these files, the main html structure is defined and the document header (including the horizontal navbar) and footer is defined. All other templates in MoReDaT \"extend\" these templates (<span class=\"code\">main-base.html</span>, now for instance, while browsing around the MoReDaT example, and <span class=\"code\">task-base.html</span> during one of the tasks defined by MoReDaT apps.</p>",
+        "message": "",
+        "creator": 1,
+        "creator_ip": "127.0.0.1",
+        "created": "2021-09-14T14:09:35.384Z",
+        "modified": "2021-09-14T14:09:35.384Z"
+    }
+},
+{
+    "model": "documentation.revision",
+    "pk": 33,
+    "fields": {
+        "page": 6,
+        "content": "<h1>MoReDaT Apps</h1>\r\n\r\n\r\n<p>MoReDaT apps are very much like other Django app directories, contianing \r\n\r\n<ul>\r\n\t<li>a <span class=\"code\">migrations</span> direcory\r\n\t\t<p>Contains database definitions (generated with <span class=\"code\">python manage.py makemigrations</span> and applied to the database with <span class=\"code\">python manage.py migrate</span></p>\r\n\t</li>\r\n\t<li>a <span class=\"code\">templates</span> directory\r\n\t\t<p>Contains html templates that receive data from views functions and render browser-ready html.</p>\r\n\t</li>\r\n\t<li>an <span class=\"code\">admin.py</span> file\r\n\t\t<p>Defines how the app can be interacted with in the admin panel</p>\r\n\t</li>\r\n\t<li>an <span class=\"code\">apps.py</span> file\r\n\t\t<p>app class</p>\r\n\t</li>\r\n\t<li>a <span class=\"code\">forms.py</span> file\r\n\t\t<p>Defines forms (if any) to be used in the app</p>\r\n\t</li>\r\n\t<li>a <span class=\"code\">models.py</span> file\r\n\t\t<p>Database tables are defined here as class objects</p>\r\n\t</li>\r\n\t<li>a <span class=\"code\">urls.py</span> file\r\n\t\t<p>Urls specific to the app are defined</p>\r\n\t</li>\r\n\t<li>a <span class=\"code\">views.py</span> file\r\n\t\t<p>Functions are defined to process database data (if necessare) and pass data to templates</p>\r\n\t</li>\r\n</ul>\r\n\r\nAditionally, other things may be included\r\n\r\n<ul>\r\n\t<li>a <span class=\"code\">templatetags</span> directory\r\n\t\t<p>Contains custom template tags used in the app's templates.</p>\r\n\t</li>\r\n\t<li>a <span class=\"code\">local</span> directory\r\n\t\t<p>Contains .po and .mo files, related to translation and internationalization of a site</p>\r\n\t</li>\r\n\t<li>other files\r\n\t\t<p>For instance, context processors or other support functions / classes</p>\r\n\t</li>\r\n</ul>\r\n\r\n</p>",
+        "message": "",
+        "creator": 1,
+        "creator_ip": "127.0.0.1",
+        "created": "2021-09-14T14:09:58.080Z",
+        "modified": "2021-09-14T14:09:58.080Z"
+    }
+},
+{
+    "model": "documentation.revision",
+    "pk": 34,
+    "fields": {
+        "page": 2,
+        "content": "<h1>Using MoReDaT as the basis for a new website</h1>\r\n\r\n\r\n<p>Here are some things to consider doing if you want to adopt MoReDaT as the basis for a new website:\r\n\t<ul>\r\n\t\t<li>Customize urls, viwes functions, and templates in <span class=\"code\">main</span></li>\r\n\t\t<li>Customize the look and feel of the site with css in <span class=\"code\">static/main/main.css</span></li>\r\n\t\t<li>Bulk up your authentication system\r\n\t\t\t<ul>\r\n\t\t\t\t<li>add email field to user registration form</li>\r\n\t\t\t\t<li>on create user set <span class=\"code\">is_active</span> to <span class=\"code\">False</span></li>\r\n\t\t\t\t<li>confirm email to activate</li>\r\n\t\t\t</ul>\r\n\t\t\t<br>\r\n\t\t\t<ul>\r\n\t\t\t\t<li>password reset form</li>\r\n\t\t\t</ul>\r\n\t\t</li>\r\n\t</ul>\r\n</p>",
+        "message": "",
+        "creator": 1,
+        "creator_ip": "127.0.0.1",
+        "created": "2021-09-14T19:03:24.555Z",
+        "modified": "2021-09-14T19:03:24.555Z"
+    }
+},
+{
+    "model": "documentation.revision",
+    "pk": 35,
+    "fields": {
+        "page": 2,
+        "content": "<h1>Using MoReDaT as the basis for a new website</h1>\r\n\r\n\r\n<p>Here are some things to consider doing if you want to adopt MoReDaT as the basis for a new website:\r\n\t<ul>\r\n\t\t<li>Customize urls, viwes functions, and templates in <span class=\"code\">main</span></li>\r\n\t\t<li>Customize the look and feel of the site with css in <span class=\"code\">static/main/main.css</span></li>\r\n\t\t<li>Bulk up your authentication system\r\n\t\t\t<ul>\r\n\t\t\t\t<li>add email field to user registration form</li>\r\n\t\t\t\t<li>on create user set <span class=\"code\">is_active</span> to <span class=\"code\">False</span></li>\r\n\t\t\t\t<li>confirm email to activate</li>\r\n\t\t\t</ul>\r\n\t\t\t<br>\r\n\t\t\t<ul>\r\n\t\t\t\t<li>password reset form</li>\r\n\t\t\t</ul>\r\n\t\t</li>\r\n\t</ul>\r\n</p>\r\n\r\n<p>Consider how you want to deploy your site into production (this is well beyond the scope of this documentation, but some things for consideration):\r\n\t<ul>\r\n\t\t<li>renting server space or acquiring hardware</li>\r\n\t\t<li>which linux distro do you want to install on</li>\r\n\t\t<li>which webserver software (Apache, Nginx, etc)</li>\r\n\t\t<li>acquiring domain name...</li>\r\n\t\t<li>etc...</li>\r\n\t</ul>\r\n</p>",
+        "message": "",
+        "creator": 1,
+        "creator_ip": "127.0.0.1",
+        "created": "2021-09-14T19:10:16.248Z",
+        "modified": "2021-09-14T19:10:16.248Z"
+    }
+},
+{
+    "model": "documentation.revision",
+    "pk": 36,
+    "fields": {
+        "page": 16,
+        "content": "<h2>The Test User Audio IO App</h2>\r\n\r\n<p>This app helps ensure users have functional and correctly configured audio hardware.</p>\r\n\r\n\r\n<h3>Rationale</h3>\r\n\r\n\r\n\r\n<h3>How it works</h3>\r\n\r\n\r\n\r\n<h2>Components</h2>\r\n\r\n\r\n<h3>Models</h3>\r\n\r\n\r\n<h3>Views</h3>\r\n\r\n\r\n<h3>Forms</h3>\r\n\r\n\r\n\r\n<h2>Static files</h2>\r\n\r\n<h2>Customizations</h2>",
+        "message": "",
+        "creator": 1,
+        "creator_ip": "127.0.0.1",
+        "created": "2022-03-03T09:50:09.317Z",
+        "modified": "2022-03-03T09:50:09.317Z"
+    }
+},
+{
+    "model": "documentation.revision",
+    "pk": 37,
+    "fields": {
+        "page": 17,
+        "content": "<h2>Free Media Upload</h2>\r\n\r\n<h3>Rationale</h3>\r\n\r\n<p>Sometimes you might like to allow your research participants to upload files that are not part of the apps, whether pictures or audio/video. Perhaps you want them to have the freedom to decide what is important that the researcher sees, or perhaps you as the researcher give little assignments to your participants \"Go record your grandma telling you how to cook X in language Y\", or \"Record you and your friends having a casual conversation in language Y\". This app allows you to accept such files.</p>\r\n\r\n\r\n<h3>How it works</h3>\r\n\r\n<p>The app is a standard file upload page. A user selects a file and provides minimal metadata. Once they click \"Submit\", the file is transferred to the host server and a metadata entry is created.</p>",
+        "message": "",
+        "creator": 1,
+        "creator_ip": "127.0.0.1",
+        "created": "2022-03-03T21:57:18.931Z",
+        "modified": "2022-03-03T21:57:18.931Z"
+    }
+},
+{
+    "model": "documentation.revision",
+    "pk": 38,
+    "fields": {
+        "page": 12,
+        "content": "Model in the users app.\r\n\r\n* Don't assign Consent and User Details to groups – these are assigned to all users.",
+        "message": "",
+        "creator": 1,
+        "creator_ip": "127.0.0.1",
+        "created": "2022-03-06T21:47:05.251Z",
+        "modified": "2022-03-06T21:47:05.251Z"
+    }
+},
+{
+    "model": "documentation.revision",
+    "pk": 39,
+    "fields": {
+        "page": 17,
+        "content": "<h2>Free Media Upload</h2>\r\n\r\n\t<h3>Rationale</h3>\r\n\r\n\t\t<p>Sometimes you might like to allow your research participants to upload files that are not part of the apps, whether pictures or audio/video. Perhaps you want them to have the freedom to decide what is important that the researcher sees, or perhaps you as the researcher give little assignments to your participants \"Go record your grandma telling you how to cook X in language Y\", or \"Record you and your friends having a casual conversation in language Y\". This app allows you to accept such files.</p>\r\n\r\n\r\n\t<h3>How it works</h3>\r\n\r\n\t\t<p>The app is a standard file upload page. A user selects a file and provides minimal metadata. Once they click \"Submit\", the file is transferred to the host server and a metadata entry is created.</p>\r\n\r\n\r\n<h2>Components</h2>\r\n\r\n\t<h3>Models</h3>\r\n\r\n\t<h3>Views</h3>\r\n\r\n\t<h3>Forms</h3>\r\n\r\n\r\n<h2>Static files</h2>\r\n\r\n\r\n<h2>Customizations</h2>",
+        "message": "",
+        "creator": 1,
+        "creator_ip": "127.0.0.1",
+        "created": "2022-03-16T09:57:13.660Z",
+        "modified": "2022-03-16T09:57:13.660Z"
+    }
+},
+{
+    "model": "documentation.revision",
+    "pk": 40,
+    "fields": {
+        "page": 7,
+        "content": "<h2>The Informed Consent App</h2>\r\n\r\n\t<h3>Rationale</h3>\r\n\r\n\t\t<p>Conducting ethical research with human usually requires that participants / subjects are informed about the research they participate in. The MoReDaT Informed Consent Form is a tool that allows the researcher / data-collection site admins to present such information and ask for participants&#39; agreement. Consent is built into MoReDat and by default, a user is required to consent before s/he can access research tasks and participate further.</p>\r\n\r\n\t<h3>How it works</h3>\r\n\r\n\t\t<p>Upon creation of a new user (<a href=\"#\">users</a> app), the new user is assigned the task to consent to the research program. The consent model is a simple model with a User object and a boolean value showing whether the user has consented to the research program or not. At the start of each research task, the consent model is queried and the user may not provide and further data about themselves or complete research tasks until and unless they provide their consent to participate. Additionally, untill the consent assignment (Assigned Tasks in users model) is markd complete, links to other research tasks will not be visible on the user&#39;s profile.</p>\r\n\r\n\t\t<p>The consent app allows you as the researcher to display a(n abbrebiated) version of your consent form as html directly in the app&#39;s form. As well the end user can download a pdf version of your consent form for his/her records.</p>\r\n\r\n\t\t<p>Upon consent, the Consent App redirects the user to the Get User Detaisl form (<a href=\"#\">users</a> app), where s/he selects the relevant research group and provides gender and DOB; then they are redirected to their individual profile.</p>\r\n\r\n\r\n<h2>Components</h2>\r\n\r\n\t<h3>Models</h3>\r\n\r\n\t\t<p>There's just one model, a simple bool value associated with the user. True means the user has consented.</p>\r\n\r\n\t<h3>Views</h3>\r\n\r\n\t\t<p>There are two views in the Consent App\r\n\t\t\t<ol>\r\n\t\t\t\t<li><span class=\"code\">get_user_consent()</span>\r\n\t\t\t\t\t<p>This actually displays the overview of the researcher defined consent form and the Boolean Field form input. Text for the consent form is defined in the lines directly above the view function in <span class=\"code\">views.py</span>; the text shoudl be replaced by a real consent form corresponding to the researcher&#39;s project. Consent form text categories can be customized by adding/editing/removing context variables here, in the actual function, and in the template (<span class=\"code\">consent/templates/consent/consent-form.html</span>).</p>\r\n\t\t\t\t</li>\r\n\t\t\t\t<li><span class=\"code\">dl_consent_form()</span>\r\n\t\t\t\t\t<p>This allows the user to download a pdf version of the researcher&#39;s consent form, stored at <span class=\"code\">static/consent/docs/consent-form.pdf</span>. There is not actually an html template rendered after this function, rather the browser prompts the user to display or download the pdf direvtly.</p>\r\n\t\t\t\t</li>\r\n\t\t\t</ol>\r\n\t\t</p>\r\n\r\n\t<h3>Forms</h3>\r\n\r\n\t\t<p>There's just one form in <span class=\"code\">forms.py</span> diplayed by <span class=\"code\">get_user_consent()</span>. Customize the label here. It's also where the link is defined to call <span class=\"code\">dl_consent_form()</span>.</p>\r\n\r\n\r\n<h2>Static files</h2>\r\n\r\n\r\n<h2>Customizations</h2>\r\n\r\n\t<h3>Already done that</h3>\r\n\r\n\t\t<p>Currently if a user has already consented, <span class=\"code\">get_user_consent()</span> function will display the consent form with a warning message that it has already been completed. Change this behavior on lines 45 and 46 of <span class=\"code\">views.py</span>; you could, for instance, redirect to the get-UD url of the users app, redirect to the users profile, or similar.</p>",
+        "message": "",
+        "creator": 1,
+        "creator_ip": "127.0.0.1",
+        "created": "2022-03-16T10:06:29.221Z",
+        "modified": "2022-03-16T10:06:29.221Z"
+    }
+},
+{
+    "model": "documentation.revision",
+    "pk": 41,
+    "fields": {
+        "page": 15,
+        "content": "<h2>The Questionnaires App</h2>\r\n\r\n\t<h3>Rationale</h3>\r\n\r\n\t\t<p>A frequent activity in linguistics research is the distribution of sociolinguistic survey questionnaires. This app allows the researcher to create multiple questionnaires and distrubute them the users. The questionnaire app is written generically so virtually any type of questionnaire can be designed and deployed with the Questionnaires App. MoReDaT comes with two preconstructed questionnaires &mdash;one about pizza preferences and a shortened version of the EuLaViBar linguistic vitality questionnaire&mdash; to illustrate how the different model components work together.</p>\r\n\r\n\t<h3>How it works</h3>\r\n\r\n\r\n\t\t<p>All elements of a questionnaire are model objects and these are constructed via the admin panel. Questionnaire objects contain Question objects. Question objects contain a type specification, and in the case when the question type specifies that there are predefined choises, the Question object contains a Choice-set object. Choice-set objects contain Choice objects. User answers are stored as Answer onjects with three foreign keys: User, Question, and Questionnaire.</p>\r\n\r\n\t\t<p>Practically speaking, questionnaires must be constructed from the smallest elememts. That is, if an envisioned question type calls for predefined choices, in the admin panel, Choice objects must be created first. Then a Choice-set can be created and Choices added to it. Once the Choice-set object is created, the Question object can be created and the Choice-set added. Once Question objects are created the Questionnaire object can be created and Question objects added to it. At any stage, more objects can be added to a parent object. In the case when Question object types require a free text answer, the above process can be started from the question object.</p>\r\n\r\n\t\t<p>The following types of questions are predefined in the MoReDaT Questionnaires App:\r\n\t\t\t<ul>\r\n\t\t\t\t<li>Short -one line- free text answer</li>\r\n\t\t\t\t<li>Options are presented, user selects one</li>\r\n\t\t\t\t<li>Options are presented, user selects multiple</li>\r\n\t\t\t\t<li>Select predefined options or \\'other\\' with text input</li>\r\n\t\t\t\t<li>Select predefined options and / or \\'other\\' with text input</li>\r\n\t\t\t\t<li>Long(ger) -multi line- free text answer</li>\r\n\t\t\t\t<li>Mutliple checkbox-select subquestions in a grid</li>\r\n\t\t\t</ul>\r\n\t\t</p>\r\n\r\n\r\n<h2>Components</h2>\r\n\r\n\r\n\t<h3>Models</h3>\r\n\r\n\t\t<h4>Choice</h4>\r\n\r\n\t\t<h4>ChoiceSet</h4>\r\n\r\n\t\t<h4>Question</h4>\r\n\r\n\t\t<h4>Questionnaire</h4>\r\n\r\n\t<h4>Answer</h4>\r\n\r\n\t<h3>Views</h3>\r\n\r\n\t\t<p>The <span class=\"code\">views.py</span> file contains views functions and several support functions.</p>\r\n\r\n\t\t<h4>home_view</h4>\r\n\r\n\t\t\t<p>This view lists all the available quesitionnaires. It should probably not be accessible to ordinary users.</p>\r\n\r\n\r\n\t\t<h4>welcome_view</h4>\r\n\r\n\t\t\t<p>This view displays the instructions for each questionnaire to the user. If the current user is the admin user, a list of questions is also displayed.</p>\r\n\r\n\t\t<h4>question_view</h4>\r\n\r\n\t\t\t<p></p>\r\n\r\n\t\t<h4>finish_view</h4>\r\n\r\n\t\t\t<p></p>\r\n\r\n\r\n\t\t<h4>Support Functions</h4>\r\n\r\n\t\t\t<p>\r\n\t\t\t\t<ul>\r\n\t\t\t\t\t<li>CompileQuestion()</li>\r\n\t\t\t\t\t<li>MakeQuestionForm()</li>\r\n\t\t\t\t\t<li>get_next_slug()</li>\r\n\t\t\t\t</ul>\r\n\t\t\t</p>\r\n\r\n\t\t<h3>Forms</h3>\r\n\r\n\t\t\t<h4>QuestionForm</h4>\r\n\r\n\t\t\t\t<p>Stupid Name for the form that save question answers as instances of the Answer model.</p>\r\n\r\n\t\t\t<h4>OtherFieldForm</h4>\r\n\r\n\t\t\t\t<p>Form to take text input for questions with choices where one choce is other. This form also saves instances of the Answer model.</p>\r\n\r\n\r\n<h2>Static files</h2>\r\n\r\n\r\n<h2>Customizations</h2>",
+        "message": "",
+        "creator": 1,
+        "creator_ip": "127.0.0.1",
+        "created": "2022-03-16T10:16:37.567Z",
+        "modified": "2022-03-16T10:16:37.567Z"
+    }
+},
+{
+    "model": "documentation.revision",
+    "pk": 42,
+    "fields": {
+        "page": 18,
+        "content": "<h2>TROG App</h2>\r\n\r\n\t\t<p>This app allows you to check a participants receptive proficiency (how well they understand spoken language). It is loosely based on the Test For Reception of Grammar II. Due to both copyright issues and the fact linguistic structures vary greatly across languages, no stimuli are provided with this app &mdash; the single stimulus set is provided only to demonstrate the principle of how the app works. Please create / compile your own stimuli.</p>\r\n\r\n\t<h3>Rationale</h3>\r\n\r\n\t\t<p>Sometimes it is necessary to get an idea of how much of a language a participant can understand. This app allows you to present audio stimuli, such as a phrase or sentence, along with a set of images in a 2x2 grid, wherein one corresponds to the audio prompt and the other three are distractor images. The user selects the image they think corresponds to the audio prompt.</p>\r\n\r\n\t<h3>How it works</h3>\r\n\r\n\t\t<p>The TROG app allows to construct a single task as described above. Stimuli sets are displayed in a random order and the arrangement of the 2x2 grid is randomized. File naming conventions must be followed strictly and be stored in the correct directories for the task to function properly.</p>\r\n\t\t<p>The task records the users response for each trial &mdash; selected image (the file name indicates whether it was the target), selected quadrant, the amount of time it took the participant to make a selection, and the number of times the participant replayed the audio stimulus.</p>\r\n\r\n\r\n<h2>Components</h2>\r\n\r\n\t<h3>Models</h3>\r\n\r\n\t<h3>Views</h3>\r\n\r\n\t<h3>Forms</h3>\r\n\r\n\r\n<h2>Static files</h2>\r\n\r\n\r\n<h2>Customizations</h2>",
+        "message": "Initial revision",
+        "creator": 1,
+        "creator_ip": "127.0.0.1",
+        "created": "2022-03-16T10:34:43.318Z",
+        "modified": "2022-03-16T10:34:43.318Z"
+    }
+},
+{
+    "model": "documentation.revision",
+    "pk": 43,
+    "fields": {
+        "page": 19,
+        "content": "<h2>SPN App</h2>\r\n\r\n\t\t<p>This app displays predefined sets of image stimuli, one image at a time, and records responses to each image stimulus.</p>\r\n\r\n\t<h3>Rationale</h3>\r\n\r\n\t\t<p>List translation as a means to get acquainted with a new language is useful, but translation tasks have their drawbacks. An alternative to translation tasks are using non verbal stimuli such as photographs and drawings to elicit words and / or short phrases.</p>\r\n\r\n\t<h3>How it works</h3>\r\n\r\n\t\t<p>Participants are assigned one or more SPN tasks, whereby they are charged with providing lexical responses for a predefined set of pictures. For each image in the set, the image is displayed on the screen and the participant provides a response, either they record an audio response (optionally providing a written version of what they say and / or a written commentary) or they select \"I don&#39;t know\" or \"I don&#39;t remember\". Responses are saved as database object instances and recorded audio is saved in the server media/recorded-audio directory. Participants proceed through the each task at their own pace.</p>\r\n\r\n\t\t\r\n<h2>Components</h2>\r\n\r\n\t<h3>Models</h3>\r\n\r\n\t<h3>Views</h3>\r\n\r\n\t<h3>Forms</h3>\r\n\r\n\r\n<h2>Static files</h2>\r\n\r\n\r\n<h2>Customizations</h2>",
+        "message": "Initial revision",
+        "creator": 1,
+        "creator_ip": "127.0.0.1",
+        "created": "2022-03-16T10:47:46.989Z",
+        "modified": "2022-03-16T10:47:46.989Z"
+    }
+},
+{
+    "model": "documentation.revision",
+    "pk": 44,
+    "fields": {
+        "page": 20,
+        "content": "<h2>RAN App</h2>\r\n\r\n\t\t<p>This app displays randomized blocks of image stimuli quickly and at regular intervals. Participant vocalizations are recorded.</p>\r\n\r\n\t<h3>Rationale</h3>\r\n\r\n\t\t<p>In order to get some idea about a participant&#39;s lexical recall (in connection with proficiency) sometimes a researcher might like to have the participant react to image stimuli presented rapidly and at consistent intervals. The task is essentially a rapid automatized picture naming task (hence RAN in the name).</p>\r\n\t\t\r\n\t<h3>How it works</h3>\r\n\r\n\t\t<p>The RAN app allows to construct a single task that displays blocks of stimuli at predefined speed and at regular intervals. The user does not control the speed or the progression of the stimuli blocks. Example stimuli (from the Bank of Standardized Stimuli) Are provided with MOREDAT. Stimuli are randomized and an order is defined for each user. During the RAN task, participants vocalizations are recorded for each trial; files saved in the media/recorded-audio directory.</p>\r\n\r\n\r\n<h2>Components</h2>\r\n\r\n\t<h3>Models</h3>\r\n\r\n\t<h3>Views</h3>\r\n\r\n\t<h3>Forms</h3>\r\n\r\n\r\n<h2>Static files</h2>\r\n\r\n\r\n<h2>Customizations</h2>",
+        "message": "Initial revision",
+        "creator": 1,
+        "creator_ip": "127.0.0.1",
+        "created": "2022-03-16T10:59:56.159Z",
+        "modified": "2022-03-16T10:59:56.159Z"
+    }
+},
+{
+    "model": "documentation.revision",
+    "pk": 45,
+    "fields": {
+        "page": 21,
+        "content": "<h2>VIDNAR App</h2>\r\n\r\n\t\t<p>This app is for the creation and display of video-based elicitation tasks.</p>\r\n\r\n\t<h3>Rationale</h3>\r\n\r\n\t\t<p>Translation of longer stretches of text is generally not an acceptable method in language documentation due to translation effects. Instead it is preferable in most instances to elicit longer stretches of text with non-verbal stimuli such as video and images. This app allows for the creation of video-based elicitation tasks.</p>\r\n\r\n\t<h3>How it works</h3>\r\n\r\n\t\t<p>In the VIDNAR app, sets of video stimuli are defined and assigned as tasks to research participants. Participants are shown video stimuli in sequence and they should narrate the events of each video stimulus as it plays. Their voice is recordedand audio responses are saved in the media/recorded-audio directory.</p>\r\n\r\n<h2>Components</h2>\r\n\r\n\t<h3>Models</h3>\r\n\r\n\t<h3>Views</h3>\r\n\r\n\t<h3>Forms</h3>\r\n\r\n\r\n<h2>Static files</h2>\r\n\r\n\r\n<h2>Customizations</h2>",
+        "message": "Initial revision",
+        "creator": 1,
+        "creator_ip": "127.0.0.1",
+        "created": "2022-03-16T11:13:36.540Z",
+        "modified": "2022-03-16T11:13:36.541Z"
+    }
+},
+{
+    "model": "documentation.revision",
+    "pk": 46,
+    "fields": {
+        "page": 22,
+        "content": "<h2>Word List Translation App</h2>\r\n\r\n\t\t<p>With this app create lists of written stimuli to be translated by participants.</p>\r\n\r\n\t<h3>Rationale</h3>\r\n\r\n\t\t<p>When we know almost nothing about a language, it can be useful to start by translating lists of basic vocabulary and sets of short phrases (grammar paradigms). This app allows for the creation of word (or phrase) list-based Tasks.</p>\r\n\r\n\t<h3>How it works</h3>\r\n\t\t\r\n\t\t<p>Written stimuli are compiled into lists, and lists form the basis for tasks that can be assigned to research participants. In a task, a participant is presented with items in a list, one at a time, and they provide a response &mdash; either a recorded response (audio and optionally a written version and/or commentary), or an \"I don&#39;t know\" or \"I don&#39;t remember\". Responses are recorded as database entries and audio is saved to the media/recorded-audio directory.</p>\r\n\r\n<h2>Components</h2>\r\n\r\n\t<h3>Models</h3>\r\n\r\n\t<h3>Views</h3>\r\n\r\n\t<h3>Forms</h3>\r\n\r\n\r\n<h2>Static files</h2>\r\n\r\n\r\n<h2>Customizations</h2>",
+        "message": "Initial revision",
+        "creator": 1,
+        "creator_ip": "127.0.0.1",
+        "created": "2022-03-16T12:16:18.659Z",
+        "modified": "2022-03-16T12:16:18.659Z"
+    }
+}
+]

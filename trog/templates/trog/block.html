@@ -1,0 +1,73 @@
+{% extends 'main/task-base.html' %}
+{% load static %}
+{% load i18n %}
+
+
+{% block content %}
+
+	<link rel="stylesheet" type="text/css" href="{% static 'trog/trog-trial.css' %}">
+
+	<div class="col-lg-2 col-md-12"></div>
+	<div class="col-lg-8 col-md-12">	
+
+		<div id="replayButtonDiv">
+			<p>
+				<button onclick="javascript:incrementReplay();">
+					{% translate 'Replay Audio' %}
+				</button>
+			</p>
+		</div>
+
+
+		<div id="startDiv">
+            <div id="startTrialMessage">
+                <p>{% translate 'This is trial' %} {{ block_desctiption }}.</p>
+                <p>{% translate 'Seclect the image that best corresponds to the audio prompt.' %} </p>
+                <p><button class="btn btn-info" id="startTrialButton">{% translate 'Start Trial' %}</button></p>
+            </div>
+
+            <div id="startingTrialIn">
+                <p id="startingTrialInThree">{% translate 'Starting trial in <b>3</b>...' %}</p>
+                <p id="startingTrialInTwo">{% translate 'Starting trial in <b>2</b>...' %}</p>
+                <p id="startingTrialInOne">{% translate 'Starting trial in <b>1</b>...' %}</p>
+            </div>
+        </div>
+
+
+
+		<div id="dotDiv">
+			<p><img id="focusDot" src="{% static 'trog/cues/pngwing.com.png' %}"></p>
+		</div>
+
+
+
+		{% for stim, stimlist in block_d.items %}
+		<div class="stimDiv" id="stimDiv_{{ forloop.counter0 }}">
+			<div id="stimDivTop">
+				<a id="SDTopLeft" onclick="javascript:select('topLeft', '{{ stimlist.0 }}');">
+					<img class="stimg" src="{% static 'trog/img/' %}{{ stimlist.0 }}">
+				</a>
+				<a id="SDTopRight"onclick="javascript:select('topRight', '{{ stimlist.1 }}');">
+					<img class="stimg" src="{% static 'trog/img/' %}{{ stimlist.1 }}">
+				</a>
+			</div>
+			<div id="stimDivBottom">
+				<a id="SDBottomLeft" onclick="javascript:select('bottomLeft', '{{ stimlist.2 }}');">
+					<img class="stimg" src="{% static 'trog/img/' %}{{ stimlist.2 }}">
+				</a>
+				<a id="SDBottomRight" onclick="javascript:select('bottomRight', '{{ stimlist.3 }}');">
+					<img class="stimg" src="{% static 'trog/img/' %}{{ stimlist.3 }}">
+				</a>	
+			</div>
+		<audio id="audiostim_{{ forloop.counter0 }}" src="{% static 'trog/cues/' %}{{ user_details.research_group.target_lang_short_name }}_{{ stim }}.mp3" preload="auto"></audio>
+		</div>
+
+		{% endfor %}
+
+<script type="text/javascript">
+
+	var NEXT = "{% url 'trog-block' TROGblock=next %}"
+
+</script>
+<script type="text/javascript" src="{% static 'trog/trog-trial.js' %}"></script>
+{% endblock %}

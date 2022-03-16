@@ -1,0 +1,23 @@
+{% extends 'main/main-base.html' %}
+{% load i18n %}
+
+
+
+{% block content %}
+	{% include './main-sidebar.html' %}
+	<div class="col-lg-8 col-md-12">
+		<h1>{% translate 'Wordlist Translation' %}</h1>
+		<hr>
+		<h2>{% translate 'Rationale' %}</h2>
+		<p>{% translate 'When we know almost nothing about a language, it can be useful to start by translating lists of basic vocabulary and sets of short phrases (grammar paradigms). This app allows for the creation of word (or phrase) list-based Tasks.' %}</p>
+		<h2>{% translate 'How it works' %}</h2>
+		<p>{% translate 'Written stimuli are compiled into lists, and lists form the basis for tasks that can be assigned to research participants. In a task, a participant is presented with items in a list, one at a time, and they provide a response &mdash; either a recorded response (audio and optionally a written version and/or commentary), or an "I don&#39;t know" or "I don&#39;t remember". Responses are recorded as database entries and audio is saved to the media/recorded-audio directory.' %}</p>
+		<h2>{% translate 'See it in action' %}</h2>
+		<p>
+			{% translate 'Example Wordlist Task:' %}&nbsp;<a href="{% url 'wlt-welcome' word_set='common-animals' %}">{% translate 'here' %}</a></p>
+		<h2>{% translate 'Read the Documentation' %}</h2>
+			{% translate 'App Documentation:' %}&nbsp;<a href="{% url 'documentation_page' slug='WordlistAppDocumentation' %}">{% translate 'here' %}</a>
+		</p>
+
+	</div>
+{% endblock %}

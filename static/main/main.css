@@ -1,0 +1,55 @@
+body {
+  height: 100%;
+  background: #fafafa;
+  color: #333333;
+  margin-top: 5rem;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrapper {
+  min-height: 100vh;
+}
+
+h1 h2 h3 h4 h5 h6 {
+  text-align: left; 
+}
+
+
+
+#pageMain{
+  min-height: 75vh;
+  text-align: justify;
+}
+
+.content-section {
+  background: #ffffff;
+  padding: 10px 20px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+.nested-list-group{
+  padding-left: 0;
+}
+
+.code {
+  background-color: lightgrey;
+  font-family: monospace;
+}
+
+footer {
+  margin-top: 20px;
+  border-top: solid;
+  border-width: thin;
+}
+
+.list-group-item {
+  text-align: left;
+}

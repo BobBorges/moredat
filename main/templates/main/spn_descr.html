@@ -1,0 +1,23 @@
+{% extends 'main/main-base.html' %}
+{% load i18n %}
+
+
+
+{% block content %}
+	{% include './main-sidebar.html' %}
+	<div class="col-lg-8 col-md-12">
+		<h1>{% translate 'SPN Task' %}</h1>
+		<hr>
+		<h2>{% translate 'Rationale' %}</h2>
+		<p>{% translate 'List translation as a means to get acquainted with a new language is useful, but translation tasks have their drawbacks. An alternative to translation tasks is using non verbal stimuli such as photographs and drawings to elicit words and / or short phrases. This app is a means to conduct elicitation with image-based stimuli.' %}</p>
+		<h2>{% translate 'How it works' %}</h2>
+		<p>{% translate 'Participants are assigned one or more SPN tasks, whereby they are charged with providing lexical responses for a predefined set of pictures. For each image in the set, the image is displayed on the screen and the participant provides a response, either they record an audio response (optionally providing a written version of what they say and / or a written commentary) or they select "I don&#39;t know" or "I don&#39;t remember". Responses are saved as database object instances and recorded audio is saved in the server media/recorded-audio directory. Participants proceed through the each task at their own pace.' %}</p>
+		<h2>{% translate 'See it in action' %}</h2>
+		<p>
+			{% translate 'Example SPN task:' %}&nbsp;<a href="{% url 'spn-welcome' pic_set='cats' %}">{% translate 'here' %}</a></p>
+		<h2>{% translate 'Read the Documentation' %}</h2>
+			{% translate 'App Documentation:' %}&nbsp;<a href="{% url 'documentation_page' slug='SpnAppDocumentation' %}">{% translate 'here' %}</a>
+		</p>
+
+	</div>
+{% endblock %}

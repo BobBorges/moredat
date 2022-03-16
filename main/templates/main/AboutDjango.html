@@ -1,0 +1,62 @@
+{% extends 'main/main-base.html' %}
+{% load i18n %}
+
+
+
+
+
+
+
+
+{% block content %}
+	{% include './main-sidebar.html' %}
+	<div class="col-lg-8 col-md-12">
+		
+
+
+		<h1>{% translate 'Django' %}</h1>
+
+		<p><b>Django</b> ({% translate 'from' %} <a href="https://en.wikipedia.org/wiki/Django_(web_framework)">Wikipedia</a>) {% translate '&#8220;is a Python-based free and open-source web framework that follows the model–template–views (MTV) architectural pattern. It is maintained by the Django Software Foundation (DSF), an American independent organization established as a 501(c)(3) non-profit. Django&#39;s primary goal is to ease the creation of complex, database-driven websites. The framework emphasizes reusability and &#39;pluggability&#39; of components, less code, low coupling, rapid development, and the principle of don&#39;t repeat yourself. Python is used throughout, even for settings, files, and data models. Django also provides an optional administrative create, read, update and delete interface that is generated dynamically through introspection and configured via admin models.&#8221;' %}</p>
+
+		<p>{% translate 'Django us a huge platform with many possibilities, which is one of the reasons it was selected as the framework to run MoReDaT, but it also means that it is a rather daunting task to begin to understand how it works. For more details, check out the' %} <a href="https://www.djangoproject.com/">Django Documentation</a> {% translate 'or one of many tutorials floating around the web.' %}</p>
+
+
+
+		<h3>{% translate 'How it works (in brief)' %}</h3>
+
+		<p>{% translate 'When you, as a user, visit a website, you send a request via your browser to the server hosting the website. When you visit a Django site, Django will first try to match the url of your request to a list of pre-defined urls that have been configured to work with the site. Typically urls are defined in a Django project (within the App subdirectories) in files called' %}
+			<ul>
+				<li><span class="code">urls.py</span></li>
+			</ul>
+		{% translate 'When the request url matches one of the patterns defined in <span class="code">urls.py</span> the specified views function is called.' %}	</p>
+
+
+		<p>{% translate 'The views functions that are called after a url pattern match are defined in' %}
+			<ul>
+				<li><span class="code">viwes.py</span></li>
+			</ul>
+		{% translate 'Views functions are responsible for fetching and processing data from the underlying database, processing that data and passing it to templates, which are rendered as html in the browser.' %}</p>
+
+
+		<p>{% translate 'Template files are a special type of html &mdash;<a href="https://docs.djangoproject.com/en/3.2/ref/templates/language/">Django Template Language</a>&mdash; typically stored within the relevant app, e.g.: <span class="code">example_app/templates/example_app/example_template.html</span>.' %}</p>
+
+
+		<p>{% translate 'Database tables are defined as class objects in' %}
+			<ul>
+				<li><span class="code">models.py</span></li>
+			</ul>
+		</p>
+
+
+		<p>{% translate 'Other stuff:' %}
+			<ul>
+				<li>Settings: <span class="code">settings.py</span> within the main app directory &ndash; various setting definitions are defined here. Perhaps most important is that apps need to be listed under <span class="code">INSTALLED_APPS</span>.</li>
+				<li>Management: <span class="code">manage.py</span> in project root. All sorts of project management can be accomplished with this file.</li>
+				<li>Admin: <span class="code">admin.py</span> in app directories. These files define what data from the App's models are displayed in the Admin pannel.</li>
+			</ul>
+		</p>
+
+
+
+	</div>
+{% endblock %}

@@ -1,0 +1,109 @@
+{% extends "main/main-base.html" %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'vidnar/vidnar-trial.css' %}">
+
+<div class="col-md-1"></div>
+<div class="col-md-10">
+    <h1>{% translate 'Video Narration' %}</h1>
+    <div> <!-- class="col-md-8"> -->
+        <div class="content-section">
+            <p>
+                {% if vid_set_obj.target_language == 'target_language' %}
+
+                    <img style="height:60px;" src="{% static 'vidnar/cues/cue_'|add:user_details.research_group.target_lang_short_name|add:'.png' %}">
+                    {% translate 'Video Narration: ' %} {{ vid_set_obj }} &mdash; video {{ vidnr }} of {{ num_vids }}
+
+                {% else %}
+
+                    <img style="height:60px;" src="{% static 'vidnar/cues/cue_'|add:user_details.research_group.other_langauge_short_name|add:'.png' %}">
+                    {% translate 'Video Narration: ' %} {{ vid_set_obj }} video {{ current_vid.sort_order }} of {{ vid_set_obj|length }}
+
+                {% endif %}
+
+            
+                <div style="width: 100%; height: 450px; background: lightgrey;position: relative; display: flex; justify-content: center;">
+
+
+                    <div id="loadingDataMessage" style="margin-top:25px; text-align:center;">
+                        <p>{% translate 'Video data is loading.' %}</p>
+                        <p>{% translate 'This will take a moment depending on your internet connection.' %}</p>
+                        <p style="margin-top:55px;">
+                            <img style="width:125px; height:125px;" src="{% static 'vidnar/cues/loading.gif' %}">
+                        </p>
+                    </div>
+
+                    <div style="padding:25px; display:none;" id="startTrialMessage">
+                        <p>
+
+                            {% if vid_set_obj.target_language == 'target_language' %}
+
+                            <p>Please describe the events to the best of your ability in <b>{{ user_details.research_group.target_language }}</b> as they happen.</p>
+
+                            {% else %}
+
+                            <p>Please describe the events to the best of your ability in <b>{{ user_details.research_group.other_language }}</b> as they happen.</p>
+
+                            {% endif %}
+
+                            <button class="btn btn-info" id="startTrialButton" style="display:none;">{% translate 'Start Video' %}</button>
+                        </p> 
+                    </div>
+
+                    <div id="startingTrialIn" style="display:none;">
+                        <p id="startingTrialInThree" style="display:none; text-align: center;top:25%;position: absolute;">{% translate 'Starting video in <b>3</b>...' %}</p>
+                        <p id="startingTrialInTwo" style="display:none; text-align: center;top:50%;position: absolute;">{% translate 'Starting video in <b>2</b>...' %}</p>
+                        <p id="startingTrialInOne" style="display:none; text-align: center;top:75%;position: absolute;">{% translate 'Starting video in <b>1</b>...' %}</p>
+                    </div>
+
+                    
+                    <video class="VidnarStimuli" id="vid_{{ vidnr }}" style="width: 100%; display: none;">
+                        <source src="{% static 'vidnar/vid/'|add:current_vid.filename %}" type="video/mp4">
+                    </video>
+                    
+                </div>
+            </p>
+            <div id="myProgress" style="display: none;">
+                <div id="myBar"></div>
+            </div>
+            <div class="elipsis" id="elipsis" style="display:none;">
+                {% translate 'Recording will stop in around <span id="stopRecordingTimeout"></span> seconds after the video <span class="d1">. </span><span class="d2">. </span><span class="d3">. </span>' %}
+            </div>
+            <!-- <button id="startTrialButton">{% translate 'Start Trial' %}</button> -->
+            <div style="height: 100px; justify-content: right;">
+                {% if next_vid_nr %}
+
+                <p id="nextButtonNotice" style="display: none; text-align: right;">{% translate 'Click Next to continue...' %}<br>
+                    
+                <a href="{% url 'vidnar-trial' vid_set_obj.slug next_vid_nr %}"><button class="btn btn-success" type="button">{% translate 'Next' %}</button></a>
+                    
+                </p>
+
+                {% else %}
+                <p id="nextButtonNotice" style="display: none; text-align: right;">{% translate 'Click Finish to finish...' %}<br>
+                    
+                <a href="{% url 'vidnar-finish' vid_set_obj.slug %}"><button class="btn btn-success" type="button">{% translate 'Finish' %}</button></a>
+                    
+                </p>
+
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    var currentBlock = '{{ vid_set_obj.slug }}';
+    var userRG = "{{ user_details.research_group.target_lang_short_name }}";
+    var vidnr = '{{vidnr}}';
+</script>
+<script type="text/javascript" src="{% static 'vidnar/vidnar-trial.js' %}"></script>
+
+{% endblock %}

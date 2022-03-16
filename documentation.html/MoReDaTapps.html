@@ -1,0 +1,50 @@
+
+
+
+<h1>MoReDaT Apps</h1>
+
+
+<p>MoReDaT apps are very much like other Django app directories, contianing 
+
+<ul>
+	<li>a <span class="code">migrations</span> direcory
+		<p>Contains database definitions (generated with <span class="code">python manage.py makemigrations</span> and applied to the database with <span class="code">python manage.py migrate</span></p>
+	</li>
+	<li>a <span class="code">templates</span> directory
+		<p>Contains html templates that receive data from views functions and render browser-ready html.</p>
+	</li>
+	<li>an <span class="code">admin.py</span> file
+		<p>Defines how the app can be interacted with in the admin panel</p>
+	</li>
+	<li>an <span class="code">apps.py</span> file
+		<p>app class</p>
+	</li>
+	<li>a <span class="code">forms.py</span> file
+		<p>Defines forms (if any) to be used in the app</p>
+	</li>
+	<li>a <span class="code">models.py</span> file
+		<p>Database tables are defined here as class objects</p>
+	</li>
+	<li>a <span class="code">urls.py</span> file
+		<p>Urls specific to the app are defined</p>
+	</li>
+	<li>a <span class="code">views.py</span> file
+		<p>Functions are defined to process database data (if necessare) and pass data to templates</p>
+	</li>
+</ul>
+
+Aditionally, other things may be included
+
+<ul>
+	<li>a <span class="code">templatetags</span> directory
+		<p>Contains custom template tags used in the app's templates.</p>
+	</li>
+	<li>a <span class="code">local</span> directory
+		<p>Contains .po and .mo files, related to translation and internationalization of a site</p>
+	</li>
+	<li>other files
+		<p>For instance, context processors or other support functions / classes</p>
+	</li>
+</ul>
+
+</p>

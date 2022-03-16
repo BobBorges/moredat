@@ -1,0 +1,30 @@
+{% extends 'main/main-base.html' %}
+{% load i18n %}
+
+
+
+
+
+
+
+
+{% block content %}
+	{% include './main-sidebar.html' %}
+	<div class="col-lg-8 col-md-12">
+
+
+		
+		<h1>{% translate 'Documentation' %}</h1>
+		
+		<p>{% translate '<b>MoReDaT</b> comes with a Documentation App. The Documentation App is essentially a wiki-type infrastructure with detailed information about MoReDaT and how to use MoReDaT. Check out the actual documentation' %}&nbsp;<a href="{% url 'documentation_index' %}">{% translate 'here' %}</a>. {% translate 'Extensive documentation about the Documentation App is not provided because a wiki-type site is not envisioned as a useful app for the purpose of language data collection.' %}</p>
+
+		<p>{% translate 'The Documentation App uses Django model objects to store documentation wiki pages. MoReDaT comes with documentation pages filled out, but these pages are not restricted, so users can add their own notes and revisions to their copy of MoReDaT documenttation as they explore. A user can add a new Documentation page via the Admin panel, however pages can be edited directly in the MoReDaT webpage running on localhost.' %}</p>
+
+
+
+		<h3>{% translate 'Acknowledgement' %}</h3>
+
+		<p>{% translate 'The documentation app was &#8220;inspired by&#8220;' %}&nbsp;<a href="https://github.com/bartTC/django-wakawaka">Wakawaka</a>&nbsp;{% translate 'In fact, relevant parts of the Wakawaka source code was copy-pasted directly to create the MoReDaT Documentation App. If you need a wiki-like app, check out' %}&nbsp;<a href="https://github.com/bartTC/django-wakawaka">Wakawaka</a>.</p>		
+
+	</div>
+{% endblock %}

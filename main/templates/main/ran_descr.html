@@ -1,0 +1,23 @@
+{% extends 'main/main-base.html' %}
+{% load i18n %}
+
+
+
+{% block content %}
+	{% include './main-sidebar.html' %}
+	<div class="col-lg-8 col-md-12">
+		<h1>{% translate 'RAN Task' %}</h1>
+		<hr>
+		<h2>{% translate 'Rationale' %}</h2>
+		<p>{% translate 'In order to get some idea about a participant&#39;s lexical recall (in connection with proficiency) sometimes a researcher might like to have the participant react to image stimuli presented rapidly and at consistent intervals. The task is essentially a rapid automatized picture naming task (hence RAN in the name).' %}</p>
+		<h2>{% translate 'How it works' %}</h2>
+		<p>{% translate 'The RAN app allows to construct a single task that displays blocks of stimuli at predefined speed and at regular intervals. The user does not control the speed or the progression of the stimuli blocks. Example stimuli (from the Bank of Standardized Stimuli) Are provided with MOREDAT. Stimuli are randomized and an order is defined for each user. During the RAN task, participants vocalizations are recorded for each trial; files saved in the media/recorded-audio directory.' %}</p>
+		<h2>{% translate 'See it in action' %}</h2>
+		<p>
+			{% translate 'Example RAN task:' %}&nbsp;<a href="{% url 'ran-welcome' %}">{% translate 'here' %}</a></p>
+		<h2>{% translate 'Read the Documentation' %}</h2>
+			{% translate 'App Documentation:' %}&nbsp;<a href="{% url 'documentation_page' slug='RanAppDocumentation' %}">{% translate 'here' %}</a> 
+		</p>
+
+	</div>
+{% endblock %}

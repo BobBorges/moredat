@@ -1,0 +1,43 @@
+{% extends 'main/main-base.html' %}
+{% load i18n %}
+
+
+
+{% block content %}
+	{% include './main-sidebar.html' %}
+	<div class="col-lg-8 col-md-12">
+		<h1>MoReDaT</h1>
+		<hr>
+		<p>MoReDaT :: <b>Mo</b>dular <b>Re</b>mote <b>Da</b>ta-collection <b>T</b>oolkit.</p>
+		<p>{% translate 'MoReDat is an example set of tools that will allow you to collect linguistic data over the web remotely. It is essentially a website, with backend written in Python/Django, divided into subsections &mdash; or Apps &mdash; that consist of a single "elicitation-type" task. This means that, while you might use this example project running on localhost to collect data during in-person fieldwork or as the basis for a whole new website for your remote data-collection needs, individual Apps can also be easily integrated into existing websites.' %}</p>
+		<hr>
+		<h2>{% translate 'Included Apps' %}</h2>
+		<p>
+			<ul>
+				<li>{% translate 'Automatized Picture Naming' %}</li>
+				<li>{% translate 'Free Media Upload' %}</li>
+				<li>{% translate 'Informed Consent' %}</li>
+				<li>{% translate 'Questionnaires' %}</li>
+				<li>{% translate 'Receptive Proficiency' %}</li>
+				<li>{% translate 'Self Paced Picture Naming' %}</li>
+				<li>{% translate 'Test User Audio IO' %}</li>
+				<li>{% translate 'Users (and authentication)' %}</li>
+				<li>{% translate 'Video Narration' %}</li>
+				<li>{% translate 'Word List Translation' %}</li>
+			</ul>
+		</p>
+		<hr>
+		<h2>{% translate 'Getting started' %}</h2>
+		<p>By default the database with this example project is initiated with a single admin user <span class="code">admin</span> who user <span class="code">admin_passwd123</span> as a password. You can log in as <span class="code">admin</span> on both the public side and the admin panel (localhost:8000/admin) to explore.</p>
+		<p>{% translate 'It is also possible to see most of the apps in action. There are two example users <span class="code">DOT_user</span> and <span class="code">VAL_user</span>; both users can be accessed with the password <span class="code">user_passwd123</span>' %}</p>
+		<p>{% translate 'Documentation is provided with this example site.' %}
+			<ul>
+				<li><a href="{% url 'quickstart' %}">{% translate 'Quick Start Guide' %}</a></li>
+				<li><a href="{% url 'documentation_page' slug='DocumentationLanding' %}">{% translate 'Documentation Wiki' %}</a></li>
+			</ul>
+		</p>
+		<hr>
+		<h2>{% translate 'Licence' %}</h2>
+		<p>License stuff goes here...</p>
+	</div>
+{% endblock %}

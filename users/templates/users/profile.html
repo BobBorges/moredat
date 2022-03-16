@@ -1,0 +1,94 @@
+{% extends "main/main-base.html" %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+
+
+
+
+
+{% block content %}
+
+
+
+	<!-- SIDEBAR -->
+	<div class="col-lg-4 col-md-12">
+		<div class="content-section">
+			<h3>{% translate "Research Tasks" %}</h3>
+			<p class="text-muted">
+				<ul class="list-group">
+
+					{% if user_consented == False %}
+
+						<li class="list-group-item list-group-item-light"><a href="{% url 'get-consent' %}">{% translate 'Informed Consent' %}</a></li>
+					
+					{% else %}
+
+						{% if assigned_tasks %}
+						
+							{% for at in assigned_tasks %} 
+								{% if at.complete %}
+
+									<li class="list-group-item list-group-item-light">{{ at.task }}</li>
+
+								{% else %}
+
+									{% if at.task.url_arg %}
+										<li class="list-group-item list-group-item-light"><a href="{% url at.task.url_name at.task.url_arg %}">{{ at.task }}</a></li>
+									{% else %}
+										<li class="list-group-item list-group-item-light"><a href="{% url at.task.url_name %}">{{ at.task }}</a></li>
+									{% endif %}						
+								
+								{% endif %}
+							{% endfor %}
+
+						{% else %}
+						
+							<li>No UD</li>
+						
+						{% endif %}
+
+					{% endif %}
+					
+				</ul>
+			</p>
+		</div>
+	</div>
+
+
+
+
+
+
+	<!-- CONTENT SECTION -->
+	<div class="col-lg-8 col-md-12">
+
+		{% if request.user.username == 'admin' %}
+			<p>{% translate 'You&#39;re logged in as the admin user. Go to the Admin panel:' %}&nbsp;<a href="/admin/">here</a></p>
+			<hr>
+		{% endif %}
+		<h2>User Profile</h2>
+
+		<p>Assigned Tasks for {{ request.user }}, User ID: {{ request.user.id }}
+			<ul> 
+			{% for task in assigned_tasks %}
+				<li>{{ task.task }}</li>
+			{% endfor %}
+			</ul>
+		</p>
+		{% if user_details != None %}
+			<p>Research Group ID: {{ user_details.research_group_id }}</p>
+			<p>Research Group = {{ user_details.research_group }}</p>
+		{% else %}
+			<p>User must provide details.</p>
+		{% endif %}
+		<p>Complete = {{ num_completed_tasks }}</p>
+		<p>Assigned = {{ num_assigned_tasks }}</p>
+
+	</div>
+
+
+
+{% endblock %}

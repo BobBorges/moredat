@@ -1,0 +1,31 @@
+{% extends 'main/task-base.html' %}
+{% load static %}
+{% load i18n %}
+
+
+
+
+
+
+{% block content %}
+	<div class="col-lg-2 col-md-12"></div>
+	<div class="col-lg-8 col-md-12">
+		{% if user.is_authenticated and user.get_username == 'admin' %}
+		<h1>{% translate 'Wordlist Translation landing page' %}</h1>
+		<br>
+		<p>{% translate 'Below is a list of <b>Available Wordlists</b> for the Wordlist Translation task and a brief description of each. You can see this because you are logged in as the admin user.<br><br>N.B. Available word lists are NOT necessarily assigned to a Task object. If you click a link in the below list and it fails, it is probably because the set has not been assigned to a Task Object (do this in the Admin panel.' %}</p>
+		<hr>
+		<ul>
+			{% for WL in wordlist_sets %}
+			<li><a href="{% url 'wlt-welcome' WL.slug %}">{{ WL.name }}</a>
+				<p>{{ WL.description|safe }}</p>
+			</li>
+			{% endfor %}
+		</ul>
+		{% else %}
+			<h1>{% translate 'Oops!!' %}</h1>
+			<p>{% translate 'You should&#39;t be here. Use the back button or head over to --->' %}&nbsp;<a href="{% url 'profile' %}">{% translate 'Profile' %}</a></p>
+		{% endif %}
+	</div>
+	<div class="col-lg-2 col-md-12"></div>
+{% endblock %}

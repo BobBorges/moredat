@@ -1,0 +1,21 @@
+{% extends 'main/task-base.html' %}
+{% load static %}
+{% load i18n %}
+
+
+
+
+
+
+{% block content %}
+	<div class="col-lg-2 col-md-12"></div>
+	<div class="col-lg-8 col-md-12">
+		<h1 style="text-align:left;">Questionnaire Finish</h1>
+		<br>
+		<p>Thanks for finishing the questionnaire: {{ questionnaire.name }}.</p>
+		 <div class="form-group">
+		 	<p>Go to your profile:</p>
+		 	<a href="{% url 'profile' %}"><button class="btn btn-outline-info">Profile</button></a>
+		 </div>
+	</div>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'main/main-base.html' %}
+{% load i18n %}
+
+
+
+
+
+
+
+
+{% block content %}
+	{% include './main-sidebar.html' %}
+	<div class="col-lg-8 col-md-12">
+
+
+
+		<h1>{% translate 'Informed Consent Form App' %}</h1>
+		<hr>
+
+		<h2>{% translate 'Rationale' %}</h2>
+		<p>{% translate 'Conducting ethical research with humans usually requires that participants / subjects are informed about the research they participate in. The MoReDaT Informed Consent Form is a tool that allows the researcher / data-collection site admins to present such information and ask for participants&#39; consent. Consent is built into MoReDat and by default, a user is required to consent before s/he can access research tasks and participate further.' %}</p>
+
+
+
+		<h2>{% translate 'How it works' %}</h2>
+
+		<p>{% translate 'Upon creation of a new user (' %}<a href="{% url 'users-descr' %}">users</a> {% translate 'app), the new user is assigned the task to consent to the research program. The consent model is a simple model with a User object and a boolean value showing whether the user has consented to the research program or not. At the start of each research task, the consent model is queried and the user may not provide and further data about themselves or complete research tasks until and unless they provide their consent to participate. Additionally, until the consent assignment (Assigned Tasks in users model) is marked complete, links to other research tasks will not be visible on the user&#39;s profile.' %}</p>
+
+		<p>{% translate 'The consent app allows you as the researcher to display a(n abbrebiated) version of your consent form as html directly in the app&#39;s form. As well the end user can download a pdf version of your consent form for his/her records.' %}</p>
+
+		<p>{% translate 'Upon consent, the Consent App redirects the user to the Get User Details form (' %}<a href="{% url 'get-user-details' %}">users</a> {% translate 'app), where s/he selects the relevant research group and provides gender and DOB; then they are redirected to their individual profile.' %}</p>
+
+
+
+		<h2>{% translate 'See it in action' %}</h2>
+
+		<p>{% translate 'See the MoReDaT Example Informed Consent Form:' %}&nbsp;<a href="{% url 'get-consent' %}">{% translate 'here' %}</a></p>
+
+
+
+		<h2>{% translate 'Read the Documentation' %}</h2>
+
+		<p>{% translate 'App Documentation:' %}&nbsp;<a href="{% url 'documentation_page' slug='ConsentAppDocumentation' %}">{% translate 'here' %}</a></p>
+
+	</div>
+{% endblock %}

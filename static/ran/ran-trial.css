@@ -1,0 +1,72 @@
+.cue1 {
+	height:60px;
+}
+
+#stimBox {
+	width: 100%; 
+	height: 300px; 
+	background: lightgrey;
+	position: relative; 
+	display: flex; 
+	justify-content: center;
+}
+
+#stimBox > div {
+	padding: 25px;
+}
+
+#startTrialButton {
+	display: none;
+}
+
+#startingTrialIn {
+	display: none;
+}
+
+#startingTrialIn > p {
+	display:none; 
+	text-align: center;
+	position: absolute;
+}
+
+#startingTrialInThree {
+	top: 25%;
+}
+
+#startingTrialInTwo {
+	top: 50%;
+}
+
+#startingTrialInOne {
+	top: 75%;
+}
+
+#focusDot {
+	width: 25px; 
+	top: 50%; 
+	position: absolute; 
+	-ms-transform: translateY(-50%); 
+	transform: translateY(-50%); 
+	display: none; 
+	margin: auto;
+}
+
+.RANStim {
+	width: 250px; 
+	top: 50%; 
+	position: absolute; 
+	-ms-transform: translateY(-50%); 
+	transform: translateY(-50%); 
+	display: none; 
+	margin: auto;
+}
+
+.bottomDiv {
+	height: 100px; 
+	justify-content: right;
+}
+
+.bottomDiv > p {
+	display: none; 
+	text-align: right;
+}
