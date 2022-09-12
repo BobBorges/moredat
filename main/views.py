@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.utils.translation import gettext as _
 import logging
+from .models import *
 
 
 
@@ -36,6 +37,8 @@ def credits_view(request):
 	context = {
 		"title": "MoReDaT Credits"
 	}
+	context['acknowledgements'] = AcknowledgedContribution.objects.all()
+	context['references'] = CitedReference.objects.all()
 	return render(request, 'main/credits.html', context)
 
 

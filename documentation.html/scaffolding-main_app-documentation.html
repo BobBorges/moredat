@@ -1,0 +1,81 @@
+<h2>Scaffolding: <span class="code">main</span> app</h2>
+
+
+    <h3>Rationale</h3>
+
+        <p>This is where all the Django / MOREDAT infrastructure magic happens. The <span class="code">main</span> app defines the root of the project's URLs, the main landing views / pages (those that are nat part of another app), overall settings for the whole program, including which apps are 'active', and which tasks are/can be assigned to users.</p>
+
+
+
+    
+    <h3>Components</h3>
+
+
+        <h4>Models</h4>
+
+            <ul>
+                <li>AcknowledgedContribution</li>
+    
+                    <p>This Model has a "person" and a "reason" field, such that contributors to MOREDAT are acknowledged by name in the "person" field and for what contribution in the "reason" filed. Acknowledgments are listed on the "Credits page" (view: <span class="code">credits_view()</span>; template: <span class="code">credits.html</span></p> 
+
+    
+                <li>CitedReference</li>
+    
+                    <p>This Model has fields "item_title", "creators", "production_date", "persistent_id", and "full_reference". It is intended that published works which contributed to the design or motivation of fields will be listed here. CitedReference objects are also listed on the "Credits" page.</p> 
+
+        
+                <li>Tasks</li>
+    
+                    <p>The tasks Model is a database table that contains all the tasks designed by the researcher. Unlike the other two models in the <span class="code">main</span> app, the Tasks Model is necessary for the functionality of MOREDAT. In the case when MOREDAT apps are cherry picked to an existing website, the Tasks Model must be replicated somewhere in the project structure of that site.</p>
+
+                <p>Fields:
+                    <ul>
+                        <li>task: name of the task</li>
+                        <li>url_name: URL to task</li>
+                        <li>app_name: name of app task is built on</li>
+                        <li>model_name: name of Model the task is built on</li>
+                        <li>url_arg: (optional) variable second component of task URL</li>  
+                    </ul>
+                </p>    
+                
+            </ul>   
+
+
+
+
+        <h4>Views and Templates</h4>
+
+            <p>The Views and templates from the <span class="code">main</span> app render landing pages for the scaffolding and elicitation apps' basic descriptions. Views in the main app are most basic, consisting of a function that simply returns a template – with the exception of the <span class="code">credits_view()</span> none of the main apps make any calls to the database. Function names are transparently linked to the <span class="code">main</span> app's templates by their file names.</p>
+
+
+
+    
+        <h4>URLs</h4>
+
+            <p>In the <span class="code">main</span> app, the <span class="code">urls.py</span> file defines the urls for the scaffolding site, elicitation apps' descriptions, and paths to the actual elicitation apps. Additionally, as the root url specification, this file also defines paths to static and media files, to the admin pages, and for internationalization (translation infrastructure, <span class="code">i18n</span>).</p>
+
+    
+        <h4>Settings</h4>
+    
+            <p>The <span class="code">settings.py</span> file defines a number of global settings for the MOREDAT project, including:
+                <ul>
+                    <li>The base directory (folder) for the entire project</li>
+                    <li>The hosts allowed to access the site (set to localhost, but for a site on the public internet, the setting needs to be changed)</li>
+                    <li>Installed apps: all the apps and installed pip packages used need to be listed here</li>
+                    <li>Root URL configuration</li>
+                    <li>Database configuration</li>
+                    <li>Template configuration</li>
+                    <li>Internationalization configuration</li>
+                    <li>Media and static file director configuration</li>
+                </ul>
+            </p>    
+    
+
+        <h4>Template Tags</h4>
+
+
+
+
+
+    
+    
