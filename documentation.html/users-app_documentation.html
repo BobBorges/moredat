@@ -1,129 +1,172 @@
 
 
 
-<h2>The Users App</h2>
 
+<h2>Scaffolding: the <span class="code">users</span> app</h2>
 
+    <h3>Rationale</h3>
 
+        <p>The users app provides a means for keeping track of individual users and customizing how MOREDAT interacts with individual and groups of users. It relies on Django's default User Authentication with a few additions &mdash; a model for storing additional details from idividual users (research group, self-directed bio, gender, picture), a model for differentiating research groups (group name, short-name, language, second-language, description, slug), an assigned tasks model (user, task, complete), and a model for default assigned tasks per research group (group name, task). The User object is the foreign key for the results of the research tasks that generate database data; the user ID number is included in audio data generated. This means that we have a means for research participants to be authenticated by the site and research participants can be designated to research groups; research tasks can be assigned to them based on their group membership.</p>
 
-<h3>Rationale</h3>
 
 
-<p>The users app provides a means for keeping track of individual users and customizing how MoReDaT interacts with individual and groups of users. It relies on Django's default User Authentication with a few additions &mdash; a model for storing additional details from idividual users (research group, self-directed bio, gender, picture), a model for differentiating research groups (group name, short-name, language, second-language, description, slug), an assigned tasks model (user, task, complete), and a model for default assigned tasks per research group (group name, task). The User object is the foreign key for the results of the research tasks that generate database data; the user ID number is included in audio data generated. This means that we have a means for research participants to be authenticated by the site and research participants can be designated to research groups; research tasks can be assigned to them based on their group membership.</p>
 
+    <h3>How it works</h3>
 
+        <p>The researcher must first define research groups with the ResearchGroups model &mdash; this can be done in the admin panel. Two <i>language</i>' fields are provided ('language' and 'L2') because often in questionnaires, we are interested in how our informants view their sociolinguistic setting, e.g. a minority language and a national language, thus these can be defined here. Once research groups are defined, default tasks can be assigned to those research groups (the DefaultAssignedTasksByGroup model). The MOREDAT example project consent form redirects users, on completion, to the UserDetails form, where they choose the research group to which they belong. On successful completion of the UserDetails form, default tasks will be assigned to that user automatically according to the research group they joined via the <span class="code">get_user_details()</span> view function in <span class="code">users/views.py</span>.</p>
 
+        <p>Research groups and default assigned tasks are managed in the admin panel. By default The AssignedTasks model is handled by by <span class="code">register()</span> (give consent and user details) and <span class="code">get_user_details()</span> (all the rest) in <span class="code">users/views.py</span>. It's possible to manually assign tasks to users in the admin panel, but by design, it shouldn't be necessary. Tasks (in the main app) do need to be defined manually.</p>
 
-<h3>How it works</h3>
 
 
-<p>The researcher must first define research groups with the ResearchGroups model &mdash; this can be done in the admin panel. Two <i>language</i>' fields are provided ('language' and 'L2') because often in questionnaires, we are interested in how our informants view their sociolinguistic setting, e.g. a minority language and a national language, thus these can be defined here. Once research groups are defined, default tasks can be assigned to those research groups (the DefaultAssignedTasksByGroup model). The MoReDaT example project consent form redirects users, on completion, to the UserDetails form, where they choose the research group to which they belong. On successful completion of the UserDetails form, default tasks will be assigned to that user automatically according to the research group they joined via the <span class="code">get_user_details()</span> view function in <span class="code">users/views.py</span>.</p>
 
-<p>Research groups and default assigned tasks are managed in the admin panel. By default The AssignedTasks model is handled by by <span class="code">register()</span> (give consent and user details) and <span class="code">get_user_details()</span> (all the rest) in <span class="code">users/views.py</span>. It's possible to manually assign tasks to users in the admin panel, but by design, it shouldn't be necessary. Tasks (in the main app) do need to be defined manually.</p>
+    <h3>Components</h3>
 
+        <h4>Models</h4>	
 
+            <ul>
 
+                <li>AssignedTasks</li>
 
-<h2>Components</h2>
+                    <p>This model is a table to manage Tasks assigned to users. It consists of three fields:
+                        <ul>
+                            <li>user: foreign key to the User object (Django built-in auth)</li>
+                            <li>task: foreign key to the Tasks object (main/models.py Tasks)</li>
+                            <li>complete: Bool field, whether the assigned task is complete</li>
+                        </ul>   
+                    By default, AssigendTasks do not need to be managed manually -- they are assigned via group membership (see DefaultAssignedTasksByGroup) -- though they can be assigned via the admin panel.</p>
 
+    
+                <li>DefaultAssignedTasksByGroup</li>    
 
-<h3>Models</h3>	
+                    <p>This model defines which tasks are assigned to which research group by default -- that is once a user registers, s/he first consents, then fills in the <span class="code">UserDetailsForm()</span> (from the <span class="code">UserDetails()</span> Model), and taks are assigned depending on their response to the research_group field. The DefaultAssignedTasksByGroup model is managed via the admin panel. Tasks (<span class="code">main/models.py</span>) and ResearchGroups (<span class="code">users/models.py</span>) need to be defined before they can be used within this model.</p>
 
-	<h4>ResearchGroups</h4>
+    
+                <li>ResearchGroups</li>
 
-	<p>ResearchGroups are managed via the admin panel. Fields can be viewed and populated there.</p>
+                    <p>This model defines groups within which participants can be classified. Tasks objects can be defined and assigned to specific groups. The fields are:
+                        <ul>
+                            <li>group name: freetext name of group</li>
+                            <li>target_language: the language of the group being researched</li>
+                            <li>other_language: a secondary language pertinent to the research context</li>
+                            <li>target and other language _short_name: usually a 3-letter iso-code designating the languages</li>
+                            <li>description: freetext description of the group</li>
+                            <li>slug: a slugfield related to the group name</li>
+                        </ul>  
+                    ResearchGroups are managed via the admin panel. Fields can be viewed and populated there.</p>
+    
 
+                <li>UserDetails</li>
 
-	<h4>UserDetails</h4>
+                    <p>The UserDetails model stores basic info about the user:
+		                <ul>
+                            <li>user: a foreign key field (the Django.auth user object)</li> 
+			                <li>research_group: the research group to which the user belongs</li>
+			                <li>birth_date: Date of birth of user</li>
+			                <li>gender: the user's gender</li>
+			                <li>user_bio: a user autobiography*</li>
+			                <li>profile_pic: a user profile pic*</li>
+		                </ul>
+                    UserDetails fields are populated by the User with the <span class="code">UserDetailsForm()</span> / <span class="code">get_user_details()</span> view. The user_bio and profile_pic fields are currently not implemented anywhere outside the admin pannel – forms could be created and these forms/fields added for viewing and management by the user in the <span class="code">profile()</span> view.</p>
 
-	<p>The UserDetails model stores basic info about the user:
-		<ul>
-			<li>the research group to which the user belongs</li>
-			<li>Date of birth</li>
-			<li>the user's gender</li>
-			<li>a user autobiography</li>
-			<li>a user profile pic</li>
-		</ul>
-	UserDetails fields are populated by the UserDetailsForm(), the Autobiography() form, and the UpdatePicture() form.
-	</p>
+            </ul>   
 
 
-	<h4>AssignedTasks</h4>
 
-	<p>By default, AssigendTasks do not need to be managed manually, though they can be assigned via the admin panel.</p>
+        <h4>Views and Templates</h4>    
+	
+            <ul>
+                <li>register()</li>
+    
+                    <p>The register function renders the RegisterUser() form to the register.html template. Upon successful submission of the form, a new user is created and assigned the Tasks &ndash; consent and get-user-details. Absence of a completed consent Task will cause the user to be redirected to the consent Task (in the consent app) when navigating to any other data-generating taks within the site.The get-user-details task will assign further tasks depending on the response to the research_group field.</p>
 
+    
+                <li>get_user_details()</li>   
 
-	<h4>DefaultAssignedTasksByGroup</h4>
+                    <p>This function passes the UserDetails() form and passes it to the user-details.html template. On successful submission of the form the form fields are added to the user's UserDetails Model instance.</p>
 
-	<p>The DefaultAssignedTasksByGroup is managed via the admin panel. Tasks (<span class="code">main/models.py</span>) and ResearchGroups need to be defined before they can be linked in this model.</p>
 
+                <li>profile()</li>
 
-<h3>Views</h3>
+                    <p>This function displays the user's basic info and status of their AssignedTasks in the profile.html template. The user profile displays info about the user, UserDetails and active links to unfinished assigned tasks. These data are available throughout the whole MOREDAT project, thanks to the <span class="code">custom_context_processor.py</span> (see below).</p>
+    
+            </ul>   
 
-	<h4>register()</h4>
 
-	<p>The register function sends the RegisterUser() form to the register.html template. Upon successful submission of the form, a new user is created and assigned tasks &ndash; consent and get-user-details</p>
 
+    
+        <h4>Forms</h4>
 
-	<h4>get_user_details()</h4>
+            <ul>
 
-	<p>This function calls the UserDetails form and passes it to the user-details template. On successfult submission of the form the form fields are added to the user's UserDetails Model instance.</p>
+	            <li>RegisterUser()</li> 
 
+                    <p>ModelForm corresponding to the Django auth User model.</p> 
+    
+	            <li>UserDetailsForm()</li>  
 
-	<h4>profile()</h4>
+                    <p>ModelForm corresponding to the users/models.py UserDetails model</p> 
+    
+            </ul>
 
-	<p>This function displays the profile.html template. The user profile displays info about the user, UserDetails and active links to unfinished assigned tasks. The profile view also contains the Autobiography form and UpdatePicture form where users can provide a self-directed description and picture of themselves. Both forms populate the UserDetails model.</p>
 
 
-<h3>Forms</h3>
+        <h4>URLs</h4>
 
-	<h4>RegisterUser()</h4>
 
-	<h4>UserDetailsForm()</h4>
+            Do this!
 
-	<h4>Autobiography()</h4>
+            
 
-	<h4>UpdatePicture()</h4>
 
+    
+    
+    
+        <h4>custom_context_processor.py</h4>
 
-<h3>custom_context_processor.py</h3>
+            <p>This function (also named <span class="code">get_user_details()</span>, unfortunately &mdash; not to be confused with the views function) makes the following details about a logged in user available as context variables accross the whole MoReDaT example site:
+	            <ul>
+		            <li>the UserDetails object</li>
+		            <li>the user's assigned tasks</li>
+		            <li>a bool about the user's consent status</li>
+		            <li>the number of a user's assigned tasks</li>
+		            <li>the number of tasks the user has completed</li>
+	            </ul>
+            This is necessarily registered in the main/settings.py file under TEMPLATES - OPTIONS - context_processors.
+            </p>
 
-<p>This function (also named <span class="code">get_user_details()</span>, unfortunately &mdash; not to be confused with the views function) makes the following details about a logged in user available as context variables accross the whole MoReDaT example site:
-	<ul>
-		<li>the UserDetails object</li>
-		<li>the user's assigned tasks</li>
-		<li>a bool about the user's consent status</li>
-		<li>the number of a user's assigned tasks</li>
-		<li>the number of tasks the user has completed</li>
-	</ul>
-</p>
 
 
-<h3>task_checker.py</h3>
+    
+        <h4>task_checker.py</h4>
 
-<p>The Task Checker checks incomplete Tasks (<span class="code">main/models.py</span>) assigned to the current user, and if a task has been completed since the last time the Task Checker has been called, the bool for that task is updated. The task checker is called each time the user loads his/her profile page.</p>
+            <p>The Task Checker checks incomplete Tasks (<span class="code">main/models.py</span>) assigned to the current user, and if a task has been completed since the last time the Task Checker has been called, the bool for that task is updated. The task checker is called each time the user loads his/her profile page.</p>
 
+    
 
 
-<h2>Customizations</h2>
+    <h3>Customizations</h3>
 
+        <h4>Registration</h4>
 
-<h3>User Details: Already done that</h3>
+            <p>On a site connected to the public internet, it would be prudent to add some email verification to the registration process in order to avoid spam and robot users.</p>
 
-<p>If a user navigates to the get-UD url, s/he will see a warning message that the user details have already been provided. Entering new info will do nothing to the database. As a researcher, you probably want to change this behavior, e.g. to redirect the user to his/her profile. This can be changed on lines 48 and 49 of <span class="code">users/views.py</span>.</p>
+        <h4>User Details: Already done that</h4>
 
+            <p>If a user navigates to the get-UD url, s/he will see a warning message that the user details have already been provided. Entering new info will do nothing to the database. As a researcher, you probably want to change this behavior, e.g. to redirect the user to his/her profile. This can be changed on lines 48 and 49 of <span class="code">users/views.py</span>.</p>
 
-<h3>User Details: Gender</h3>
+    
+        <h4>User Details: Gender</h4>
 
-<p>Add/edit/remove gendner options in <span class="code">users/models.py</span> just above the UserDetails class definition.</p>
+            <p>Add/edit/remove gendner options in <span class="code">users/models.py</span> just above the UserDetails class definition.</p>
 
 
-<h3>User Details: assigning research group</h3>
+        <h4>User Details: assigning research group</h4>
 
-<p>By default, MoReDaT allows users to chose their own research group. They can be assgned to a default group, e.g. if there's only one target group by setting the default or initial value in the UserDetails model and removing the field from UserDetailsForm. Other solutions are possible but would require more complex customizations beyond the scope of this documetnation.</p>
+            <p>By default, MoReDaT allows users to chose their own research group. They can be assgned to a default group, e.g. if there's only one target group by setting the default or initial value in the UserDetails model and removing the field from UserDetailsForm. Other solutions are possible but would require more complex customizations beyond the scope of this documetnation.</p>
 
 
-<h3>User Details: Assigning tasks</h3>
+        <h4>User Details: Assigning tasks</h4>
 
-<p>Default task sets are assigned by the <span class="code">get_user_details()</span> function of <span class="code">users/views.py</span>. This behavior can be changed there.</p>
+            <p>Default task sets are assigned by the <span class="code">get_user_details()</span> function of <span class="code">users/views.py</span>. This behavior can be changed there.</p>
 
