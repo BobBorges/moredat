@@ -1,0 +1,79 @@
+
+
+
+
+<h2>The Informed Consent App</h2>
+
+	<h3>Rationale</h3>
+
+        <p>Conducting ethical research with human usually requires that participants / subjects are informed about the research they participate in. The MoReDaT Informed Consent Form is a tool that allows the researcher / data-collection site admins to present such information and ask for participants&#39; agreement. Consent is built into MoReDat and by default, a user is required to consent before s/he can access research tasks and participate further.</p>
+
+
+
+    
+    <h3>How it works</h3>
+
+        <p>Upon creation of a new user (<a href="#">users</a> app), the new user is assigned the task to consent to the research program. The consent model is a simple model with a User object and a boolean value showing whether the user has consented to the research program or not. At the start of each research task, the consent model is queried and the user may not provide and further data about themselves or complete research tasks until and unless they provide their consent to participate. Additionally, untill the consent assignment (Assigned Tasks in users model) is markd complete, links to other research tasks will not be visible on the user&#39;s profile.</p>
+
+        <p>The consent app allows you as the researcher to display a(n abbrebiated) version of your consent form as html directly in the app&#39;s form. As well the end user can download a pdf version of your consent form for his/her records.</p>
+
+        <p>Upon consent, the Consent App redirects the user to the Get User Detaisl form (<a href="#">users</a> app), where s/he selects the relevant research group and provides gender and DOB; then they are redirected to their individual profile.</p>
+
+
+
+    
+    <h3>Components</h3>
+
+	    <h4>Models</h4>
+
+            <p>There's just one model, <span class="code">UserConsent()</span>, a simple bool filed associated with a User instance via a foreign key field. True means the user has consented.</p>
+
+
+
+        
+    	<h4>Views and Templates</h4>
+
+		    <p>There are two views in the Consent App
+			    <ul>
+				    <li><span class="code">get_user_consent()</span></li>
+    
+                        <p>This displays an overview of the researcher defined consent conditions along with a simple form (<span class="code">consent/forms.py GetUserConsent()</span>)  to take the user input. Text for the consent form is defined in the lines directly above the view function in <span class="code">views.py</span> and passed to the template <span class="code">consent-form.html</span>; the text should be replaced by a real consent form corresponding to the researcher&#39;s project. Consent form text categories can be customized by adding/editing/removing context variables in the View function and in the corresponding template.</p>
+
+				    <li><span class="code">dl_consent_form()</span></li>
+    
+                        <p>This allows the user to download a pdf version of the researcher&#39;s consent form, stored at <span class="code">static/consent/docs/consent-form.pdf</span>. There is not actually an html template rendered after this function, rather the browser prompts the user to display or download the pdf direvtly.</p>
+
+                </ul>
+		    </p>
+
+
+    
+    
+        <h4>Forms</h4>
+
+            <p>There's just one form in <span class="code">consent/forms.py</span> diplayed by the <span class="code">get_user_consent()</span> View. Customize the form input label consent form asset download link.</p>
+
+
+    
+
+        <h4>URLs</h4>
+
+            <p>URL paths and corresponding View functions are transparently linked by the variable names</p>
+
+
+
+    
+        <h4>Static files</h4>
+
+            <p>File versions of the consent text are stored in <span class="code">static/consent/docs/</span>. Links should be customized to these forms in the <span class="code">forms.py</span> file.</p>   
+
+
+    
+
+    <h3>Customizations</h3>
+
+    	<h4>Already done that</h4>
+
+            <p>Currently if a user has already consented, <span class="code">get_user_consent()</span> function will display the consent form with a warning message that it has already been completed. Change this behavior on lines 50 and 51 of <span class="code">views.py</span>; you could, for instance, redirect to the get-UD url of the users app, redirect to the users profile, or similar.</p>
+
+    

@@ -1,31 +1,40 @@
 
+    
 
 
-<h1>MoReDaT Scaffolding</h1>
+<h2>MOREDAT Scaffolding</h2>
 
-<p>In order to make MoReDaT Apps operable and testable, it is built around the most basic parts of a Django website. This is referred to in the documentation as Scaffolding.</p>
-
-<h2>What is MoReDaT Scaffolding?</h2>
-
-<p>Under ordinary circumstances, a new Django project (lets say "MyApp") will consist of a <span class="code">MyApp</span> directory containing the <span class="code">manage.py</span> file and anothr <span class="code">MyApp</span> directory which contains the <span class="code">settings.py</span> configuration file and the root <span class="code">urls.py</span> configuration file. Other apps are then built around these basic components – usually a new app gets a new subdirectory within the top-level <span class="code">MyApp</span> directory.</p>
-
-<p>In the MoReDaT instance, we don't have another <span class="code">MOREDAT</span> directory inside the top-level <span class="code">MOREDAT</span> directory. This was in order to contain all necessary elements to run the basic functionality of the site inside one MOREDAT sub-directory. The <span class="code">main</span> subdirectory of <span class="code">MOREDAT</span> contains <span class="code">settings.py</span> and the root <span class="code">urls.py</span> file, but also functions as an app in itself. The <span class="code">main</span> app responsible for displaying the MoReDaT language page, app descriptoins, and credits. All other directories, with the exception of <span class="code">static</span> (and the python virtual environment directory, if applicable) are detachable MoReDaT modules. This main app is primarily what is referred to as Scaffolding in this documentation.</p>
-
-<p>The Users App serves as a kind of go-between, linking the Scaffolding from the modular apps. Extra care is needed when reusing / integrating this app into another project. Its functionality is based on Django's default authentication, but with some MoReDaT specific functionality. Care should be take to understand these functionalities in order to replicate them in a site serving as host for a MoReDaT module app.</p>
-
-<p>Finally, it must be mentioned that there is one database model in the <span class="code">main</span> app. This model &ndash; Tasks &ndash; is a list of tasks the researcher will include (e.g. a questionnaire instance) in their site and assign to research subjects. As this model is neither directly related to any of the MoReDaT apps, nor user instances, it has been included in <span class="code">main</span>. A similar model must be included somewhere in a site that will host a MoReDaT app.</p>
+    <p>In order to make MOREDAT Apps operable and testable "out of the box", it is built around the most basic parts of a Django website. This is referred to in the documentation as Scaffolding.</p>
 
 
-<h3>The <span class="code">settings.py</span> file</h3>
 
-<p>The most importand info regarding the settings file is that all apps that one wishes to work with on a host site need to be listed in the <span class="code">INSTALLED_APPS</span> list. List entries refer to the class name of an app in the file <span class="code">apps.py</span>. So an entry like <span class="code">'consent.apps.ConsentConfig'</span> &ndash; this refers to the <span class="code">consent</span> directory ---&gt; <span class="code">apps.py</span> file ---&gt; <span class="code">ConsentConfig</span> class. </p> 
+    
+    <h3>What is MOREDAT Scaffolding?</h3>
+
+        <p>Scaffolding consists of:
+            <ul>
+                <li>two apps, <span class="code">main</span> and <span class="code">users</span></li></br>
+
+                    <p>The <span class="code">main</span> app is the root of MOREDAT; it contains the necessary infrastructural components to support a fully functional Django project.</p>
+    
+                    <p>It is described here in full: ScaffoldingApp/MainApp</p>
+
+    
+                    <p>The <span class="code">users</span> app is...</p>    
+
+                    <p>It is described here in full: ScaffoldingApp/UsersApp</p>
+
+    
+                <li><span class="code">static</span> and <span class="code">media</span> directories and files</li>
+
+                <li>a development database <span class="code">database.sqlite3</span>
+
+                <li>the <span class="code">manage.py</span> file</li>
+
+            </ul>
+        </p>    
+    
 
 
-<h3>The <span class="code">urls.py</span> file</h3>
-
-<p>The list of urls in this instance of <span class="code">urls.py</span> points to all views functions (in <span class="code">main/views.py</span>) that are part of the MoReDaT Scaffolding (app descriptions, etc), and towards the end of the list, urls that point to installed apps. The <span class="code">include()</span> function contained in these url definitions point django to the url configuration for individual apps.</p>
-
-
-<h3>The <span class="code">templates</span> directory and the html base</h3>
-
-<p>Generally an app renders its own specific html templates with data passed from views.py. IN the <span class="code">main/templates</span> directory there are two special template files &ndash; <span class="code">main-base.html</span> and <span class="code">task-base.html</span>. within these files, the main html structure is defined and the document header (including the horizontal navbar) and footer is defined. All other templates in MoReDaT "extend" these templates (<span class="code">main-base.html</span>, now for instance, while browsing around the MoReDaT example, and <span class="code">task-base.html</span> during one of the tasks defined by MoReDaT apps.</p>
+    
+  

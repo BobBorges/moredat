@@ -25,7 +25,6 @@
         <h4>Models</h4>	
 
             <ul>
-
                 <li>AssignedTasks</li>
 
                     <p>This model is a table to manage Tasks assigned to users. It consists of three fields:
@@ -73,6 +72,7 @@
 
 
 
+    
         <h4>Views and Templates</h4>    
 	
             <ul>
@@ -89,6 +89,10 @@
                 <li>profile()</li>
 
                     <p>This function displays the user's basic info and status of their AssignedTasks in the profile.html template. The user profile displays info about the user, UserDetails and active links to unfinished assigned tasks. These data are available throughout the whole MOREDAT project, thanks to the <span class="code">custom_context_processor.py</span> (see below).</p>
+
+                <li>Logging in / out</li>
+
+                    <p>No View functions are defined for this functionality. Default Django authentication Views are utilized for this -- called directly from <span class="code">urls.py</span>, rendering the <span class="code">login.html</span> and <span class="code">logout.html</span> templates.</p>   
     
             </ul>   
 
@@ -98,30 +102,39 @@
         <h4>Forms</h4>
 
             <ul>
-
 	            <li>RegisterUser()</li> 
 
                     <p>ModelForm corresponding to the Django auth User model.</p> 
+
     
 	            <li>UserDetailsForm()</li>  
 
-                    <p>ModelForm corresponding to the users/models.py UserDetails model</p> 
+                    <p>ModelForm corresponding to the users/models.py UserDetails model</p>
     
             </ul>
 
 
 
+    
         <h4>URLs</h4>
 
+            <p>There are two groups of URL paths in <span class="code">users/urls.py</span>:
+                <ul>
+                    <li>Authentication URLs</li>
+    
+                        <p>...call the Django default login and logout Views.</p>
 
-            Do this!
+
+                    <li>Custom URLs</li>
+
+                        <p>...which call the View functions defined in <span class="code">views.py</span></p>
+
+                </ul>
+            Paths, path names, and the functions they call are named trasnparently.</p> 
 
             
 
 
-    
-    
-    
         <h4>custom_context_processor.py</h4>
 
             <p>This function (also named <span class="code">get_user_details()</span>, unfortunately &mdash; not to be confused with the views function) makes the following details about a logged in user available as context variables accross the whole MoReDaT example site:
@@ -151,9 +164,14 @@
 
             <p>On a site connected to the public internet, it would be prudent to add some email verification to the registration process in order to avoid spam and robot users.</p>
 
+
+
+    
         <h4>User Details: Already done that</h4>
 
             <p>If a user navigates to the get-UD url, s/he will see a warning message that the user details have already been provided. Entering new info will do nothing to the database. As a researcher, you probably want to change this behavior, e.g. to redirect the user to his/her profile. This can be changed on lines 48 and 49 of <span class="code">users/views.py</span>.</p>
+
+
 
     
         <h4>User Details: Gender</h4>
@@ -161,11 +179,15 @@
             <p>Add/edit/remove gendner options in <span class="code">users/models.py</span> just above the UserDetails class definition.</p>
 
 
+
+    
         <h4>User Details: assigning research group</h4>
 
             <p>By default, MoReDaT allows users to chose their own research group. They can be assgned to a default group, e.g. if there's only one target group by setting the default or initial value in the UserDetails model and removing the field from UserDetailsForm. Other solutions are possible but would require more complex customizations beyond the scope of this documetnation.</p>
 
 
+
+    
         <h4>User Details: Assigning tasks</h4>
 
             <p>Default task sets are assigned by the <span class="code">get_user_details()</span> function of <span class="code">users/views.py</span>. This behavior can be changed there.</p>

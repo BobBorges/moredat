@@ -74,5 +74,5 @@ def profile(request):
 	context = {
 		'title': 'MoReDaT Profile'
 	}
-
+        # no database calls are made because all UD and assigned tasks is made available to the logged-in user throughout the site with the custom_contect_processor
 	return render(request, 'users/profile.html', context)

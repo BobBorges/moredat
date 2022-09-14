@@ -244,7 +244,7 @@ def page_list(request, template_name='documentation/page_list.html', extra_conte
     Displays all Pages
     """
     page_list = WikiPage.objects.all()
-    page_list = page_list.order_by('title')
+    page_list = page_list.order_by('slug')
 
     template_context = {
         'page_list': page_list,

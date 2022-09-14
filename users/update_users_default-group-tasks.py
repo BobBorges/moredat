@@ -11,13 +11,23 @@ WHEN TO USE THIS SCRIPT
 
 	Run this script to update existing users' AssignedTasks to match the DefaultAssignedTasksByGroup.
 
+
+
+
 HOW TO USE THIS SCRIPT
 
 1. enter the django shell
 	--->	$ python manage.py shell
 
-3. run the script in the shell
+2. run the script in the shell
 	--->	>>> exec(open('users/update_users_default-group-tasks.py').read())
+
+
+
+
+THE FUTURE
+
+add this script as a manage.py command
 """
 
 
