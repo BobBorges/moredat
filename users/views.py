@@ -70,9 +70,11 @@ def get_user_details(request):
 
 @login_required
 def profile(request):
-	complete_checker(request.user)
-	context = {
-		'title': 'MoReDaT Profile'
-	}
-        # no database calls are made because all UD and assigned tasks is made available to the logged-in user throughout the site with the custom_contect_processor
-	return render(request, 'users/profile.html', context)
+    complete_checker(request.user)
+    context = {
+        'title': 'MoReDaT Profile'
+    }
+    print(request.user.userconsent.consent)
+    # no database calls are made because all UD and assigned tasks is made available to the logged-in user throughout the site with the custom_contect_processor
+    return render(request, 'users/profile.html', context)
+
