@@ -66,30 +66,26 @@ def complete_checker(USER):
                 if debug:
                     print(f"{USER.username} has not provided his/her details'")
 
-        if ass.task.url_name == 'questionnaire-welcome':
-            if dbug:
-                print("  ~Erməgərrrd, there's no task checker for the questionnaires yet :|")
-
-        if ass.task.task == "Automated Picture Naming":
+        if ass.task.url_name == "ran-welcome":
 
             try:
                 ROobject = RanOrder.objects.get(user=USER)
             except:
                 ROobject = None
                 
-                if ROobject:
-                    last_r_block = ROobject.block_6.strip('[]')
-                    last_r_stim = last_r_block.split(', ')[-1].strip("'")
+            if ROobject:
+                last_r_block = ROobject.block_6.strip('[]')
+                last_r_stim = last_r_block.split(', ')[-1].strip("'")
 
-                    if glob.glob(f"{settings.MEDIA_ROOT}/recorded-audio/RAN-b6-{last_r_stim}_{URG}_{USER.id}_*.wav"):
-                        ass.complete = True 
-                        ass.save()
-                    else:
-                        if dbug:
-                            print(f'  ~{USER.username} has started the RAN task but not finished it. The file RAN-b6-{last_r_stim}_{URG}_{USER.id}_*.wav does not exist.')
+                if glob.glob(f"{settings.MEDIA_ROOT}/recorded-audio/RAN-b6-{last_r_stim}_{URG}_{USER.id}_*.wav"):
+                    ass.complete = True 
+                    ass.save()
                 else:
                     if dbug:
-                        print(f'  ~{USER.username} has not started the RAN task.')
+                        print(f'  ~{USER.username} has started the RAN task but not finished it. The file RAN-b6-{last_r_stim}_{URG}_{USER.id}_*.wav does not exist.')
+            else:
+                if dbug:
+                    print(f'  ~{USER.username} has not started the RAN task.')
 
         if ass.task.url_name == 'spn-welcome':
             pic_set = SpnPictureSet.objects.get(slug=ass.task.url_arg)
@@ -101,16 +97,33 @@ def complete_checker(USER):
             if num_block_resp == 0:
                 if dbug:
                     print(f"  ~{USER.username} has not started the SPN task '{pic_set.name}' yet.")
-                elif num_block_resp == num_block_stim:
-                    if dbug:
-                        print(f"  ~{USER.username} is done with SPN task '{pic_set.name}'. Fixing that in the database.")
-                        ass.complete = True
-                        ass.save()
-                            # print("  ~~I jus' saved yo' ass!~~")
-                else:
-                    if dbug:
-                        print(f"  ~{USER.username} started SPN '{pic_set.name}', but did not finish. Fix that ish, yo")
+            elif num_block_resp == num_block_stim:
+                if dbug:
+                    print(f"  ~{USER.username} is done with SPN task '{pic_set.name}'. Fixing that in the database.")
+                ass.complete = True
+                ass.save()
+                # print("  ~~I jus' saved yo' ass!~~")
+            else:
+                if dbug:
+                    print(f"  ~{USER.username} started SPN '{pic_set.name}', but did not finish. Fix that ish, yo")
+
+        if ass.task.url_name == 'questionnaire-welcome':
+            if dbug:
+                print("  ~Erməgərrrd, there's no task checker for the questionnaires yet :|")
+
+                
+        if ass.task.url_name == 'wlt-welcome':
+            if dbug:
+                print("  ~Erməgərrrd, there's no task checker for the word-list translations yet :|")
 
 
+        if ass.task.url_name == 'trog-welcome':
+            if dbug:
+                print("  ~Erməgərrrd, there's no task checker for the TROG-like tasks yet :|")
 
 
+        if ass.task.url_name == 'vidnar-welcome':
+            if dbug:
+                print("  ~Erməgərrrd, there's no task checker for the video narrations yet :|")
+                
+                
