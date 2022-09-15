@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 from .forms import UploadForm
 from .models import UploadMetaData
+from users.decorators import user_consented
 
 
 
@@ -12,6 +13,7 @@ from .models import UploadMetaData
 
 
 @login_required
+@user_consented
 def freemediaupload_view(request):
 	context = {'title': 'MoReDaT Free Media Upload'}
 
