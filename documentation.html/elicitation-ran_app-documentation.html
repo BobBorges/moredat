@@ -1,0 +1,112 @@
+
+
+
+    
+<h2>Elicitation: Rapid Automated picture-Naming App</h2>
+
+    <p>This app displays randomized blocks of image stimuli quickly and at regular intervals. Participant vocalizations are recorded.</p>
+
+
+
+    
+    <h3>Rationale</h3>
+
+        <p>In order to get some idea about a participant&#39;s lexical recall (in connection with proficiency/entrenchment) this taks has the participants reacting to image stimuli presented rapidly and at consistent intervals. The task is essentially a rapid automatized picture naming task (hence RAN in the name).</p>
+
+
+
+    		
+	<h3>How it works</h3>
+
+        <p>The RAN app allows to construct a single task that displays blocks of stimuli at predefined speed and at regular intervals. The user does not control the speed or the progression of the stimuli blocks. Example stimuli (from the Bank of Standardized Stimuli) Are provided with MOREDAT. Stimuli are randomized and an order is defined for each user. During the RAN task, participants vocalizations are recorded for each trial; files saved in the media/recorded-audio directory.</p>
+
+        <p>Describe trial loop sequence (dot/ding, cue, stim, recording)</p>
+
+
+
+    
+    <h3>Components</h3>
+
+	    <h4>Models</h4>
+
+            <ul>
+                <li><span class="code">RanOrder()</span></li>
+
+                    <p></p>
+    
+            </ul>
+
+     
+
+    
+	    <h4>Views and Templates</h4>
+
+            <ul>
+
+                <li><span class="code">ran_welcome()</span></li>
+
+                    <p></p>
+
+
+                <li><span class="code">ran_trial_block()</span></li>
+
+                    <p></p>
+
+
+                <li><span class="code">ran_post_practice()</span></li>
+
+                    <p></p>
+
+
+                <li><span class="code">ran_finish()</span></li>      
+
+                    <p></p>
+
+                <li><span class="code">save_trial_data()</span></li>
+
+                    <p></p> 
+    
+            </ul>   
+
+    
+    
+
+    	<h4>Forms</h4>
+
+            <ul>
+
+                <li><span class="code">RanWelcomeForm()</span></li>
+
+                    <p></p>
+
+
+                <li><span class="code">RanFinishForm()</span></li>
+
+                    <p></p>    
+
+    
+        <h4>URLs</h4>   
+
+
+    
+
+        <h4>Static files</h4>
+
+            <p>Stimuli are saved in the static files directory: <span class="code">static/ran/img/</span>. Image and audio cues are stored in <span class="code">static/ran/cues/</span> and <span class="code">static/ran/audio/</span>, respectively.</p> 
+
+    
+
+    
+    <h3>Customizations</h3>
+
+        <h4>Changing stimuli</h4>
+
+            <p></p>
+
+    
+
+
+        <h4>Adjusting trial loop times</h4>
+
+            <p></p> 
+
