@@ -1,0 +1,178 @@
+
+
+
+    
+<h2>Elicitation: The Questionnaires App</h2>
+
+    <h3>Rationale</h3>
+
+        <p>A frequent activity in linguistics research is the distribution of sociolinguistic survey questionnaires. This app allows the researcher to create multiple questionnaires and distrubute them the users. The questionnaire app is written generically so virtually any type of questionnaire can be designed and deployed with the Questionnaires App. MoReDaT comes with two preconstructed questionnaires &mdash;one about pizza preferences and a shortened version of the EuLaViBar linguistic vitality questionnaire&mdash; to illustrate how the different model components work together.</p>
+
+
+
+
+    <h3>How it works</h3>
+
+        <p>All elements of a questionnaire are model objects and these are constructed via the admin panel. Questionnaire objects contain Question objects. Question objects contain a type specification, and in the case when the question type specifies that there are predefined choises, the Question object contains a Choice-set object. Choice-set objects contain Choice objects. User answers are stored as Answer onjects with three foreign keys: User, Question, and Questionnaire.</p>
+
+        <p>Practically speaking, questionnaires must be constructed from the smallest elememts. That is, if an envisioned question type calls for predefined choices, in the admin panel, Choice objects must be created first. Then a Choice-set can be created and Choices added to it. Once the Choice-set object is created, the Question object can be created and the Choice-set added. Once Question objects are created the Questionnaire object can be created and Question objects added to it. At any stage, more objects can be added to a parent object. In the case when Question object types require a free text answer, the above process can be started from the question object.</p>
+
+        <p>The following types of questions are predefined in the MoReDaT Questionnaires App:
+            <ul>
+			    <li>Short -one line- free text answer</li>
+				<li>Options are presented, user selects one</li>
+				<li>Options are presented, user selects multiple</li>
+				<li>Select predefined options or \'other\' with text input</li>
+				<li>Select predefined options and / or \'other\' with text input</li>
+				<li>Long(ger) -multi line- free text answer</li>
+				<li>Mutliple checkbox-select subquestions in a grid</li>
+			</ul>
+		</p>
+
+
+
+    
+    <h3>Components</h3>
+
+        <h4>Models</h4>
+
+            <p>The models <span class="code">Choice()</span>, <span class="code">ChoiceSet()</span>, <span class="code">Question()</span>, and <span class="code">Questionnaire()</span> serve the researcher in constructing questionnaires. These are managed in the admin panel. <span class="code">Answer()</span> on the other hand, is where User's responses to questions are stored. Models are presented in this order because for constructing a questionnaire, one must roughly follow this order creating model instances.</p> 
+
+            <ul>
+
+        		<li><span class="code">Choice()</span></li>
+
+                    <p>For questions with a closed set of answers, i.e. the user must select a response from presented options, those options must first be created. Each of these is a Choice. One can specify a numerical sort order for Choice objects with the <span class="code">sort_order</span> field. A short value (<span class="code">short_val</span>) for questions with a long text, and the actual text to be displayed to the user (<span class="code">text</span>.</p>
+    
+
+		        <li><span class="code">ChoiceSet()</span></li>
+
+                    <p>Once Choice objects are specified, they can be grouped into a set with the ChoiceSet model. The ChoceSet takes a <span class="code">name</span> and multiple Choice objects in the <span class="code">choices</span> field.</p>  
+
+    
+		        <li><span class="code">Question()</span></li>
+
+                    <p>The Question model defines ...questions... The fields are
+                        <ul>
+                            <li><span class="code">slug</span>: a slug variable to serve the correct question via URL.</li>
+                            <li><span class="code">q_type</span>: the question type</li>
+                                <p>Question types are defined in the <span class="code">QUESTION_TYPES</span> variable and are utilized in the logic of the <span class="code">question_view()</span> View function and Templates. It is possible to customize the question  types, but then the corresponding view/template logic must also be adapted.</p>
+                            <li><span class="code">text</span>: The question to be displayed to the user</li>
+                            <li><span class="code">subtext</span>: subtext to a question</li>
+                                <p>This is useful when multiple questions are the same but different subtext - the question can be displayed once and the subtext (and eventual choice sets) subsequently. See the EuLaViBar example -- Question: "What language do you speak with..." Subtext 1: "your parents", Subtext 2: "your grandparents", Subtext 3: "your siblings".</p>
+                            <li><span class="code">help_text</span>: text displayed to the user to help them understand how to answer the question.</li>
+                            <li><span class="code">choices</span>: If a ChoiceSet instance is required for the question type, the it is linked to the question in this field.</li>
+                            <li><span class="code">sort_order</span>: a numerical value representing the order for which questions should be sorted within a Questionnaire instance.</li>   
+                        </ul>
+                    </p>    
+
+        
+		        <li><span class="code">Questionnaire</span></li>
+
+                    <p>Questionnaire instances are collections of Question instances, linked via the <span class="code">questions</span> field. Additionally Questionnaires have a <span class="code">name</span> field, a basic <span class="code">description</span> field, a <span class="code">welcome_instructions</span>  field, contents of which is displayed to the user when starting a Questionnaire Task, and a <span class="code">slug</span>  filed, which is used as a variable within the URL paths.</p>    
+    
+
+                <li>Answer</li>
+        
+                    <p>Answer instances store users answers, and are linked to the User instance (<span class="code">user</span> field), the Question (<span class="code">question</span> field) and Questionnaire (<span class="code">questionnaire</span> field)
+    
+            </ul>   
+
+
+
+        
+	    <h4>Views and Templates</h4>
+
+		    <p>The <span class="code">views.py</span> file contains views functions and several support functions.</p>
+
+            <p><b>View Functions:</b>
+
+                <ul>
+    
+		            <li><span class="code">home_view()</span></li>
+
+                        <p>This view lists all the available quesitionnaires, rendiering the <span class="code">questionnaire-welcome.html</span> template. This View should probably not be accessible to ordinary users; currently, no explicit links to it are made in the <span class="code">users.profile</span>  View, but nothing stops the user from manually entering the URL path to this View.</p>   
+
+
+	    	        <li><span class="code">welcome_view()</span></li> 
+
+                        <p>This View displays is rendered (<span class="code">questionnaire-welcome.html</span> ) at the start of each questionnaire, displaying the instructions (<span class="code">models.Questionnaire.welcome_instructions</span> for each questionnaire to the user. If the current user is the admin user, a list of Questions is also displayed.</p>
+
+                        <p>The <span class="code">welcome_view()</span> requres a an argument is pased to it, which is the string from <span class="code">Questionnaire.slug</span> field, in order to work as expected. It is passed via the URL (see the URLs section below).</p>
+
+    
+	    	        <li><span class="code">question_view()</span></li>
+
+                        <p>This View is responsible for displaying actual Question instances associated with a Questionnaire. Two variables are passed to the function via the URL: the <span class="code">Questionnaire.slug</span> field, and the <span class="code">Question.slug</span> field. With these variables, the function can query the databse for the Question objects, ChoceSet objects / Choices if required by the qeustion type.</p>
+
+                        <p>The View function compiles question text using UserDetails data (from <span class="code">users.models.UserDetails</span>) with help of the <span class="code">CompileQuestion()</span> support function, gets the next question in the Questionnaire sequence (with the <span class="code">get_next_slug()</span> support function), and generates the necessary user input forms (with the <span class="code">MakeQuestionForm()</span> support function. Then all this is passed to the <span class="code">questionnaire-question.html</span> template.</p>
+
+                        <p>The View function also handles the form submission and validation -- when all forms are valid, Answer objects are instatiated and the user is redirected to the next question.</p>   
+
+    
+		            <li><span class="code">finish_view()</span></li>
+
+                        <p>After all questions have been succesfully answered, the user is directed to a "thanks"/"confirmation of completion" page. This View function renders the template <span class="code">questionnaire-finish.html</span></p>
+
+    
+                    <li><span class="code">file_download()</span></li>
+
+                        <p>This allows the researcher to provide file downloads – for whatever reason, one may wish to allow participants for download questionnaire (or whatever else) files. It's not a propper view function in the sense that it doesn't render a template, just serves the raw file in the browser. This function takes a URL argument: the name of a file, which according to the function lives at <span class="code">static/questionnaire/docs/</span>.</p>    
+    
+                </ul>
+            </p>       
+
+    
+			<p><b>Suport Functions</b>  
+
+				<ul>
+
+					<li>CompileQuestion()</li>
+
+                        <p>This Function is called From the <span class="code">question_view()</span> View. It interpolates data from the UserDetails object with the question text. So "{{ language }}" or "{{ L2 }}" in the question text will be replaced with the <span class="code">language</span> or <span class="code">L2</span> fields from the <span class="code">research_group<span class="code"> associated with that user.</span>
+    
+
+					<li>MakeQuestionForm()</li>
+
+                        <p>The <span class="code">MakeQuestionForm()</span> function (careful it's <b>NOT</b> a form), called from the <span class="code">question_view()</span> View, generates an appropriate form for a Question, accounting for its type and any associated ChoiceSets.</p> 
+     
+
+					<li><span class="code">get_next_slug()</span></li>
+
+                        <p>As the name suggest, the form gets the slug for the next question in a Questionnaire sequence. It returns a slug for the <span class="code">finnish_view()</span> if the current question is the last question in the sequence.</p>  
+    
+				</ul>
+			</p>
+
+
+
+    
+		<h4>Forms</h4>
+
+            <ul>
+    
+	    		<li><span class="code">QuestionForm()</span></li>
+
+                    <p>This form has a rather stupid name because it is a model form that saves user responses as Ansswer instances.</p>
+
+    
+			    <li>OtherFieldForm</li>
+
+                    <p>This is a Form to take text input for questions with choices with an "other" option. This form saves a separate Answer instances, meaning that Question responses with "other" have two associated Answer instances, one with "other" and one with the free text entered by the user.</p>
+
+            </ul>
+
+    
+
+
+        <h4>URLs</h4>
+       
+            <p>Paths, and path names are transparrntly linked to associated View functions. Several URLs in the <span class="code">questionnaire</span>  require variables to be passed in order to properly render the correct content. These variables are delimited by &lt; and &gt; and also include a type definition. So "&lt;str:questionnaire&gt;", for example is a string variable called questionnaire in the View function called by the URL. In the case of the <span class="code">questionnaire</span>    app these variables are the slug fields associated with Questionnaire and Question instances, or the file name of a file to be downloaded in the case of the <span class="code">file_download()</span> View.</p>
+
+
+
+    <h3>Customizations</h3>
+
+        <h4>Question types</h4>
+
+            <p>Question types may be customized by edditing the variable <span class="code">QUESTION_TYPES</span> in the <span class="code">models.py</span> file. Keep in mind however that doing this also requires following and customizing the logic in the <span class="code">question_view()</span>, support functions, and possibly the <span class="code">question-view.html</span> template in order to ensure the questions and choice sets are rendered properly.
