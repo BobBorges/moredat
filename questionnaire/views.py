@@ -9,7 +9,9 @@ from django.shortcuts import render, redirect
 from django.template import Template, Context
 from django.utils.safestring import mark_safe
 from django.utils.translation import gettext as _
+from users.decorators import user_consented
 from users.models import UserDetails
+
 
 
 
@@ -145,6 +147,7 @@ def get_next_slug(questionnaire, question):
 
 
 @login_required
+@user_consented
 def home_view(request):
 	context = {"title": "MoReDaT Questionnaire"}
 	questionnaires = Questionnaire.objects.all()
@@ -154,6 +157,7 @@ def home_view(request):
 
 
 @login_required
+@user_consented
 def welcome_view(request, questionnaire):
 
 	#check here if user already answered questionnaire ---> redirect profile
@@ -192,6 +196,7 @@ def welcome_view(request, questionnaire):
 
 
 @login_required
+@user_consented
 def question_view(request, questionnaire, question):
 	if question == 'questionnaire-finish':
 		return redirect('questionnaire-finish', questionnaire=questionnaire)
@@ -310,6 +315,7 @@ def question_view(request, questionnaire, question):
 
 
 @login_required
+@user_consented
 def finish_view(request, questionnaire):
 	context = {
 		"title":"MoReDaT Questionnaire",
