@@ -9,6 +9,7 @@ from django.shortcuts import render, redirect
 from django.utils.translation import gettext as _
 from main.models import Tasks
 from users.models import UserDetails, AssignedTasks
+from users.decorators import user_consented
 from .forms import WordlistFinishForm, WordlistResponseForm
 from .models import *
 import os
@@ -31,6 +32,7 @@ def wlt_home(request):
 
 
 @login_required
+@user_consented
 def wlt_welcome(request, word_set):
 	UD_object = UserDetails.objects.get(user=request.user)
 	context = {"title": "MoReDaT Wordlist Translation"}
