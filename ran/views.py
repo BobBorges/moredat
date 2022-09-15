@@ -10,6 +10,7 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.utils.translation import gettext as _
 import random, os
+from users.decorators import user_consented
 from users.models import AssignedTasks
 
 
@@ -88,14 +89,11 @@ def ShuffleStumuli():
 
 
 
-def consented(user):
-	return True
-
 
 
 
 @login_required
-@user_passes_test(consented, login_url='profile')
+@user_consented
 def ran_welcome(request):
 	context = {"title": "MoReDaT RAN"}
 	Uobj = User.objects.get(id=request.user.id)
@@ -134,7 +132,7 @@ def ran_welcome(request):
 
 
 @login_required
-@user_passes_test(consented, login_url='profile')
+@user_consented
 def ran_trial_block(request, block):
 	context = {"title": "MoReDaT RAN"}
 	try:
@@ -155,7 +153,7 @@ def ran_trial_block(request, block):
 
 
 @login_required
-@user_passes_test(consented, login_url='profile')
+@user_consented
 def ran_post_practice(request):
 	context = {"title": "MoReDaT RAN"}
 	return render(request, 'ran/postpractice.html', context)
@@ -164,7 +162,7 @@ def ran_post_practice(request):
 
 
 @login_required
-@user_passes_test(consented, login_url='profile')
+@user_consented
 def ran_finish(request):
 	context = {"title": "MoReDaT RAN"}
 	if request.method == 'POST':
@@ -190,6 +188,7 @@ def ran_finish(request):
 
 
 @login_required
+@user_consented
 def save_trial_data(request):
 	with open(
 		os.path.join(settings.MEDIA_ROOT, 'recorded-audio/RAN-{}-{}_{}_{}_{:%Y-%m-%d-%H-%M-%S}.wav'.format(
