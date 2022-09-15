@@ -1,0 +1,61 @@
+
+
+
+<h2>Elicitation: Free Media Upload</h2>
+
+    <h3>Rationale</h3>
+
+        <p>Sometimes you might like to allow your research participants to upload files that are not part of the apps, whether pictures or audio/video. Perhaps you want them to have the freedom to decide what is important that the researcher sees, or perhaps you as the researcher give little assignments to your participants "Go record your grandma telling you how to cook X in language Y", or "Record you and your friends having a casual conversation in language Y". This app allows you to accept such files.</p>
+
+
+    
+    
+    <h3>How it works</h3>
+
+        <p>The app is a pretty standard file upload page. A user selects a file and provides minimal metadata. Once they click "Submit", the file is transferred to the host server and a metadata entry is created as a database model instance.</p>
+
+        <p>Unlike the other elicitation apps, there is no specific functionality to assign uploads as a task. The researcher could communicate what users should upload on their profile page. For instance by adding an "if user.research_group == X" condition followed by a description of the researcher's request for uploads.</p>
+
+
+
+    
+    <h3>Components</h3>
+
+	    <h4>Models</h4>
+
+            <p>There's just one model <span class="code">UploadMetaData()</span> with basic metadata fields for each upload.</p>
+
+
+    
+
+	    <h4>Views and Templates</h4>
+
+            <p>There are two views in the Free Media Upload app:
+                <ul>
+                    <li><span class="code">freemediaupload_view()</span></li>
+
+                        <p>This View displays the <span class="code">upload.html</span> template, which renders a simple upload form (<span class="code">freemediaupload/forms.py UploadForm()</span>).</p> 
+
+                    <li><span class="code">thx_view()</span> </li>
+
+                        <p>This View is a confirmation message after submitting a successful Free Media Upload form. It renders <span class="code">thx.html</span>  </p>
+    
+                </ul>
+            </p>        
+
+
+    
+
+	    <h4>Forms</h4>
+
+            <p>There's just one form <span class="code">freemediaupload/forms.py UploadForm()</span>, which is a model form corresponding to <span class="code">UploadMetaData()</span></p>
+
+
+
+    
+        <h4>URLs</h4>
+
+            <p>URL paths and corresponding View functions are transparently linked by the variable names.</p>
+
+
+
