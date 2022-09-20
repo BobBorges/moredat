@@ -20,7 +20,14 @@
 
         <p>The RAN app allows to construct a single task that displays blocks of stimuli at predefined speed and at regular intervals. The user does not control the speed or the progression of the stimuli blocks. Example stimuli (from the Bank of Standardized Stimuli) Are provided with MOREDAT. Stimuli are randomized and an order is defined for each user. During the RAN task, participants vocalizations are recorded for each trial; files saved in the media/recorded-audio directory.</p>
 
-        <p>Describe trial loop sequence (dot/ding, cue, stim, recording)</p>
+        <p>The trial loop sequence
+            <ul>
+                <li>dot/ding: The user is presented with a focus dot and a 'ding' audio stimulus (500ms)</li>
+                <li>image stimulus: the stimulus is displayed (500ms) and audio recording is started</li>
+                <li>participant response: recording continues for another 4500ms, before the next trial begins</li>
+            </ul>
+        A response language cue is presented for each trial block just outside the stimulus area, instructing and reminding the participant in which language s/he should produce words.</p>
+                
 
 
 
@@ -92,7 +99,9 @@
 
         <h4>Static files</h4>
 
-            <p>Stimuli are saved in the static files directory: <span class="code">static/ran/img/</span>. Image and audio cues are stored in <span class="code">static/ran/cues/</span> and <span class="code">static/ran/audio/</span>, respectively.</p> 
+            <p>Stimuli are saved in the static files directory: <span class="code">static/ran/img/</span>. Image and audio cues are stored in <span class="code">static/ran/cues/</span> and <span class="code">static/ran/audio/</span>, respectively.</p>
+
+            <p>Describe JS – handles the trial blocks</p>   
 
     
 
