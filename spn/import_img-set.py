@@ -6,6 +6,43 @@ import os, shutil
 
 How to use this script:
 
+DON'T 
+DON'T
+DON'T
+– there's now a manage.py command that does the same thing. This file will get deleted.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 1. Edit INPUT_ODS_FILE var. 
     ---> path must be relative to the location of manage.py, or absolute
 
@@ -31,7 +68,7 @@ IMG_SET_SLUG = "cats"
 
 
 # Leave the rest alone!
-
+"""
 STATIC_DIR = "static/spn/img/"
 
 if os.path.isfile(INPUT_ODS_FILE):
@@ -58,3 +95,4 @@ else:
 	print("file not file")
 	print(INPUT_ODS_FILE)
 
+"""
