@@ -1,0 +1,49 @@
+
+
+<h2>Test User Audio</h2>
+
+    <h3>Motivation</h3>
+
+        <p>If you're going to rely on end users to record themselves, it would be prudent to have some way to at least try and get them to test that their microphone is functional. This app does just that</p>
+
+
+
+    
+    <h3>How it works?</h3>
+
+        <p>The user has a page with audio controlls on it where they can test their microphone before starting a task that records audio. Tasks that record audio redirect to this app before the "start" button becomes active.</p>
+
+
+
+    <h3>Components</h3>
+
+        <p>This app is quite simple compared to the others...</p>
+
+    
+        <h4>Views and Templates</h4>
+
+            <ul>
+    
+                <li><span class="code">test_audio()</span>  </li>
+
+                    <p>This View renders the <span class="code">audiotest.html</span> template which displays a short text describing how to test the microphone, audio controls for actually testing the microphone, and links for suggestions by browser if the audio test isn't working.</p>
+
+                <li><span class="code">voice_request()</span></li>
+
+                    <p>This is a function to save the audio from a user test. Currently it is not implemented, but the researcher could, for instance, add a button to the template to save the audio test, which would send the audio blob to this function.</p>
+
+            </ul>
+
+
+
+    
+        <h4>URLs</h4>
+
+            <p>Paths and URL names are transparently linked to the view functions by naming conventions.</p>
+
+
+
+    
+        <h4>Static files</h4>
+
+            <p>There's a functional Javascript file at <span class="code">static/testuseraudio/audiotest.js</span> that handles the recording and playback of audio test. By default these audio blobs aren't saved to the server.</p>   
