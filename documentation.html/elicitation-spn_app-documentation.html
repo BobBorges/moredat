@@ -1,0 +1,153 @@
+
+<h2>SPN App</h2>
+
+    <p>This app displays predefined sets of image stimuli, one image at a time, and records responses to each image stimulus.</p>
+
+
+
+    
+    <h3>Rationale</h3>
+
+        <p>List translation as a means to get acquainted with a new language is useful, but translation tasks have their drawbacks. An alternative to translation tasks are using non verbal stimuli such as photographs and drawings to elicit words and / or short phrases.</p>
+
+
+
+    
+    <h3>How it works</h3>
+
+        <p>Participants are assigned one or more SPN tasks, whereby they are charged with providing lexical responses for a predefined set of pictures. For each image in the set, the image is displayed on the screen and the participant provides a response, either they record an audio response (optionally providing a written version of what they say and / or a written commentary) or they select "I don&#39;t know" or "I don&#39;t remember". Responses are saved as database object instances and recorded audio is saved in the server media/recorded-audio directory. Participants proceed through the each task at their own pace.</p>
+
+
+
+    	
+    <h3>Components</h3>
+
+	    <h4>Models</h4>
+
+            <ul>
+
+                <li><span class="code">SpnPicture()</span></li>
+
+                    <p>This is a model for saving images as database instances. The actual image lives in <span class="code">static/spn/img/</span> but the model instance is a means to preseve the file name with sort order (ordering in <span class="code">SpnPictureSet()</span> objects), and a brief description and a source for the image.</p>
+
+                    <p><span class="code">SpnPicture</span> instances can be created individually via the admin panel or in bulk as part of a set from an ODS spreadsheet using the Management command <span class="code">import-img-set</span>.</p>    
+
+    
+                <li><span class="code">SpnPictureSet()</span></li>      
+
+                    <p>This model is a means for grouping images together as a set and forms the basis of SPN-based tasks. There is field for "name" of the set, "description" of the set, and any "special instructions" the researcher may want to convey to the participant. Pictires are associated throught the "pictures" field. A "slug" field is also present -- with this field, the picture set can be accessed referenced via URL.</p>
+
+                    <p><span class="code">SpnPictureSet</span> instances can be created individually by manually creating <span class="code">SpnPicture</span>  instances and assigning them to the picture set instance via the admin panel, or from an ODS spradsheet using the Management command <span class="code">import-img-set</span>.</p>
+
+    
+                <li><span class="code">SpnResponse()</span> </li>
+
+                    <p>This model stores user responses to SPN task trials. The User instance is linked to the task and image. Additiionally, there is a field for the response type (default types are defined in the <span class="code">SPN_RESPONSE_TYPE</span> variable, audio response (if the type is "Record response", an optional written response and an optional written commentary.</p>
+
+            </ul>   
+
+
+
+    
+	    <h4>Views and Templates</h4>
+
+            <ul>
+
+                <li><span class="code">home_view()</span> </li>
+
+                    <p>The home View renders a list of all available picture sets, with hyperlinks, in the <span class="code">spn-home.html</span>  template. This View probably shouldn't be available to non-admin users.</p>
+
+    
+                <li><span class="code">welcome_view()</span> </li>
+
+                    <p>This View is shown at the begining of a picture set: it renders the <span class="code">spn-welcome.html</span> template, shoing the user a description of the picture set (from the model), any special instructions pertaining to the picture set (from the model), and general instructions on the SPN-based tasks.</p>
+
+                    <p>The general instructions provide a link to the <span class="code">testuseraudio</span> app, and the button to progress to the any SPN-based task is deactivated until the user opens the <span class="code">testuseraudio</span> app (in the hopes that they will make sure their microphone is properly functional before starting the task).</p>   
+
+
+                <li><span class="code">pic_view()</span> </li>
+
+                    <p>This view generates renders an individual pucture from a set along with the <span class="code">SpnResponseForm()</span> form in the <span class="code">spn-pic.html</span> template. The user indicates whether they will provide a recorded response or not ("or not" default options are: "I don't know" or "I don't remember"), and if so the rest of the form and audio controls are shown w/ JS (<span class="code">static/spn/spn-trial.js</span>); the same file contains JS to handle the user's audio stream. On submission of the form the audio stream is saved as a file (<span class="code">media/recorded-audio), with user/trial info encoded in the file name, and an SpnResponse instance is created from the SpnResponseForm.</p>
+
+                    <p>obs. currently the user can still submit the form without recording anything – progresses to next pic, creates model instance, but no file. Dis bad – FIX that ish, you – empty stream  --> form.is_valid() = False.</p>  
+
+    
+                <li><span class="code">finish_view()</span></li>
+
+                    <p>Once the user has cycled through all the images in a set, they are directed to the finish View that renders the <span class="code">SpnFinishForm</span> in the <span class="code">spn-finish.html</span> template. The form field itself is a hidden input; the user only sees a button "Finish" with a "Thanks for completing the task!" text. Clicking the "Finish" button, thereby submitting the form marks the Assigned task instance for that user's SPN-based task as "complete", if they have been assigned the task, otherwise it creates a complete assigend task object, and redirects them to ther profile. In the case when a user sees the finish page and closes the browser without submitting the form, their task will be marked complete the next time they load their profile by <span class="code">users/task_checker.py</span>.</p>     
+
+            </ul>   
+    
+
+
+    
+	    <h4>Forms</h4>
+
+            <ul>
+
+                <li><span class="code">SpnResponseForm()</span> </li>
+
+                    <p>This form is a model form (<span class="code">SpnResponse</span>) that provides "response_type", "written_response", and "commentary" to the template.</p>    
+
+
+                <li><span class="code">SpnFinishForm()</span> </li>
+
+                    <p>This form has a single field, a boolean value for "finish the task".  It is rendered by the <span class="code">spn_finish()</span> View.</p>    
+
+            </ul>
+
+
+    
+    
+        <h4>URLs</h4>
+
+            <p>URL paths and names are transparently linked to the view functions. Two variables are quired for a ran trial block:
+                <ul>
+                    <ls>pic_set: the slug from the SpnPuctureSet model instance</ls>
+                    <ls>picnr: the sort_order field from the SpnPicture model instance.</ls>
+                </ul>   
+            </p>   
+
+    
+
+    
+        <h4>Static files</h4>
+
+            <p>This app has functional static files! These are:
+
+                <ul>
+
+                    <li>files in <span class="code">static/spn/img/</span> </li>
+
+                        <p>These are stimulus images.</p>
+
+
+                    <li><span class="code">static/spn/spn-trial.js</span> </li>
+
+                        <p>Javascript that handles capturing user audio and rendering appropriate parts of the SpnResponseForm.</p>
+
+    
+                    <li><span class="code">static/spn/spn-welcome.js</span> </li>
+
+                        <p>Javascript that blocks users from starting an SPN task if they have not clicked the link (provided on the welcome screen for each task) to the <span class="code">testuseraudio</span>   app.</p>
+
+                </ul>              
+
+
+
+    
+        <h4>Management commands</h4>    
+    
+            <ul>
+
+                <li><span class="code">import-img-set.py</span> </li>
+
+                    <p>Allows to the researcher to import a picture set from an <span class="code">.ods</span> spreadsheet instead of creating these one object instance at a time in the admin panel. The <span class="code">spn/img-set-ODS/</span> directory provides examples of how the speadsheet should be structured before using this command.</p>
+
+            </ul>   
+
+
+
+        
+    <h3>Customizations</h3>
+

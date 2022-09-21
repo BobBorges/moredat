@@ -170,11 +170,11 @@ def ran_finish(request):
 		context['form'] = form
 		if form.is_valid():
 			try:
-				inst = AssignedTasks.objects.get(user=request.user, task="Automated Picture Naming")
+				inst = AssignedTasks.objects.get(user=request.user, task="RAN")
 				inst.complete = True
 				inst.save()
 			except:
-				inst = AssignedTasks.objects.create(user=request.user, task="Automated Picture Naming", complete=True)
+				inst = AssignedTasks.objects.create(user=request.user, task="RAN", complete=True)
 				inst.save()
 			message = messages.success(request, _('Thanks for finishing the Automated Picture-Naming Task.'))
 			return redirect('profile')

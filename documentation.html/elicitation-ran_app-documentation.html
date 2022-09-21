@@ -39,7 +39,7 @@
             <ul>
                 <li><span class="code">RanOrder()</span></li>
 
-                    <p></p>
+                    <p>There is one model, which stores the order of RAN stimuli in blocks linked to a user instance. </p>
     
             </ul>
 
@@ -52,26 +52,30 @@
 
                 <li><span class="code">ran_welcome()</span></li>
 
-                    <p></p>
+                    <p>The <span class="code">ran_welcome()</span> view, renders the <span class="code">RanWelcomeForm()</span> in the <span class="code">ran-welcome.html</span> template. The template provides the user with instructions on how to complete the task. When the user is ready, s/he ticks the select-box for the Form and clicks next. This action causes the View function to call the <span class="code">ShuffleStimuli()</span> support function, which shuffles the stimuli order and returns blocks of the correct length (two "practice blocks" of 5 stimulus images each, and six regular blocks of 15 images); these are then saved as a model instance for that user. The user is then redirected to the the practice section of the test.</p>
 
+                    <p>N.b.: A Javascript function <span class="code">static/ran/ran-welcome.js</span>  disables the form submission until the user has navigated to the <span class="code">testuseraudio</span> app, which is hyperlinked in the instructions displayed on the welcome page -- the idea is that they will actually ensure their microphone is working properly before they start the task.</p> 
 
                 <li><span class="code">ran_trial_block()</span></li>
 
-                    <p></p>
+                    <p>The <span class="code">ran_trial_block()</span> View is responsible for fetching the stimuli for a particular block for a particular user and sending those file names as context variables to the <span class="code">ran-trialblock.html</span> template. The actual stimuli images (along with language cues, focus dot, and audio stimulus) are stored in <span class="code">static/ran/</span>. The actual cycle of each trial (display / hiding of elements and their timing) and audio recording of the User's responses is handled by Javascript: <span class="code">static/ran/ran-trial.js</span>. </p>
 
+                    <p>Progression through trial blocks is handled by <span clas="code">RAN_TRAJECTORY</span>, which provides the next block in the sequence given the current block. Each block has the <span class="code">next</span> context variable, which provides the URL variable for the redirect progression. The <span class="code">block_description</span> context variable provides a (translated) description of the current block to be displayed outside the stimulus area.</p>    
+    
 
                 <li><span class="code">ran_post_practice()</span></li>
 
-                    <p></p>
+                    <p>This View only renders a template <span class="code">ran-postpractice.html</span>, which is meant to give the user a moment to collect themselves after the practice blocks and before the non-practice section of the test begins.</p>
 
 
                 <li><span class="code">ran_finish()</span></li>      
 
-                    <p></p>
+                    <p>After all trials are complete, the user is redirected to this View, which renders the <span class="code">RanFinishForm()</span>  in the <span class="code">ran-finish.html</span> template. The form field itself is a hidden input; the user only sees a button "Finish" with a "Thanks for completing the task!" text. Clicking the "Finish" button, thereby submitting the form marks the Assigned task instance for that user's RAN task as "complete", if they have been assigned the task, otherwise it creates a complete assigend task object, and redirects them to ther profile. In the case when a user sees the finish page and closes the browser without submitting the form, their task will be marked complete the next time they load their profile by <span class="code">users/task_checker.py</span>.</p>
 
+    
                 <li><span class="code">save_trial_data()</span></li>
 
-                    <p></p> 
+                    <p>This function recieves audio data from the user's browser, the recorded response to each trial, and saves it in <span class="code">media/recorded_audio/</span>  with a timestamp, the User pk, User's research group, trial block, and stimulus ID encoded in the file name. The function is called by <span class="code">static/ran/ran-trial.js</span>. </p> 
     
             </ul>   
 
@@ -84,24 +88,33 @@
 
                 <li><span class="code">RanWelcomeForm()</span></li>
 
-                    <p></p>
+                    <p>This form has a single field, a boolean value for "ready to start the RAN test". It is rendered by the <span class="code">ran_welcome()</span> View.</p>
 
 
                 <li><span class="code">RanFinishForm()</span></li>
 
-                    <p></p>    
+                    <p>This form has a single field, a boolean value for "finish the ran test".  It is rendered by the <span class="code">ran_finish()</span> View.</p>    
+
+
 
     
         <h4>URLs</h4>   
 
-
+            <p>URL paths and names are transparently linked to the View functions by naming conventions. The <span class="code">trialblock/&lt;:block/&gt;/</span>  takes one path variable, which is the current trial block in the sequence of trial blocks.</p>  
     
 
+
+    
         <h4>Static files</h4>
 
-            <p>Stimuli are saved in the static files directory: <span class="code">static/ran/img/</span>. Image and audio cues are stored in <span class="code">static/ran/cues/</span> and <span class="code">static/ran/audio/</span>, respectively.</p>
-
-            <p>Describe JS – handles the trial blocks</p>   
+            <p>The RAN app has functional static files.
+                <ul>
+                    <li>Stimuli images are saved in the static files directory: <span class="code">static/ran/img/</span></li>
+                    <li> Image and audio cues are stored in <span class="code">static/ran/cues/</span> and <span class="code">static/ran/audio/</span>, respectively.</li>
+                    <li>Progression of each trial is handled with Javascript in <span class="code">static/ran/ran-trial.js</span></li>
+                    <li>Starting the test without at least opening the <span class="code">testuseraudio</span>  app is blocked by Javascript in <span class="code">static/ran/ran-welcome.js</span> </li>
+                </ul>     
+            </p>
 
     
 
@@ -110,12 +123,12 @@
 
         <h4>Changing stimuli</h4>
 
-            <p></p>
+            <p>Images from BOSS are inclided with the RAN app; these are numbered sequentially with 3-digit numbers, a "RANstim_" prefix and the ".png" file extension. The easiest way to customize stimuli would be to rename replacement stimuli following this convention. Otherwise, one must also customize the <span class="code">ran/views.py shuffle_stimuli()</span>  function and the references to filenames in <span class="code">ran/ran-trialblock.html</span> template.</p>
 
     
 
 
         <h4>Adjusting trial loop times</h4>
 
-            <p></p> 
+            <p>Timing of the trial sequence is handled by <span class="code">setTimeout()</span> method for the relevant function. Adjust the timing here.</p> 
 
