@@ -12,6 +12,8 @@ The assumption is that this is run from root, where the manage.py file is. If no
 """
 
 
+
+
 class Command(BaseCommand):
 
     help = "Use this to import images as a set from an ODS spreadsheet"
@@ -41,7 +43,6 @@ class Command(BaseCommand):
                     f"{INPUT_STIM_DIR}{row['FileName']}", 
                     f"{STATIC_DIR}{row['FileName']}"
                 )
-                
             imgset.save()
         else:
             self.stdout.write("file not file")

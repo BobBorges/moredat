@@ -90,16 +90,28 @@
 
             </ul>   
 
+
+
+
+        <h4>URLs</h4>
+
+            <p>URL paths and names are transparently linked to the view functions by naming conventions. Only the <span class="code">trog-block</span> URL takes a string variable <span class="code">TROGblock</span> which allows the view to render the correct stimuli for that block.</p>  
+
+
+
     
         <h4>Static files</h4>
 
-
             <p> The <span class="code">trog</span> app has functional static files! These are:
                 <ul>
+
                     <li>Image stimuli and audio cues are (meant to be) stored in <span class="code">static/trog/img/</span> and <span class="code">static/trog/cues/</span>, respectively. "Meant to be" because MOREDAT dosn't come with stimuli – the researcher must source/create them</li>
 
+    
                     <li> The js file at <span class="code">static/trog/trog-trial.js</span> is responsible for displaying/playing trial stimuli, generating and sending the data to be saved in the database.</li>
+
                 </ul>
+
             </p>    
 
 

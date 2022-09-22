@@ -7,6 +7,47 @@ import os, shutil
 
 How to use this script:
 
+DON'T
+DON'T
+DON'T !!! --> use the management command instead
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 1. Edit INPUT_ODS_FILE var. 
     ---> path must be relative to the location of manage.py, or absolute
 
@@ -21,7 +62,7 @@ How to use this script:
 
 """
 
-
+"""
 # Edit these vars
 
 INPUT_ODS_FILE = "vidnar/vid-set-ODS/mpi-cut-n-break.ods"
@@ -64,3 +105,6 @@ if os.path.isfile(INPUT_ODS_FILE):
 else:
 	print("file not file")
 	print(INPUT_ODS_FILE)
+
+"""
+
