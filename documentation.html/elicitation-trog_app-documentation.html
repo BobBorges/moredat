@@ -1,0 +1,130 @@
+
+
+<h2>TROG App</h2>
+
+    <p>This app allows you to check a participants receptive proficiency (how well they understand spoken language). It is loosely based on the Test For Reception of Grammar II. Due to both copyright issues and the fact linguistic structures vary greatly across languages, no stimuli are provided with this app &mdash; the single stimulus set is provided only to demonstrate the principle of how the app works. Please create / compile your own stimuli.</p>
+
+
+
+    
+    <h3>Rationale</h3>
+
+        <p>Sometimes it is necessary to get an idea of how much of a language a participant can understand. This app allows you to present audio stimuli, such as a phrase or sentence, along with a set of images in a 2x2 grid, wherein one corresponds to the audio prompt and the other three are distractor images. The user selects the image they think corresponds to the audio prompt.</p>
+
+
+
+    
+    <h3>How it works</h3>
+
+        <p>The TROG app allows to construct a single task as described above. Stimuli sets are displayed in a random order and the arrangement of the 2x2 grid is randomized. File naming conventions must be followed strictly and be stored in the correct directories for the task to function properly.</p>
+
+        <p>The task records the users response for each trial &mdash; selected image (the file name indicates whether it was the target), selected quadrant, the amount of time it took the participant to make a selection, and the number of times the participant replayed the audio stimulus.</p>
+
+
+    
+
+    <h3>Components</h3>
+
+    	<h4>Models</h4>
+
+            <ul>
+
+                <li><span class="code">TrogOrder()</span></li>
+
+                    <p>The <span class="code">TrogOrder()</span> model is responsible for storing blocks of trial stimuli in randomized orders per user. by default, threre is one practice block of one stimulus set and eight blocks of 10 stimulus sets.</p>
+
+    
+                <li><span class="code">TrogResponse()</span></li>
+
+                    <p>This model is responsible for responses to TROG trials. Every response is saved as a <span class="code">TrogResponse</span>  instance, which includes a reference to the User instance, the quadrant of the stimulus display the user clicked, the stimulus image that was selected, the number of times the user repeated the audio prompt, the time interval between rendering the stimuli and the selection (actually "render_time" and "click_time").</p>
+
+            </ul>         
+    
+
+
+    
+    	<h4>Views and Templates</h4>
+
+            <ul>
+
+                <li><span class="code">welcome()</span></li>
+
+                    <p>The <span class="code">welcome</span>  View renders the <span class="code">TrogWelcome()</span>  form in the <span class="code">welcome.html</span>  template. On successful submission of the form, the function shuffles randomizes the stimuli order and saves blocks of 10 sets as an instance of the <span class="code">TrogOrder()<span class="code"> model. The <span class="code">welcome.html</span>    template provides insrtuctions for the task and provides an audio control element preloaded with a "ding" sound so that the user can ensure their speakers are working and set to an appropriate volume before starting the task. There is also a Javascript function at <span class="code">static/trog/trog-welcome.js</span>  that shows/hides a section of the instructions containing detailed info about the TROG task -- it is assumed most participants won't be interested in this and therefore hidden by default.</p>
+
+    
+                <li><span class="code">block()</span></li>
+
+                    <p>This View is responsible for fetching the stimuli for a particular trial block for a particular user and sending those file names as context variables to the <span class="code">block.html</span>    template. The actual stimuli images and audio prompts are stored in <span class="code">static/trog/img/</span>  and <span class="code">static/trog/cues/</span>. The actual cycle of each trial (display / hiding of elements, handling of audio prompt repeats and generating display / click timestamps) and registering of the User's responses is handled by Javascript: static/trog/trog-trial.js. The logic of progression through trial blocks is handled by this view and the trajectory is stored in the variable <span class="code">TROG_TRAJECTORY</span>.</p>
+
+    
+                <li><span class="code">postpractice()</span></li>
+
+                    <p>This View only renders a template <span class="code">postpractice.html</span>, which is meant to give the user a moment to collect themselves after the practice blocks and before the non-practice section of the test begins.</p>        
+
+    
+                <li><span class="code">finish()</span></li>
+
+                    <p>After all trials are complete, the user is redirected to this View, which renders the <span class="code">TrogFinishForm()</span>  in the <span class="code">finish.html</span>    template. The form field itself is a hidden input; the user only sees a button "Finish" with a "Thanks for completing the task!" text. Clicking the "Finish button, thereby submitting the form marks the Assigned task instance for that user's TROG-like task as "complete", if they have been assigned the task, otherwise it creates a complete assigend task object, and redirects them to ther profile. In the case when a user sees the finish page and closes the browser without submitting the form, their task will be marked complete the next time they load their profile by users/task_checker.py.</p>
+
+                <li><span class="code">save_data()</span></li>
+
+                    <p>This function is responsible for receiving data and creating a <span class="code">TrogResponse</span> instance. Data is sent from the browser by <span class="code">static/trog/trog-trial.js</span> .</p>
+
+            </ul>       
+    
+
+
+    
+    	<h4>Forms</h4>
+
+            <ul>
+
+                <li><span class="code">TrogWelcomeForm()</span></li>
+
+                    <p>This is a model form (related to the <span class="code">TrogOrder()</span> model) with one field – "trog_ready". It is rendered by the <span class="code">welcome()</span> view / <span class="code">welcome.html</span> template.</p>
+
+    
+                <li><span class="code">TrogFinishForm()</span></li>
+
+                    <p>The form is rendered by a hidden widget , rendered by the <span class="code">finish()</span>  view in the <span class="code">finish.html</span> template.</p>        
+
+            </ul>   
+
+    
+        <h4>Static files</h4>
+
+
+            <p> The <span class="code">trog</span> app has functional static files! These are:
+                <ul>
+                    <li>Image stimuli and audio cues are (meant to be) stored in <span class="code">static/trog/img/</span> and <span class="code">static/trog/cues/</span>, respectively. "Meant to be" because MOREDAT dosn't come with stimuli – the researcher must source/create them</li>
+
+                    <li> The js file at <span class="code">static/trog/trog-trial.js</span> is responsible for displaying/playing trial stimuli, generating and sending the data to be saved in the database.</li>
+                </ul>
+            </p>    
+
+
+    
+
+    <h3>Customizations</h3>
+
+        <p>The reseearcher needs to source/create their own stimuli images and record their own audio prompts. The original TROG and TROG-2 tests are not in the public domain.</p>  
+
+        <p>The original TROG-2 had 20 blocks (A – T) of stimuli, consisting of 4 sets of images (A has 5, one for practice), which targeted different areas of grammar. Each set of images has a corresponding audio prompt and consists of one target image and three distractor images.</p>   
+
+        <p>As a concrete example. If your block A is about spatial relations, you might have an audio prompt for set A1, where someone reads "The cat is on the table."</p> 
+
+        <p>A1_1_t.jpg, the target image (t in the file name), depicts a cat on a table. A1_2_d.jpg, A1_3_d.jpg, A1_4_d.jpg, are all distractor images and depict scenarios that don't match the target audio prompt, but may be easily confused by someone who's not proficient in spatial relations in the target language – A cat under the table, behind, or next to the table.</p>  
+
+        <p>Importantly(!!):
+     
+            <ul>
+
+                <li>the image stimuli must be named following these conventions and should live at static/trog/img/.</li>   
+
+                <li>the audio prompt should be named with the following convention: {short_language_code}_{image_set}.wav. So eg For the Dothrak group the A1 set audio prompt would be called dot_A1.wav. These files live at static/trog/cues.</li>   
+
+                <li>if you don't follow these conventions, you must update the views.py file as well as the trog templates and javascript (static/trog/trog-trial.js) to reflect the new file naming conventions.</li>
+
+            </ul>
+
+        </p>    
