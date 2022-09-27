@@ -25,12 +25,12 @@
 
                 <li><span class="code">VidnarVideo()</span></li>   
 
-                    <p></p>
+                    <p>This model creates a database instance for individual videos. It has fields for "filename", "sort_order" (numerical value for sorting vids in a VideoSet), "description", and "source". <span class="code">VidnarVideo</span> objects are for creating <span class="code">VidnarVideoSet</span>  objects.</p>
 
 
                 <li><span class="code">VidnarVideoSet()</span></li>   
 
-                    <p></p>
+                    <p><span class="code">VidnarVideoSet</span> objects form the basis of Tasks. The fields are as follows: "name", "slug", "videos" (Associates to <span class="code">VidnarVideo</span> objects), "description", "target_language" (L1 or L2 from the ResearchGroup), and "special_instructions" related to a given video set task.</p>
 
             </ul>   
     
@@ -43,27 +43,27 @@
 
                 <li><span class="code">vidnar_home()</span></li>   
 
-                    <p></p>
+                    <p>This View renders a list of all available video narration tasks that have been created. In production, it probably shouldn't be available to non-admin users.</p>
 
     
                 <li><span class="code">vidnar_welcome()</span></li>   
 
-                    <p></p>
+                    <p>This View displays general info and instructions about a given vidnar task; this includes general instructions, special instructoins from the <span class="code">VidnarVideoSet</span> model instance, and a link to the <span class="code">testuseraudio</span> app. Users begin a task from this view. Admin users also see a list of <span class="code">VidnarVideo</span> objects associated with the task.</p>
 
 
                 <li><span class="code">vidnar_trial()</span></li>   
 
-                    <p></p>
+                    <p>This view is responsible for the progression of videos in a set – it renders the current <span class="code">VidnarVideo</span> object, <span class="code">User</span> object, and the next video number (if exists) as context variables in the <span class="code">vidnar-trial. Playing the actual video file, recording the user response, and sending data are handled by Javascript <span class="code">static/vidnar/vidnar-trial.js</span>.</p>
 
 
                 <li><span class="code">vidnar_finish()</span></li>   
 
-                    <p></p>
+                    <p>This View renders a single form <span class="code">VidnarFinishForm</span>  after the user has completed all trials in a vidnar task. Submitting the form marks the Task complete for that user.</p>
 
 
                 <li><span class="code">save_trial_data()</span></li>   
 
-                    <p></p>
+                    <p>This View doesn't actually display anything, bur accepts data for each trial from the functions at <span class="code">static/vidnar/vidnar-trial.js</span>. It saves an audio file for each trial in <span class="code">media/recorded-audio/</span> with transparent encoding of the user, user's research group, task, trial and timestamp.</p>
 
             </ul>   
     
@@ -98,22 +98,22 @@
 
                     <li><span class="code">static/vidnar/vidnar-trial.js</span></li>
 
-                        <p></p>
+                        <p>This code handles playing individual videos, recording the user's response, and sending audio data to the <span class="code">save_trial_data()</span> view function.</p>
 
 
                     <li><span class="code">static/vidnar/vidnar-welcome.js</span></li>
 
-                        <p></p>
+                        <p>This code prevents users from begining a vidnar task without first opening the <span class="code">testuseraudio</span> app. We want users to make sure their microphone and speakers are functional</p>
 
 
                     <li><span class="code">static/vidnar/cues/</span></li>
 
-                        <p></p>
+                        <p>This direcrory contains loading animation, focus dot, and language cues (named by the short 3-letter code from the ResearchGroup model instance.</p>
 
 
                     <li><span class="code">static/vidnar/vid/</span></li>
 
-                        <p></p>
+                        <p>Actual video files go here. For consistency, vids should be in mp4 format.</p>
 
                 </ul>
 
