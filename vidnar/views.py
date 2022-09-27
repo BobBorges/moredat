@@ -7,6 +7,7 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.utils.translation import gettext as _
 from main.models import Tasks
+from users.decorators import user_consented
 from users.models import UserDetails, AssignedTasks
 from .forms import VidnarFinishForm
 from .models import *
@@ -20,6 +21,7 @@ import os
 
 
 @login_required
+@user_consented
 def vidnar_home(request):
 
 	context = {'title': 'MoReDaT Video Narration'}
@@ -31,6 +33,7 @@ def vidnar_home(request):
 
 
 @login_required
+@user_consented
 def vidnar_welcome(request, vid_set):
 	UD_object = UserDetails.objects.get(user=request.user)
 	context = {"title": "MoReDaT Video Narration"}
@@ -48,6 +51,7 @@ def vidnar_welcome(request, vid_set):
 
 
 @login_required
+@user_consented
 def vidnar_trial(request, vid_set, vidnr):
 	UD_object = UserDetails.objects.get(user=request.user)
 	context = {"title": "MoReDaT Video Narration"}
@@ -104,6 +108,7 @@ def vidnar_finish(request, vid_set):
 
 
 @login_required
+@user_consented
 def save_trial_data(request):
 	with open(
 		os.path.join(settings.MEDIA_ROOT, 'recorded-audio/VIDNAR-{}-{}_{}_{}_{:%Y-%m-%d-%H-%M-%S}.wav'.format(

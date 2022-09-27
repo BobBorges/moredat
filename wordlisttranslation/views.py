@@ -22,6 +22,7 @@ import os
 
 
 @login_required
+@user_consented
 def wlt_home(request):
 	context = {'title': 'MoReDaT Wordlist Translation'}
 	context['wordlist_sets'] = WordlistWordSet.objects.all()
@@ -50,6 +51,7 @@ def wlt_welcome(request, word_set):
 
 
 @login_required
+@user_consented
 def wlt_trial(request, word_set, wordnr):
 	UD_object = UserDetails.objects.get(user=request.user)
 	context = {"title": "MoReDaT Word List Translation"}
@@ -112,6 +114,7 @@ def wlt_trial(request, word_set, wordnr):
 
 
 @login_required
+@user_consented
 def wlt_finish(request, word_set):
 	context = {"title": "MoReDaT WLT"}
 	current_task = Tasks.objects.get(url_name='wlt-welcome', url_arg=word_set)

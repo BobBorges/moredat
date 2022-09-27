@@ -9,6 +9,7 @@ from django.shortcuts import render, redirect
 from django.urls import resolve
 from django.utils.translation import gettext as _
 from main.models import Tasks
+from users.decorators import user_consented
 from users.models import UserDetails, AssignedTasks
 from .forms import SpnResponseForm, SpnFinishForm
 from .models import SpnPicture, SpnPictureSet, SpnResponse
@@ -22,6 +23,7 @@ import os
 
 
 @login_required
+@user_consented
 def home_view(request):
 	context = {'title': 'MoReDaT Self-paced Picture Naming'}
 	context['picture_sets'] = SpnPictureSet.objects.all() 
@@ -31,6 +33,7 @@ def home_view(request):
 
 
 @login_required
+@user_consented
 def welcome_view(request, pic_set):
 	UD_object = UserDetails.objects.get(user=request.user)
 	context = {"title": "MoReDaT Self-paced Picture Naming"}
@@ -50,6 +53,7 @@ def welcome_view(request, pic_set):
 
 
 @login_required
+@user_consented
 def pic_view(request, pic_set, picnr):
     UD_object = UserDetails.objects.get(user=request.user)
     context = {"title": "MoReDaT Self-paced Picture Naming"}
@@ -119,6 +123,7 @@ def pic_view(request, pic_set, picnr):
 
 
 @login_required
+@user_consented
 def finish_view(request, pic_set):
 	context = {"title": "MoReDaT SPN"}
 	current_task = Tasks.objects.get(url_name='spn-welcome', url_arg=pic_set)
