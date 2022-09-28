@@ -31,17 +31,19 @@
 
                 <li><span class="code">WordlistWord()</span></li>   
 
-                    <p></p>    
+                    <p>This model has two fields, "word" and "sort_order". Instances of <span class="code">WordlistWord</span> are the units compiled into a <span class="code">WordlistWordSet</span>.</p>    
 
 
                 <li><span class="code">WordlistWordSet()</span></li>   
 
-                    <p></p>
+                    <p>This model comprises sets of words and form the basis for <span class="code">wordlisttranslation</span> based tasks. The fields are "name", "slug", words (linked to <span class="code">WordlistWord</span>  objects), "description", "source", and "special_instructions"</p>
+
+                    <p>Words and Word lists can be created manually in the admin panel or the researcher can use the <span class="code">manage.py import-wordlist</span>    command to import a set of words from an ODS speadcheet.</p>    
 
 
                 <li><span class="code">WordlistResponse()</span></li>   
 
-                    <p></p>
+                    <p>Responses to words are recorded as instances of this model. The fields are "task", "word", "user", "response_type", "audio_response", "written_response" and "commentary". Research participants select from the response types defined in <span class="code">WL_RESONSE_TYPE</span> and the rest of the appropriate info is recorded and saved in the <span class="code">wlt_trial()</span> View function.</p>
 
             </ul>   
     
@@ -54,22 +56,22 @@
 
                 <li><span class="code">wlt_home()</span></li>   
 
-                    <p></p>
+                    <p>This View renders a list of all the defined wordlisttranslation based tasks. It probably shouldn't be accessible by non-admin users.</p>
 
     
                 <li><span class="code">wlt_welcome()</span></li>   
 
-                    <p></p>
+                    <p>This View displays a general welcome, general instructions and specific instructions for a wordlisttranslation task. There is a link to the testuseraudio app – clicking the link activates the button to start a task. Activation of the button is handled by <span class="code">static/wordlisttranslation/wlt-welcome.js</span>.</p>
 
 
                 <li><span class="code">wlt_trial()</span></li>   
 
-                    <p></p>
+                    <p>This function renders the current Word object, the url of next word object in a secquence or the <span class="code">wlt_finish()</span>  function url, and the <span class="code">WorrdlistResponseForm</span>   in the <span class="code">wlt-trial.html</span> template. The function also handles POST data (submission of the form + form data). Display of appropriate form fields and handling of audio recording is done with <span class="code">static/wordlisttranslation/wlt-trial.js</span>.</p>
 
 
                 <li><span class="code">wlt_finish()</span></li>   
 
-                    <p></p>
+                    <p>This view renders the <span class="code">WordlistFinishForm</span> as a hidden widget in the <span class="code">wlt-finish.html</span>as the last page of a task. Submission of the form (clicking the "next" button) marks the current task as complete.</p>
 
             </ul>   
 
@@ -82,12 +84,12 @@
 
                 <li><span class="code">WordlistResponseForm()</span></li>   
 
-                    <p></p>
+                    <p>The form is a Model form, responsible for fields in the <span class="code">WordlistResponse</span>   model.</p>
 
     
                 <li><span class="code">WordlistFinishForm()</span></li>   
 
-                    <p></p>
+                    <p>This form is a single boolean field.</p>
 
             </ul>   
 
@@ -103,23 +105,21 @@
     
         <h4>Static files</h4>
 
-            <ul>
+            <p>This app makes use of functional static files
+                <ul>
 
-                <li><span class="code">static/wordlisttranslation/wlt-welcome.js</span></li>
-
-                    <p></p>
-
-
-                <li><span class="code">static/wordlisttranslation/wlt-trial.js</span></li>
-
-                    <p></p>
+                    <li><span class="code">static/wordlisttranslation/wlt-welcome.js</span></li>
+    
+                        <p>This JS handles the activation of the button on the <span class="code">wlt-welcome.html</span> template only after the user has navigated to the testuseraudio app. Without this action the user is prevented from starting a task with the button.</p>
 
 
-                <li><span class="code">static/wordlisttranslation/wlt-welcome.js</span></li>
+                    <li><span class="code">static/wordlisttranslation/wlt-trial.js</span></li>
+    
+                        <p>Tjos bit of JS handles rendering appropriate form elements given the response type and recording and playback of user audio during a wordlisttranslation task trial.</p>
 
-                    <p></p>
 
-            </ul>            
+                </ul>
+            </p>    
 
 
 
@@ -128,9 +128,9 @@
 
             <ul>
 
-                <li><span class="code"></span></li>   
+                <li>the <span class="code">import-wordlist</span> command</li>   
 
-                    <p></p>
+                    <p>Create an ODS spreadsheet containing rows of words for your wordlist and this command will create the necessary model instances automatically. Follow the template in any of the ODS files in <span class="code">wordlisttranslation/wordlist-set-ODS/</span> to structure your sheet appropriately.</p>
 
             </ul>       
 
