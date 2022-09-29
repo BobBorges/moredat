@@ -42,7 +42,7 @@
 
 		{% if user.is_authenticated and user.get_username == 'admin' %}
 		<br><hr>
-		<h2>Vids in Set</h2>
+		<h2>Wordss in the List</h2>
 		<p><span style="color:red;">(!!!) </span>{% translate 'You also see a  list of pictures because you are logged in as the admin user. Regular users do not see the stimuli ahead of time.' %}<span style="color:red;"> (!!!)</span><hr>
 			<ul style="list-style-type:none;">
 				{% for i, V in words_fn_desc.items %}
