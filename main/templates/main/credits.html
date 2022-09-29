@@ -19,7 +19,7 @@
 		<h3>{% translate 'Acknowledgements' %}</h3>
 
 		<p>
-			<ul>N={{ acknowledgements|length|add:"1" }}
+			<ul>
 				<li>{% translate 'The MoReDaT Documentation App was inspired by' %}&nbsp;<a href="https://github.com/bartTC/django-wakawaka">Wakawaka</a>. {% translate 'If you need a wiki for your site, check them out.' %}</li>
                 {% for a in acknowledgements %}
                     <li>{{ a.person }} || {{ a.reason }}</li>    
@@ -27,11 +27,11 @@
 			</ul>
 		</p>
 
-    <h3>{% translate 'Cited literature' %}</h3>
+    <h3>{% translate 'Referenced Literature' %}</h3>
     <p>
-        <ul>N={{ references|length }}
+        <ul style="list-style:none;">
         {% for r in references %}
-            <li>{{r}}</li>
+            <li class="hang">{{r.full_reference}}</li>
         {% endfor %}
         </ul>
     </p>    

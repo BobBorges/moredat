@@ -38,7 +38,7 @@ def credits_view(request):
 		"title": "MoReDaT Credits"
 	}
 	context['acknowledgements'] = AcknowledgedContribution.objects.all()
-	context['references'] = CitedReference.objects.all()
+	context['references'] = CitedReference.objects.all().order_by('creators')
 	return render(request, 'main/credits.html', context)
 
 

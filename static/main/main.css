@@ -53,3 +53,8 @@ footer {
 .list-group-item {
   text-align: left;
 }
+
+.hang {
+    padding-left:20px;
+    text-indent:-20px;
+}
