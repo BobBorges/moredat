@@ -1,6 +1,11 @@
 # MoReDaT -- Modular Remote Data Collection Tool 
 
 
+
+[![DOI](https://zenodo.org/badge/470742882.svg)](https://zenodo.org/badge/latestdoi/470742882)
+
+
+
 ## Short Description
 
 MOREDAT is an example website for remote linguistic data collection. The site is written in Python using the Django framework; as such, it is easily customized for deployment on a webserver, and individual apps are modular, in so far as possible. As a researcher intending to engage in remote data-collection activities, you can start with a MOREDAT instance as a template for a from-scratch website, or you can integrate MOREDAT apps into another Django project. 
